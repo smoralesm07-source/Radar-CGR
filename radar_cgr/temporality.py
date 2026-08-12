@@ -45,6 +45,14 @@ def infer_from_text(text,basis_prefix="FINDING_TEXT"):
         if year and "fecha de corte" not in context and "equival" not in context:
             exact=_iso(year,MONTHS[month.lower()],day)
             if exact:return _result(exact,exact,"AS_OF_DATE",f"{basis_prefix}: {m.group(0)}",.90)
+    # Fecha contenida en un acto administrativo que el propio hallazgo vuelve a identificar como el día de ocurrencia.
+    m=re.search(rf"\bdecreto\b.{{0,100}}?\bde\s+{DATE_TEXT}",t,re.I)
+    if m:
+        day,month,year=m.groups()
+        repeated=rf"\bd[ií]a\s+{re.escape(day)}\s+de\s+{re.escape(month)}\s+de\s+la\s+presente\s+anualidad"
+        if year and re.search(repeated,t,re.I):
+            exact=_iso(year,MONTHS[month.lower()],day)
+            if exact:return _result(exact,exact,"EXACT",f"{basis_prefix}: fecha del acto coincidente con día del hecho ({day} de {month} de {year})",.94)
     m=re.search(rf"(?:el\s+d[ií]a|del\s+d[ií]a|con\s+fecha|el)\s+{DATE_TEXT}",t,re.I)
     if m:
         context=t[max(0,m.start()-50):min(len(t),m.end()+50)].lower();day,month,year=m.groups()

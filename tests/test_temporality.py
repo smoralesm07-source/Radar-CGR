@@ -41,5 +41,13 @@ def test_unknown_never_falls_back_to_report_publication_date():
     assert x["occurrence_date_from"]==""
 
 
+def test_decree_date_repeated_as_day_of_fact_is_occurrence():
+    text="Mediante el decreto alcaldicio N° 937, de 6 de marzo de 2026, se dispuso la reducción. La entidad deberá acreditar el reintegro por las horas no trabajadas del día 6 de marzo de la presente anualidad."
+    x=infer_occurrence_interval(text)
+    assert x["occurrence_date_from"]=="2026-03-06"
+    assert x["occurrence_date_precision"]=="EXACT"
+    assert x["occurrence_date_confidence"]>=0.9
+
+
 def test_normalize_document_date():
     assert normalize_document_date("29-05-2026")=="2026-05-29"
