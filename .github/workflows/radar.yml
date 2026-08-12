@@ -2,6 +2,17 @@ name: Radar CGR - recoleccion
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "radar_cgr/**"
+      - "config/**"
+      - "schemas/**"
+      - "tests/**"
+      - "requirements.txt"
+      - "pyproject.toml"
+      - "run.py"
+      - ".github/workflows/radar.yml"
   schedule:
     - cron: "17 10,22 * * *"
 
