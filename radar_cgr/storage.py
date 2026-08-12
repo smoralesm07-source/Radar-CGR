@@ -8,7 +8,11 @@ from .config import BRONZE_DIR, GOLD_DIR, SILVER_DIR
 from .models import canonical_json
 from .utils import ensure_parent
 
-TABLES=["documents","events","findings","evidence","entities","relationships","source_runs"]
+TABLES=[
+    "documents","events","findings","evidence","entities",
+    "organizations","providers","persons","relationships",
+    "irregularities","penal_hypotheses","finding_enrichment","source_runs"
+]
 VOLATILE_FIELDS={"retrieved_at"}
 
 
@@ -29,8 +33,15 @@ def _semantic(row:dict)->dict:
     return {k:v for k,v in row.items() if k not in VOLATILE_FIELDS}
 
 
+def _write_rows(path:Path, rows:list[dict], key:str)->None:
+    ensure_parent(path)
+    with path.open("w",encoding="utf-8") as fh:
+        for row in sorted(rows,key=lambda r:str(r.get(key,""))):
+            fh.write(json.dumps(row,ensure_ascii=False,sort_keys=True)+"\n")
+
+
 def upsert_jsonl(name:str,rows:Iterable[dict],key:str)->tuple[int,int]:
-    path=table_path(name); ensure_parent(path); existing={row.get(key):row for row in read_jsonl(path) if row.get(key)}; inserted=updated=0
+    path=table_path(name); existing={row.get(key):row for row in read_jsonl(path) if row.get(key)}; inserted=updated=0
     for row in rows:
         k=row.get(key)
         if not k: continue
@@ -41,9 +52,20 @@ def upsert_jsonl(name:str,rows:Iterable[dict],key:str)->tuple[int,int]:
             updated+=1; existing[k]=row
         else:
             existing[k]=previous
-    with path.open("w",encoding="utf-8") as fh:
-        for row in sorted(existing.values(),key=lambda r:str(r.get(key,""))): fh.write(json.dumps(row,ensure_ascii=False,sort_keys=True)+"\n")
+    _write_rows(path,list(existing.values()),key)
     return inserted,updated
+
+
+def replace_jsonl(name:str, rows:Iterable[dict], key:str)->tuple[int,int,int]:
+    """Reemplazo determinista para tablas derivadas. Retorna insertados, actualizados y eliminados."""
+    path=table_path(name)
+    previous={row.get(key):row for row in read_jsonl(path) if row.get(key)}
+    current={row.get(key):row for row in rows if row.get(key)}
+    inserted=sum(k not in previous for k in current)
+    updated=sum(k in previous and canonical_json(_semantic(previous[k]))!=canonical_json(_semantic(v)) for k,v in current.items())
+    deleted=sum(k not in current for k in previous)
+    _write_rows(path,list(current.values()),key)
+    return inserted,updated,deleted
 
 
 def write_snapshot(source_id:str,run_date:str,payload:dict)->Path:

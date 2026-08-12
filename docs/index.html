@@ -1,1 +1,52 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Radar CGR · Inteligencia de riesgo</title><link rel="stylesheet" href="styles.css"><meta name="theme-color" content="#34383c"></head><body><header><div class="eyebrow">OSINT · AML / LA-FT · Chile</div><h1>Radar CGR</h1><div class="sub">Inteligencia de riesgo sobre recursos públicos, hallazgos, entidades y medidas de la Contraloría General de la República. Toda señal conserva trazabilidad hacia su fuente oficial.</div></header><main class="wrap"><section id="kpis" class="kpis"></section><section class="grid"><div class="panel"><h2>Señales prioritarias</h2><div class="toolbar"><input id="q" placeholder="Buscar hallazgo…"><select id="risk"><option value="">Toda relevancia</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select><select id="family"><option value="">Todas las familias</option></select></div><div id="findings"></div></div><aside><div class="panel"><h2>Familias de riesgo</h2><div id="families"></div></div><div class="panel" style="margin-top:16px"><h2>Salud de fuentes</h2><div id="sources"></div></div></aside></section><footer id="footer"></footer></main><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Radar CGR · Entity & Irregularity Intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#2e3236">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">OSINT · AML / LA-FT · Chile <span class="version">v0.2</span></div>
+      <h1>Radar CGR</h1>
+      <p>Inteligencia estructurada sobre organismos públicos, proveedores, irregularidades, territorio y acciones derivadas de la Contraloría General de la República.</p>
+    </div>
+    <div class="status" id="generated">Cargando datos…</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="question-box">
+    <div class="question-title">Preguntas clave</div>
+    <div id="questions" class="questions"></div>
+  </section>
+
+  <section id="kpis" class="kpis"></section>
+
+  <nav class="tabs" id="tabs">
+    <button class="active" data-tab="summary">Resumen</button>
+    <button data-tab="organizations">Organismos</button>
+    <button data-tab="providers">Proveedores</button>
+    <button data-tab="regions">Territorio</button>
+    <button data-tab="penal">Relevancia penal</button>
+    <button data-tab="findings">Hallazgos</button>
+    <button data-tab="sources">Fuentes</button>
+  </nav>
+
+  <section id="view"></section>
+  <footer id="footer"></footer>
+</main>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="close" id="closeModal" aria-label="Cerrar">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

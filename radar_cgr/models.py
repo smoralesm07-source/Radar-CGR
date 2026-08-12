@@ -16,6 +16,7 @@ def stable_id(prefix: str, *parts: Any) -> str:
     digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:20]
     return f"{prefix}-{digest}"
 
+
 @dataclass
 class Document:
     document_id: str
@@ -37,6 +38,7 @@ class Document:
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
+
 @dataclass
 class Event:
     event_id: str
@@ -53,6 +55,7 @@ class Event:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
 
 @dataclass
 class Finding:
@@ -74,6 +77,7 @@ class Finding:
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
+
 @dataclass
 class Evidence:
     evidence_id: str
@@ -90,6 +94,7 @@ class Evidence:
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
+
 @dataclass
 class Entity:
     entity_id: str
@@ -99,9 +104,57 @@ class Entity:
     rut: str = ""
     region: str = ""
     source_document_id: str = ""
+    confidence: float = 0.7
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+@dataclass
+class Organization:
+    organization_id: str
+    name: str
+    normalized_name: str
+    organization_type: str
+    region: str = ""
+    commune: str = ""
+    rut: str = ""
+    source_document_id: str = ""
+    confidence: float = 0.7
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class Provider:
+    provider_id: str
+    name: str
+    normalized_name: str
+    provider_type: str = "PRIVATE_LEGAL_ENTITY"
+    rut: str = ""
+    region: str = ""
+    source_document_id: str = ""
+    confidence: float = 0.7
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class Person:
+    person_id: str
+    name: str
+    normalized_name: str
+    role: str = ""
+    organization_id: str = ""
+    rut: str = ""
+    source_document_id: str = ""
+    confidence: float = 0.5
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
 
 @dataclass
 class Relationship:
@@ -111,8 +164,45 @@ class Relationship:
     relationship_type: str
     document_id: str
     event_id: str = ""
+    finding_id: str = ""
     evidence_id: str = ""
+    source_url: str = ""
     confidence: float = 0.5
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class Irregularity:
+    irregularity_id: str
+    finding_id: str
+    document_id: str
+    code: str
+    label: str
+    family: str
+    cgr_weight: int
+    evidence_id: str = ""
+    source_url: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class PenalHypothesis:
+    hypothesis_id: str
+    finding_id: str
+    document_id: str
+    code: str
+    label: str
+    score: int
+    relevance: str
+    evidence_level: str
+    basis: list[str] = field(default_factory=list)
+    limitations: list[str] = field(default_factory=list)
+    evidence_id: str = ""
+    source_url: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

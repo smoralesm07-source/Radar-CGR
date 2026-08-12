@@ -8,6 +8,7 @@ from .collectors import HTTPClient, collect_news_articles, collect_page
 from .config import load_seed_audits, load_sources
 from .dashboard import build_dashboard
 from .extract import parse_audit_detail
+from .intelligence import rebuild_intelligence
 from .models import Event, stable_id
 from .storage import export_parquet, upsert_jsonl, write_snapshot
 
@@ -39,7 +40,8 @@ def run(source_filter:str|None=None,skip_network:bool=False)->dict:
             finally:
                 time.sleep(0.2)
     if source_run_rows: upsert_jsonl("source_runs",source_run_rows,"run_id")
-    parquet=export_parquet(); dashboard=build_dashboard(); return {"started_at":started,"totals":totals,"parquet":parquet,"dashboard_kpis":dashboard["kpis"]}
+    intelligence=rebuild_intelligence()
+    parquet=export_parquet(); dashboard=build_dashboard(); return {"started_at":started,"totals":totals,"intelligence":intelligence,"parquet":parquet,"dashboard_kpis":dashboard["kpis"]}
 
 
 def main()->None:

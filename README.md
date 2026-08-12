@@ -1,66 +1,102 @@
 # Radar CGR
 
-Módulo OSINT para convertir información pública de la **Contraloría General de la República de Chile (CGR)** en datos estructurados, trazables y reutilizables para análisis de riesgo con enfoque AML/LA-FT.
+Módulo OSINT para transformar información pública de la **Contraloría General de la República de Chile (CGR)** en datos estructurados, trazables y reutilizables para inteligencia de riesgo con enfoque AML/LA-FT.
 
-> **Criterio de uso:** una observación de Contraloría, una fiscalización o una señal derivada por el sistema **no constituye por sí sola evidencia de lavado de activos, financiamiento del terrorismo ni responsabilidad penal**. El scoring se utiliza para priorización analítica y siempre debe conservarse la evidencia de origen.
+> **Regla de interpretación:** una observación CGR, la aparición de un proveedor o una hipótesis de relevancia penal **no acredita por sí sola lavado de activos, delito ni responsabilidad individual**. El sistema prioriza revisión y conserva siempre la evidencia oficial.
 
-## v0.1
+## v0.2 — Entity & Irregularity Intelligence
 
-Implementa Python + GitHub Actions + GitHub Pages, JSONL como capa maestra versionable, Parquet analítico, identificadores estables para documentos/eventos/hallazgos/entidades/evidencia, parser dedicado de fichas HTML de auditoría CGR, extracción de montos CLP, medidas posteriores y familias de riesgo AML explicables, descubrimiento de informes desde páginas oficiales y control de salud de fuentes.
+La v0.2 cambia la unidad de análisis desde el documento hacia las entidades y hechos relacionados. El Radar busca responder preguntas como:
 
-## Arquitectura
+- ¿Qué organismo público aparece involucrado en irregularidades?
+- ¿En qué región se ubica?
+- ¿El hallazgo involucra proveedores o entidades privadas?
+- ¿Qué proveedores aparecen en más de un organismo o documento?
+- ¿Qué tipologías de irregularidad se repiten?
+- ¿Qué casos tienen reparo, procedimiento disciplinario o remisión al Ministerio Público/CDE?
+- ¿Qué hallazgos presentan indicadores compatibles con una posible hipótesis de relevancia penal funcionaria?
+
+## Arquitectura sin servidor
 
 ```text
 CGR publica
    |
    v
-collectors Python
+collectors Python / GitHub Actions
    |
-   +--> data/bronze/  snapshots + hashes
-   +--> data/silver/  JSONL: documents/events/findings/evidence/entities/relationships/source_runs
-   +--> data/gold/    Parquet
-   +--> docs/data/dashboard.json -> GitHub Pages
+   +--> data/bronze/ snapshots de fuente
+   +--> data/silver/ evidencia y tablas maestras JSONL
+   +--> data/gold/ Parquet analítico
+   +--> docs/data/dashboard.json
+   |
+   v
+GitHub Pages
 ```
 
-## Fuentes configuradas
+No requiere PostgreSQL, VM ni backend adicional. La estructura queda preparada para migrar a SQL/PostgreSQL en una evolución futura.
 
-`config/sources.json` contempla Noticias CGR, Informes de Auditoría, Fiscalizaciones en curso, FAU, Tribunal de Cuentas, auditorías de transferencias relacionadas con fundaciones, Semáforo Municipal, bases municipales y reportes financieros/presupuestarios.
+## Modelo de datos
 
-La v0.1 prioriza extracción detallada de auditorías y descubrimiento desde fuentes oficiales. Los demás conectores ya generan control de salud y snapshots y se especializarán sin cambiar el modelo de datos.
-
-## Trazabilidad
+### Evidencia primaria
 
 ```text
-document_id -> event_id -> finding_id -> evidence_id -> source_url / source_text / hash
+documents -> events -> findings -> evidence
 ```
 
-## Ejecución
+### Inteligencia derivada v0.2
+
+```text
+organizations
+providers
+persons
+relationships
+irregularities
+penal_hypotheses
+finding_enrichment
+```
+
+Las tablas derivadas se **reconstruyen de manera determinista** desde la evidencia primaria. Esto permite mejorar las reglas sin alterar el documento fuente ni acumular clasificaciones obsoletas.
+
+## Tres dimensiones separadas
+
+- **CGR Risk:** gravedad administrativa/fiscal del hallazgo según tipología, monto y acciones posteriores.
+- **Penal Relevance:** intensidad de indicadores compatibles con una eventual relevancia penal. Distingue inferencia analítica de remisiones explícitas efectuadas por CGR.
+- **AML Relevance:** interés del hallazgo para priorización desde perspectiva AML/LA-FT.
+
+Los proveedores poseen adicionalmente un **Exposure Recurrence Score**. Este indicador mide recurrencia documental y diversidad de organismos; **no representa culpabilidad ni riesgo penal del proveedor**.
+
+## Tipologías iniciales
+
+Incluye, entre otras: pagos improcedentes; pagos/gastos sin respaldo; prestaciones no acreditadas; contratación irregular; trato directo; conflicto de interés/inhabilidad; partes relacionadas; sobrepagos; fondos sin rendición; uso de fondos para fines distintos; anomalías contables; inconsistencias documentales; beneficiarios con requisitos observados; fallas de control; irregularidades de personal; control de activos.
+
+## Hipótesis de relevancia penal
+
+La versión inicial identifica, siempre como **hipótesis para revisión**, patrones compatibles con posible fraude al Fisco, malversación de caudales públicos, negociación incompatible, cohecho solo ante referencias explícitas, relevancia penal documental y otras materias cuando CGR remite expresamente antecedentes al Ministerio Público.
+
+Cada hipótesis incluye `score`, `evidence_level`, fundamentos, limitaciones y vínculo a la evidencia CGR.
+
+## Actualización
+
+`.github/workflows/radar.yml` ejecuta pruebas y el pipeline dos veces al día. En cada corrida consulta fuentes CGR, actualiza documentos/hallazgos/evidencia, reconstruye la inteligencia de entidades, recalcula perfiles, exporta JSONL/Parquet, genera `docs/data/dashboard.json` y persiste únicamente cambios reales.
+
+También puede reconstruirse todo sin red:
 
 ```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-pytest -q
-python run.py
+python run.py --skip-network
 ```
 
-`python run.py --skip-network` reconstruye salidas sin consultar Internet. `python run.py --source cgr_noticias` ejecuta una fuente.
+## Dashboard v0.2
 
-## Automatización
+La interfaz incorpora Resumen ejecutivo, Organismos, Proveedores, Territorio, Posible relevancia penal, Hallazgos, Salud de fuentes y fichas emergentes con trazabilidad a CGR.
 
-`.github/workflows/radar.yml` ejecuta el pipeline dos veces al día y también de forma manual. Instala dependencias, ejecuta tests, consulta fuentes, normaliza/deduplica, genera JSONL/Parquet/dashboard y hace commit solo si existen cambios, con `pull --rebase` antes del push.
+## Próximas líneas
 
-## GitHub Pages
-
-El sitio está en `docs/`. `pages.yml` despliega esa carpeta. En un repositorio nuevo puede ser necesario seleccionar una vez **Settings > Pages > Source: GitHub Actions**.
-
-## Próximas especializaciones
-
-- Conector exhaustivo al buscador CGR.
-- Parser de Fiscalizaciones en Curso y estado `WATCH -> FINDING`.
-- Taxonomía FAU computable.
-- Tribunal de Cuentas y escalamiento de enforcement.
-- Lectura de PDF cuando el HTML sea insuficiente.
-- NER y resolución de entidades.
-- DuckDB-WASM para SQL en navegador.
-- Contrato común para integración con otros módulos AML.
+- ampliar resolución de organismos y alias institucionales;
+- extracción de RUT cuando la evidencia oficial lo exponga;
+- mayor cobertura de personas/cargos sin fabricar identidades ausentes;
+- especialización de Fiscalizaciones en Curso (`WATCH -> FINDING`);
+- taxonomía FAU computable;
+- Tribunal de Cuentas como capa de enforcement;
+- CIC como señales de cruces masivos;
+- lectura PDF cuando HTML no sea suficiente;
+- Entity Hub común con otros módulos AML.

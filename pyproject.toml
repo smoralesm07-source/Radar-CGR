@@ -1,6 +1,6 @@
 [project]
 name = "radar-cgr"
-version = "0.1.0"
+version = "0.2.0"
 description = "Radar OSINT de Contraloria General de la Republica de Chile con enfoque AML/LA-FT"
 requires-python = ">=3.11"
 
