@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-12T15:48:39+00:00",
+  "generated_at": "2026-08-12T15:56:47+00:00",
   "version": "0.2.0",
   "disclaimer": "Las señales son antecedentes OSINT para priorización analítica. Una observación CGR o una hipótesis de relevancia penal no acredita LA/FT, dolo ni responsabilidad penal individual. Los montos indexados corresponden a valores mencionados en hallazgos y no equivalen necesariamente a perjuicio fiscal.",
   "kpis": {
     "documents": 16,
     "events": 66,
     "findings": 112,
-    "organizations": 11,
-    "providers": 18,
+    "organizations": 13,
+    "providers": 13,
     "persons": 0,
     "aml_high": 18,
     "penal_high": 4,
@@ -18,7 +18,7 @@
   "organizations": [
     {
       "commune": "",
-      "confidence": 0.85,
+      "confidence": 0.92,
       "name": "Comisión Nacional de Riego",
       "normalized_name": "COMISION NACIONAL DE RIEGO",
       "organization_id": "ENT-cf3a96f03b9eea7fb95d",
@@ -30,7 +30,7 @@
       "findings": 5,
       "providers_count": 1,
       "provider_ids": [
-        "ENT-9738a9c8e4420e771c1d"
+        "ENT-b163eecf5158224af885"
       ],
       "providers": [
         "Consultora Arrebol Ingeniería y Gestión del Agua SpA"
@@ -78,8 +78,8 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
-      "name": "Hospital Doctor Carlos Cisternas de Calama",
+      "confidence": 0.92,
+      "name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "normalized_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_id": "ENT-e2cec363518a47266e43",
       "organization_type": "HOSPITAL",
@@ -88,22 +88,16 @@
       "source_document_id": "CGR-AUD-4ba08bb0759f3f33780f94bd936e34f0",
       "documents": 1,
       "findings": 30,
-      "providers_count": 6,
+      "providers_count": 3,
       "provider_ids": [
-        "ENT-2acf6e5d094edaa2a6c1",
-        "ENT-3448bd7451318e1b631c",
-        "ENT-3b80de371ee699a59b66",
-        "ENT-4d89e11a8510af1edf9a",
-        "ENT-8835da3163ad9c3369e7",
-        "ENT-fb3894df62e9f2922d19"
+        "ENT-cf862c577d7cbbfa4c43",
+        "ENT-e2fc3bec2ff490933b1f",
+        "ENT-f5d41cde9e51f4f9aac2"
       ],
       "providers": [
         "Four Service SpA",
-        "de Four Service SpA",
-        "Constructora Guerra Letelier SpA y Four Service SpA",
         "Constructora Guerra Letelier SpA",
-        "Linkes Chile S.A",
-        "Constructora Guerra y Letelier SpA"
+        "Linkes Chile S.A"
       ],
       "amounts_indexed_clp": 5794688367,
       "cgr_risk": 83,
@@ -144,11 +138,11 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
-      "name": "MUN VILLARRICA",
-      "normalized_name": "MUN VILLARRICA",
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "confidence": 0.92,
+      "name": "Municipalidad de Villarrica",
+      "normalized_name": "MUNICIPALIDAD DE VILLARRICA",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_type": "MUNICIPALITY",
       "region": "La Araucanía",
       "rut": "",
       "source_document_id": "CGR-AUD-e6f7ccdd700a02ceceb5892575b7a85e",
@@ -196,37 +190,35 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
-      "name": "Servicio de Salud Antofagasta",
-      "normalized_name": "SERVICIO DE SALUD ANTOFAGASTA",
-      "organization_id": "ENT-179c5ce433617f21632e",
+      "confidence": 0.92,
+      "name": "Servicio de Salud de Antofagasta",
+      "normalized_name": "SERVICIO DE SALUD DE ANTOFAGASTA",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
       "organization_type": "HEALTH_SERVICE",
       "region": "Antofagasta",
       "rut": "",
       "source_document_id": "CGR-AUD-68149865935d1f457ba4afc273bb03c3",
       "documents": 1,
       "findings": 14,
-      "providers_count": 5,
+      "providers_count": 4,
       "provider_ids": [
-        "ENT-2546bf113eeca1393c2e",
-        "ENT-7692f87c53cfbed0811a",
-        "ENT-965ab22cd3a97c18facb",
-        "ENT-b59ec2518b84e9b398cd",
-        "ENT-dc0b508fce33871ebe00"
+        "ENT-4df13a85ed715cb3a025",
+        "ENT-6a1be6549328fbe59521",
+        "ENT-74ca4ab4e464e616fcd9",
+        "ENT-b299563fac22c0475f2d"
       ],
       "providers": [
-        "Segmun SpA",
         "Medical Services SpA",
-        "Servicios Odontológicos Ltda",
-        "de Segmun SpA",
-        "Ambulancias Monumental SpA"
+        "Ambulancias Monumental SpA",
+        "Segmun SpA",
+        "Servicios Odontológicos Ltda"
       ],
       "amounts_indexed_clp": 1118536246,
       "cgr_risk": 65,
       "penal_relevance_score": 85,
       "aml_relevance_score": 100,
-      "recurrence_score": 84,
-      "priority_score": 74,
+      "recurrence_score": 82,
+      "priority_score": 73,
       "disciplinary": 2,
       "reparos": 1,
       "criminal_referrals": 1,
@@ -244,7 +236,43 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
+      "confidence": 0.92,
+      "name": "Carabineros de Chile",
+      "normalized_name": "CARABINEROS DE CHILE",
+      "organization_id": "ENT-e4913e03f8dc3a8bfb5d",
+      "organization_type": "PUBLIC_ORGANIZATION",
+      "region": "",
+      "rut": "",
+      "source_document_id": "CGR-AUD-8b269eb5e9201268ad2e876f89d1ae25",
+      "documents": 1,
+      "findings": 4,
+      "providers_count": 0,
+      "provider_ids": [],
+      "providers": [],
+      "amounts_indexed_clp": 443161281,
+      "cgr_risk": 86,
+      "penal_relevance_score": 63,
+      "aml_relevance_score": 64,
+      "recurrence_score": 26,
+      "priority_score": 68,
+      "disciplinary": 0,
+      "reparos": 1,
+      "criminal_referrals": 0,
+      "cde_referrals": 0,
+      "penal_high_findings": 0,
+      "top_irregularities": [
+        {
+          "name": "Pago en exceso o sobrepago",
+          "count": 1
+        }
+      ],
+      "source_urls": [
+        "https://www.contraloria.cl/buscadorpdf/auditoria/8b269eb5e9201268ad2e876f89d1ae25/html"
+      ]
+    },
+    {
+      "commune": "",
+      "confidence": 0.92,
       "name": "UNIVERSIDAD DE SANTIAGO DE CHILE",
       "normalized_name": "UNIVERSIDAD DE SANTIAGO DE CHILE",
       "organization_id": "ENT-903790d0c607b9ed3b67",
@@ -284,10 +312,10 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
-      "name": "Universidad del Bío-Bío",
-      "normalized_name": "UNIVERSIDAD DEL BIO BIO",
-      "organization_id": "ENT-f5e7358a5757801f649f",
+      "confidence": 0.92,
+      "name": "UNIVERSIDAD DEL BIOBÍO",
+      "normalized_name": "UNIVERSIDAD DEL BIOBIO",
+      "organization_id": "ENT-12d5d1d24169d6ac8d9e",
       "organization_type": "STATE_UNIVERSITY",
       "region": "Biobío",
       "rut": "",
@@ -320,7 +348,7 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
+      "confidence": 0.92,
       "name": "HOSPITAL DE VICTORIA",
       "normalized_name": "HOSPITAL DE VICTORIA",
       "organization_id": "ENT-7ccc7970ae533a4d5faa",
@@ -356,7 +384,7 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
+      "confidence": 0.92,
       "name": "MUNICIPALIDAD DE SANTA CRUZ",
       "normalized_name": "MUNICIPALIDAD DE SANTA CRUZ",
       "organization_id": "ENT-3823afd63dc27fc2ccae",
@@ -392,8 +420,8 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
-      "name": "DIRECCIÓN REGIONAL METROPOLITANA DEL INDAP",
+      "confidence": 0.92,
+      "name": "Dirección Regional Metropolitana del INDAP",
       "normalized_name": "DIRECCION REGIONAL METROPOLITANA DEL INDAP",
       "organization_id": "ENT-9d473bd66a79dc2a977b",
       "organization_type": "PUBLIC_ORGANIZATION",
@@ -432,25 +460,31 @@
     },
     {
       "commune": "",
-      "confidence": 0.85,
-      "name": "s etapas de diseño",
-      "normalized_name": "S ETAPAS DE DISENO",
-      "organization_id": "ENT-6e5716807f51b453e50c",
+      "confidence": 0.92,
+      "name": "Corporación Nacional Forestal",
+      "normalized_name": "CORPORACION NACIONAL FORESTAL",
+      "organization_id": "ENT-6fb404cef43c64f442e7",
       "organization_type": "PUBLIC_ORGANIZATION",
-      "region": "",
+      "region": "Arica y Parinacota",
       "rut": "",
-      "source_document_id": "CGR-AUD-c4e0e1411627c20176d06ca38d1d7c3f",
+      "source_document_id": "CGR-AUD-93c71bdfd427efce3d50c21bed0c97b5",
       "documents": 1,
-      "findings": 5,
-      "providers_count": 0,
-      "provider_ids": [],
-      "providers": [],
+      "findings": 4,
+      "providers_count": 2,
+      "provider_ids": [
+        "ENT-a30813f528fc4ccac8da",
+        "ENT-efae98e94089c7781406"
+      ],
+      "providers": [
+        "Spill Tech SpA",
+        "Corporación Nacional Forestal"
+      ],
       "amounts_indexed_clp": 0,
       "cgr_risk": 35,
       "penal_relevance_score": 0,
-      "aml_relevance_score": 45,
-      "recurrence_score": 21,
-      "priority_score": 23,
+      "aml_relevance_score": 35,
+      "recurrence_score": 22,
+      "priority_score": 24,
       "disciplinary": 0,
       "reparos": 0,
       "criminal_referrals": 0,
@@ -458,15 +492,46 @@
       "penal_high_findings": 0,
       "top_irregularities": [],
       "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/c4e0e1411627c20176d06ca38d1d7c3f/html"
+        "https://www.contraloria.cl/buscadorpdf/auditoria/93c71bdfd427efce3d50c21bed0c97b5/html"
       ]
     },
     {
       "commune": "",
-      "confidence": 0.85,
-      "name": "MUNICIPALIDAD DE TIERRA AMARILLA INSPECCIÓN EN TERRENO",
-      "normalized_name": "MUNICIPALIDAD DE TIERRA AMARILLA INSPECCION EN TERRENO",
-      "organization_id": "ENT-8225ae2386251ed52a5c",
+      "confidence": 0.92,
+      "name": "SERVICIO LOCAL DE EDUCACIÓN PÚBLICA DE AYSÉN",
+      "normalized_name": "SERVICIO LOCAL DE EDUCACION PUBLICA DE AYSEN",
+      "organization_id": "ENT-ed65bd519bf1d53bba09",
+      "organization_type": "PUBLIC_ORGANIZATION",
+      "region": "Aysén",
+      "rut": "",
+      "source_document_id": "CGR-AUD-7d9782be5be33fc7023b93d269bce591",
+      "documents": 1,
+      "findings": 3,
+      "providers_count": 0,
+      "provider_ids": [],
+      "providers": [],
+      "amounts_indexed_clp": 0,
+      "cgr_risk": 35,
+      "penal_relevance_score": 0,
+      "aml_relevance_score": 45,
+      "recurrence_score": 15,
+      "priority_score": 22,
+      "disciplinary": 0,
+      "reparos": 0,
+      "criminal_referrals": 0,
+      "cde_referrals": 0,
+      "penal_high_findings": 0,
+      "top_irregularities": [],
+      "source_urls": [
+        "https://www.contraloria.cl/buscadorpdf/auditoria/7d9782be5be33fc7023b93d269bce591/html"
+      ]
+    },
+    {
+      "commune": "",
+      "confidence": 0.92,
+      "name": "MUNICIPALIDAD DE TIERRA AMARILLA",
+      "normalized_name": "MUNICIPALIDAD DE TIERRA AMARILLA",
+      "organization_id": "ENT-dd594a018438d7c742be",
       "organization_type": "MUNICIPALITY",
       "region": "Atacama",
       "rut": "",
@@ -498,16 +563,16 @@
       "confidence": 0.92,
       "name": "Constructora Guerra Letelier SpA",
       "normalized_name": "CONSTRUCTORA GUERRA LETELIER SPA",
-      "provider_id": "ENT-4d89e11a8510af1edf9a",
+      "provider_id": "ENT-e2fc3bec2ff490933b1f",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Antofagasta",
       "rut": "",
       "source_document_id": "CGR-AUD-4ba08bb0759f3f33780f94bd936e34f0",
       "documents": 1,
-      "findings": 17,
+      "findings": 19,
       "organizations_count": 1,
       "organizations": [
-        "Hospital Doctor Carlos Cisternas de Calama"
+        "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA"
       ],
       "regions": [
         "Antofagasta"
@@ -516,19 +581,19 @@
       "cgr_context_max": 83,
       "penal_context_max": 62,
       "penal_high_findings": 0,
-      "exposure_recurrence_score": 91,
+      "exposure_recurrence_score": 99,
       "top_irregularities": [
+        {
+          "name": "Pago improcedente",
+          "count": 5
+        },
         {
           "name": "Uso observado de trato directo",
           "count": 5
         },
         {
-          "name": "Pago improcedente",
-          "count": 4
-        },
-        {
           "name": "Pago en exceso o sobrepago",
-          "count": 3
+          "count": 4
         }
       ],
       "source_urls": [
@@ -539,16 +604,16 @@
       "confidence": 0.92,
       "name": "Four Service SpA",
       "normalized_name": "FOUR SERVICE SPA",
-      "provider_id": "ENT-2acf6e5d094edaa2a6c1",
+      "provider_id": "ENT-cf862c577d7cbbfa4c43",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Antofagasta",
       "rut": "",
       "source_document_id": "CGR-AUD-4ba08bb0759f3f33780f94bd936e34f0",
       "documents": 1,
-      "findings": 7,
+      "findings": 8,
       "organizations_count": 1,
       "organizations": [
-        "Hospital Doctor Carlos Cisternas de Calama"
+        "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA"
       ],
       "regions": [
         "Antofagasta"
@@ -557,7 +622,7 @@
       "cgr_context_max": 82,
       "penal_context_max": 68,
       "penal_high_findings": 0,
-      "exposure_recurrence_score": 51,
+      "exposure_recurrence_score": 55,
       "top_irregularities": [
         {
           "name": "Vínculo o parte relacionada",
@@ -580,16 +645,16 @@
       "confidence": 0.92,
       "name": "Segmun SpA",
       "normalized_name": "SEGMUN SPA",
-      "provider_id": "ENT-2546bf113eeca1393c2e",
+      "provider_id": "ENT-74ca4ab4e464e616fcd9",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Antofagasta",
       "rut": "",
       "source_document_id": "CGR-AUD-68149865935d1f457ba4afc273bb03c3",
       "documents": 1,
-      "findings": 4,
+      "findings": 5,
       "organizations_count": 1,
       "organizations": [
-        "Servicio de Salud Antofagasta"
+        "Servicio de Salud de Antofagasta"
       ],
       "regions": [
         "Antofagasta"
@@ -598,7 +663,7 @@
       "cgr_context_max": 65,
       "penal_context_max": 0,
       "penal_high_findings": 0,
-      "exposure_recurrence_score": 39,
+      "exposure_recurrence_score": 43,
       "top_irregularities": [
         {
           "name": "Uso observado de trato directo",
@@ -613,7 +678,7 @@
       "confidence": 0.92,
       "name": "Consultora Arrebol Ingeniería y Gestión del Agua SpA",
       "normalized_name": "CONSULTORA ARREBOL INGENIERIA Y GESTION DEL AGUA SPA",
-      "provider_id": "ENT-9738a9c8e4420e771c1d",
+      "provider_id": "ENT-b163eecf5158224af885",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Metropolitana de Santiago",
       "rut": "",
@@ -644,9 +709,35 @@
     },
     {
       "confidence": 0.92,
+      "name": "Sociedad de Confecciones Cler Ltda",
+      "normalized_name": "SOCIEDAD DE CONFECCIONES CLER LIMITADA",
+      "provider_id": "ENT-e01b3755462c4723cd0e",
+      "provider_type": "PRIVATE_LEGAL_ENTITY",
+      "region": "Maule",
+      "rut": "",
+      "source_document_id": "CGR-AUD-fd425eb29b52dde1febebde5f1c7aa16",
+      "documents": 1,
+      "findings": 2,
+      "organizations_count": 0,
+      "organizations": [],
+      "regions": [
+        "Maule"
+      ],
+      "associated_finding_amounts_clp": 756191453,
+      "cgr_context_max": 42,
+      "penal_context_max": 0,
+      "penal_high_findings": 0,
+      "exposure_recurrence_score": 31,
+      "top_irregularities": [],
+      "source_urls": [
+        "https://www.contraloria.cl/buscadorpdf/auditoria/fd425eb29b52dde1febebde5f1c7aa16/html"
+      ]
+    },
+    {
+      "confidence": 0.92,
       "name": "Servicios Odontológicos Ltda",
       "normalized_name": "SERVICIOS ODONTOLOGICOS LIMITADA",
-      "provider_id": "ENT-965ab22cd3a97c18facb",
+      "provider_id": "ENT-b299563fac22c0475f2d",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Antofagasta",
       "rut": "",
@@ -655,7 +746,7 @@
       "findings": 1,
       "organizations_count": 1,
       "organizations": [
-        "Servicio de Salud Antofagasta"
+        "Servicio de Salud de Antofagasta"
       ],
       "regions": [
         "Antofagasta"
@@ -674,7 +765,7 @@
       "confidence": 0.92,
       "name": "Linkes Chile S.A",
       "normalized_name": "LINKES CHILE SA",
-      "provider_id": "ENT-8835da3163ad9c3369e7",
+      "provider_id": "ENT-f5d41cde9e51f4f9aac2",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Antofagasta",
       "rut": "",
@@ -683,7 +774,7 @@
       "findings": 1,
       "organizations_count": 1,
       "organizations": [
-        "Hospital Doctor Carlos Cisternas de Calama"
+        "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA"
       ],
       "regions": [
         "Antofagasta"
@@ -694,39 +785,6 @@
       "penal_high_findings": 0,
       "exposure_recurrence_score": 27,
       "top_irregularities": [],
-      "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html"
-      ]
-    },
-    {
-      "confidence": 0.92,
-      "name": "de Four Service SpA",
-      "normalized_name": "DE FOUR SERVICE SPA",
-      "provider_id": "ENT-3448bd7451318e1b631c",
-      "provider_type": "PRIVATE_LEGAL_ENTITY",
-      "region": "Antofagasta",
-      "rut": "",
-      "source_document_id": "CGR-AUD-4ba08bb0759f3f33780f94bd936e34f0",
-      "documents": 1,
-      "findings": 1,
-      "organizations_count": 1,
-      "organizations": [
-        "Hospital Doctor Carlos Cisternas de Calama"
-      ],
-      "regions": [
-        "Antofagasta"
-      ],
-      "associated_finding_amounts_clp": 0,
-      "cgr_context_max": 72,
-      "penal_context_max": 68,
-      "penal_high_findings": 0,
-      "exposure_recurrence_score": 27,
-      "top_irregularities": [
-        {
-          "name": "Vínculo o parte relacionada",
-          "count": 1
-        }
-      ],
       "source_urls": [
         "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html"
       ]
@@ -735,7 +793,7 @@
       "confidence": 0.92,
       "name": "Medical Services SpA",
       "normalized_name": "MEDICAL SERVICES SPA",
-      "provider_id": "ENT-7692f87c53cfbed0811a",
+      "provider_id": "ENT-4df13a85ed715cb3a025",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Antofagasta",
       "rut": "",
@@ -744,63 +802,7 @@
       "findings": 1,
       "organizations_count": 1,
       "organizations": [
-        "Servicio de Salud Antofagasta"
-      ],
-      "regions": [
-        "Antofagasta"
-      ],
-      "associated_finding_amounts_clp": 0,
-      "cgr_context_max": 35,
-      "penal_context_max": 0,
-      "penal_high_findings": 0,
-      "exposure_recurrence_score": 27,
-      "top_irregularities": [],
-      "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/68149865935d1f457ba4afc273bb03c3/html"
-      ]
-    },
-    {
-      "confidence": 0.92,
-      "name": "Constructora Guerra Letelier SpA y Four Service SpA",
-      "normalized_name": "CONSTRUCTORA GUERRA LETELIER SPA Y FOUR SERVICE SPA",
-      "provider_id": "ENT-3b80de371ee699a59b66",
-      "provider_type": "PRIVATE_LEGAL_ENTITY",
-      "region": "Antofagasta",
-      "rut": "",
-      "source_document_id": "CGR-AUD-4ba08bb0759f3f33780f94bd936e34f0",
-      "documents": 1,
-      "findings": 1,
-      "organizations_count": 1,
-      "organizations": [
-        "Hospital Doctor Carlos Cisternas de Calama"
-      ],
-      "regions": [
-        "Antofagasta"
-      ],
-      "associated_finding_amounts_clp": 0,
-      "cgr_context_max": 41,
-      "penal_context_max": 0,
-      "penal_high_findings": 0,
-      "exposure_recurrence_score": 27,
-      "top_irregularities": [],
-      "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html"
-      ]
-    },
-    {
-      "confidence": 0.92,
-      "name": "de Segmun SpA",
-      "normalized_name": "DE SEGMUN SPA",
-      "provider_id": "ENT-b59ec2518b84e9b398cd",
-      "provider_type": "PRIVATE_LEGAL_ENTITY",
-      "region": "Antofagasta",
-      "rut": "",
-      "source_document_id": "CGR-AUD-68149865935d1f457ba4afc273bb03c3",
-      "documents": 1,
-      "findings": 1,
-      "organizations_count": 1,
-      "organizations": [
-        "Servicio de Salud Antofagasta"
+        "Servicio de Salud de Antofagasta"
       ],
       "regions": [
         "Antofagasta"
@@ -819,7 +821,7 @@
       "confidence": 0.92,
       "name": "Ambulancias Monumental SpA",
       "normalized_name": "AMBULANCIAS MONUMENTAL SPA",
-      "provider_id": "ENT-dc0b508fce33871ebe00",
+      "provider_id": "ENT-6a1be6549328fbe59521",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Antofagasta",
       "rut": "",
@@ -828,7 +830,7 @@
       "findings": 1,
       "organizations_count": 1,
       "organizations": [
-        "Servicio de Salud Antofagasta"
+        "Servicio de Salud de Antofagasta"
       ],
       "regions": [
         "Antofagasta"
@@ -845,142 +847,19 @@
     },
     {
       "confidence": 0.92,
-      "name": "Constructora Guerra y Letelier SpA",
-      "normalized_name": "CONSTRUCTORA GUERRA Y LETELIER SPA",
-      "provider_id": "ENT-fb3894df62e9f2922d19",
-      "provider_type": "PRIVATE_LEGAL_ENTITY",
-      "region": "Antofagasta",
-      "rut": "",
-      "source_document_id": "CGR-AUD-4ba08bb0759f3f33780f94bd936e34f0",
-      "documents": 1,
-      "findings": 1,
-      "organizations_count": 1,
-      "organizations": [
-        "Hospital Doctor Carlos Cisternas de Calama"
-      ],
-      "regions": [
-        "Antofagasta"
-      ],
-      "associated_finding_amounts_clp": 0,
-      "cgr_context_max": 76,
-      "penal_context_max": 55,
-      "penal_high_findings": 0,
-      "exposure_recurrence_score": 27,
-      "top_irregularities": [
-        {
-          "name": "Pago en exceso o sobrepago",
-          "count": 1
-        },
-        {
-          "name": "Pago improcedente",
-          "count": 1
-        }
-      ],
-      "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html"
-      ]
-    },
-    {
-      "confidence": 0.92,
-      "name": "Sociedad de Confecciones Cler Limitada",
-      "normalized_name": "SOCIEDAD DE CONFECCIONES CLER LIMITADA",
-      "provider_id": "ENT-39e28ec9609469cd62b0",
-      "provider_type": "PRIVATE_LEGAL_ENTITY",
-      "region": "Maule",
-      "rut": "",
-      "source_document_id": "CGR-AUD-fd425eb29b52dde1febebde5f1c7aa16",
-      "documents": 1,
-      "findings": 1,
-      "organizations_count": 0,
-      "organizations": [],
-      "regions": [
-        "Maule"
-      ],
-      "associated_finding_amounts_clp": 394776023,
-      "cgr_context_max": 42,
-      "penal_context_max": 0,
-      "penal_high_findings": 0,
-      "exposure_recurrence_score": 27,
-      "top_irregularities": [],
-      "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/fd425eb29b52dde1febebde5f1c7aa16/html"
-      ]
-    },
-    {
-      "confidence": 0.92,
-      "name": "de McCann Erickson S.A",
-      "normalized_name": "DE MCCANN ERICKSON SA",
-      "provider_id": "ENT-32348efb58b7aedb4fe1",
-      "provider_type": "PRIVATE_LEGAL_ENTITY",
-      "region": "",
-      "rut": "",
-      "source_document_id": "CGR-AUD-7a92c254bb27c3d3ef0a2dc41578c429",
-      "documents": 1,
-      "findings": 1,
-      "organizations_count": 0,
-      "organizations": [],
-      "regions": [
-        "Sin región"
-      ],
-      "associated_finding_amounts_clp": 1700,
-      "cgr_context_max": 82,
-      "penal_context_max": 68,
-      "penal_high_findings": 0,
-      "exposure_recurrence_score": 27,
-      "top_irregularities": [
-        {
-          "name": "Conflicto de interés o inhabilidad",
-          "count": 1
-        }
-      ],
-      "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/7a92c254bb27c3d3ef0a2dc41578c429/html"
-      ]
-    },
-    {
-      "confidence": 0.92,
-      "name": "Dittborn y Unzueta S.A",
-      "normalized_name": "DITTBORN Y UNZUETA SA",
-      "provider_id": "ENT-658f42c3e5f6f3b9bb41",
-      "provider_type": "PRIVATE_LEGAL_ENTITY",
-      "region": "",
-      "rut": "",
-      "source_document_id": "CGR-AUD-7a92c254bb27c3d3ef0a2dc41578c429",
-      "documents": 1,
-      "findings": 1,
-      "organizations_count": 0,
-      "organizations": [],
-      "regions": [
-        "Sin región"
-      ],
-      "associated_finding_amounts_clp": 1700,
-      "cgr_context_max": 82,
-      "penal_context_max": 68,
-      "penal_high_findings": 0,
-      "exposure_recurrence_score": 27,
-      "top_irregularities": [
-        {
-          "name": "Conflicto de interés o inhabilidad",
-          "count": 1
-        }
-      ],
-      "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/7a92c254bb27c3d3ef0a2dc41578c429/html"
-      ]
-    },
-    {
-      "confidence": 0.92,
       "name": "Spill Tech SpA",
       "normalized_name": "SPILL TECH SPA",
-      "provider_id": "ENT-1656fae3ee0e2a475c58",
+      "provider_id": "ENT-a30813f528fc4ccac8da",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
       "region": "Arica y Parinacota",
       "rut": "",
       "source_document_id": "CGR-AUD-93c71bdfd427efce3d50c21bed0c97b5",
       "documents": 1,
       "findings": 1,
-      "organizations_count": 0,
-      "organizations": [],
+      "organizations_count": 1,
+      "organizations": [
+        "Corporación Nacional Forestal"
+      ],
       "regions": [
         "Arica y Parinacota"
       ],
@@ -995,18 +874,20 @@
       ]
     },
     {
-      "confidence": 0.78,
+      "confidence": 0.85,
       "name": "Corporación Nacional Forestal",
       "normalized_name": "CORPORACION NACIONAL FORESTAL",
-      "provider_id": "ENT-6fb404cef43c64f442e7",
+      "provider_id": "ENT-efae98e94089c7781406",
       "provider_type": "NONPROFIT_LEGAL_ENTITY",
       "region": "Arica y Parinacota",
       "rut": "",
       "source_document_id": "CGR-AUD-93c71bdfd427efce3d50c21bed0c97b5",
       "documents": 1,
       "findings": 1,
-      "organizations_count": 0,
-      "organizations": [],
+      "organizations_count": 1,
+      "organizations": [
+        "Corporación Nacional Forestal"
+      ],
       "regions": [
         "Arica y Parinacota"
       ],
@@ -1022,28 +903,64 @@
     },
     {
       "confidence": 0.92,
-      "name": "la Sociedad de Confecciones Cler Ltda",
-      "normalized_name": "LA SOCIEDAD DE CONFECCIONES CLER LIMITADA",
-      "provider_id": "ENT-b6e846669dc5d58a7ae1",
+      "name": "Dittborn y Unzueta S.A",
+      "normalized_name": "DITTBORN Y UNZUETA SA",
+      "provider_id": "ENT-8f7ad760975646fd74ed",
       "provider_type": "PRIVATE_LEGAL_ENTITY",
-      "region": "Maule",
+      "region": "",
       "rut": "",
-      "source_document_id": "CGR-AUD-fd425eb29b52dde1febebde5f1c7aa16",
+      "source_document_id": "CGR-AUD-7a92c254bb27c3d3ef0a2dc41578c429",
       "documents": 1,
       "findings": 1,
       "organizations_count": 0,
       "organizations": [],
       "regions": [
-        "Maule"
+        "Sin región"
       ],
-      "associated_finding_amounts_clp": 361415430,
-      "cgr_context_max": 42,
-      "penal_context_max": 0,
+      "associated_finding_amounts_clp": 1700,
+      "cgr_context_max": 82,
+      "penal_context_max": 68,
       "penal_high_findings": 0,
       "exposure_recurrence_score": 27,
-      "top_irregularities": [],
+      "top_irregularities": [
+        {
+          "name": "Conflicto de interés o inhabilidad",
+          "count": 1
+        }
+      ],
       "source_urls": [
-        "https://www.contraloria.cl/buscadorpdf/auditoria/fd425eb29b52dde1febebde5f1c7aa16/html"
+        "https://www.contraloria.cl/buscadorpdf/auditoria/7a92c254bb27c3d3ef0a2dc41578c429/html"
+      ]
+    },
+    {
+      "confidence": 0.92,
+      "name": "McCann Erickson S.A",
+      "normalized_name": "MCCANN ERICKSON SA",
+      "provider_id": "ENT-9dffa29d571c0ff931cc",
+      "provider_type": "PRIVATE_LEGAL_ENTITY",
+      "region": "",
+      "rut": "",
+      "source_document_id": "CGR-AUD-7a92c254bb27c3d3ef0a2dc41578c429",
+      "documents": 1,
+      "findings": 1,
+      "organizations_count": 0,
+      "organizations": [],
+      "regions": [
+        "Sin región"
+      ],
+      "associated_finding_amounts_clp": 1700,
+      "cgr_context_max": 82,
+      "penal_context_max": 68,
+      "penal_high_findings": 0,
+      "exposure_recurrence_score": 27,
+      "top_irregularities": [
+        {
+          "name": "Conflicto de interés o inhabilidad",
+          "count": 1
+        }
+      ],
+      "source_urls": [
+        "https://www.contraloria.cl/buscadorpdf/auditoria/7a92c254bb27c3d3ef0a2dc41578c429/html"
       ]
     }
   ],
@@ -1080,7 +997,7 @@
     {
       "name": "Antofagasta",
       "organizations": 2,
-      "providers": 11,
+      "providers": 7,
       "documents": 2,
       "findings": 44,
       "penal_high": 1,
@@ -1176,7 +1093,7 @@
     {
       "name": "Maule",
       "organizations": 0,
-      "providers": 2,
+      "providers": 1,
       "documents": 1,
       "findings": 7,
       "penal_high": 0,
@@ -1204,7 +1121,7 @@
     },
     {
       "name": "Arica y Parinacota",
-      "organizations": 0,
+      "organizations": 1,
       "providers": 2,
       "documents": 1,
       "findings": 4,
@@ -1216,7 +1133,7 @@
     },
     {
       "name": "Aysén",
-      "organizations": 0,
+      "organizations": 1,
       "providers": 0,
       "documents": 1,
       "findings": 3,
@@ -1289,7 +1206,7 @@
       "relevance": "HIGH",
       "score": 85,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/68149865935d1f457ba4afc273bb03c3/html",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "region": "Antofagasta",
       "provider_names": [],
       "amount_clp": null,
@@ -1344,7 +1261,7 @@
       "relevance": "HIGH",
       "score": 75,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/e6f7ccdd700a02ceceb5892575b7a85e/html",
-      "organization_name": "MUN VILLARRICA",
+      "organization_name": "Municipalidad de Villarrica",
       "region": "La Araucanía",
       "provider_names": [],
       "amount_clp": null,
@@ -1377,7 +1294,7 @@
       "region": "",
       "provider_names": [
         "Dittborn y Unzueta S.A",
-        "de McCann Erickson S.A"
+        "McCann Erickson S.A"
       ],
       "amount_clp": 1700,
       "finding_text": "Cabe señalar que 5 de ellas corresponden a exresidentes definitivos o temporales/transitorio, a los que se les revocó la residencia por diversos motivos, correspondiendo uno de ellos a una expulsión administrativa del país. Se detectó que una exasesora del Censo 2024, contratada por el INE hasta el 31 de agosto de 2024, participó como experta en la comisión evaluadora de la licitación adjudicada a Dittborn y Unzueta S.A. por $1.700 millones, siendo representante legal de McCann Erickson S.A., empresa con 60% de participación en la adjudicataria, situación que eventualmente configura conflicto de interés según la Ley N° 20.880 sobre Probidad.",
@@ -1401,7 +1318,7 @@
       "relevance": "MEDIUM",
       "score": 68,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/e6f7ccdd700a02ceceb5892575b7a85e/html",
-      "organization_name": "MUN VILLARRICA",
+      "organization_name": "Municipalidad de Villarrica",
       "region": "La Araucanía",
       "provider_names": [],
       "amount_clp": null,
@@ -1428,11 +1345,10 @@
       "relevance": "MEDIUM",
       "score": 68,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
-        "Four Service SpA",
-        "de Four Service SpA"
+        "Four Service SpA"
       ],
       "amount_clp": null,
       "finding_text": "15. En virtud de lo señalado en el numeral 5.4, se advirtió que la empresa Four Service SpA, en el marco de la licitación privada ID N° 2215-43-CO22, denominada “Mantenimiento de control de acceso y circuito cerrado”, presentó cartas de recomendación emitidas por empresas relacionadas, societaria y familiarmente con uno de sus socios, las cuales fueron utilizadas para acreditar experiencia técnica sin que existieran antecedentes que demostraran la prestación efectiva de servicios ni transacciones comerciales entre dichas entidades. En efecto, se constató que las cartas fueron suscritas por personas vinculadas directa o indirectamente a un socio de Four Service SpA, existiendo además parentesco por consanguinidad, al ser hermanos, comprobándose, además, que las empresas emisoras no registran relaciones comerciales con el proveedor según los registros del Servicio de Impuestos Internos (AC). En consecuencia, el establecimiento de salud deberá, en lo sucesivo, dar estricto cumplimiento a las medidas anunciadas, a fin de asegurar que los antecedentes presentados por los oferentes para acreditar su experiencia en el rubro correspondan a documentos auténticos y fidedignos.",
@@ -1456,7 +1372,7 @@
       "relevance": "MEDIUM",
       "score": 68,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
         "Four Service SpA"
@@ -1485,7 +1401,7 @@
       "relevance": "MEDIUM",
       "score": 63,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/8b269eb5e9201268ad2e876f89d1ae25/html",
-      "organization_name": "",
+      "organization_name": "Carabineros de Chile",
       "region": "",
       "provider_names": [],
       "amount_clp": 9048041,
@@ -1513,7 +1429,7 @@
       "relevance": "MEDIUM",
       "score": 62,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -1541,7 +1457,7 @@
       "relevance": "MEDIUM",
       "score": 62,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -1569,7 +1485,7 @@
       "relevance": "MEDIUM",
       "score": 62,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -1597,7 +1513,7 @@
       "relevance": "MEDIUM",
       "score": 59,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -1625,7 +1541,7 @@
       "relevance": "MEDIUM",
       "score": 59,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -1653,7 +1569,7 @@
       "relevance": "MEDIUM",
       "score": 59,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -1681,10 +1597,10 @@
       "relevance": "MEDIUM",
       "score": 55,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/4ba08bb0759f3f33780f94bd936e34f0/html",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "region": "Antofagasta",
       "provider_names": [
-        "Constructora Guerra y Letelier SpA"
+        "Constructora Guerra Letelier SpA"
       ],
       "amount_clp": null,
       "finding_text": "24. En relación con lo indicado en el numeral 1.2, se advirtió que el hospital de Calama presentó deficiencias en el control y supervisión de la correcta ejecución de los servicios de aseo y vigilancia y seguridad, contratados a la empresa Constructora Guerra y Letelier SpA, toda vez que las unidades técnicas designadas no realizaron una supervisión efectiva del cumplimiento integral de las prestaciones pactadas conformes a las bases de licitación y términos de referencia de los tratos directos. Si bien existen certificados de recepción conforme emitidos por los responsables técnicos, esta Contraloría Regional verificó la existencia de incumplimientos relevantes -como pagos en exceso y gastos improcedentes o no acreditados- que no fueron detectados oportunamente, lo que evidencia debilidades en los mecanismos de control interno y en la gestión de riesgos asociados a la ejecución contractual (AC). En consecuencia, ese recinto asistencial deberá, en lo sucesivo, implementar las medidas informadas en su respuesta, con el objeto de fortalecer los mecanismos de supervisión y control que permitan asegurar la correcta ejecución de los servicios contratados, dando cumplimiento tanto a los procedimientos establecidos por la propia entidad como a lo indicado en el artículo 4° de la citada resolución exenta N° 1.962, de 2022, de este Organismo de Control. Sin perjuicio de lo anterior, y atendidas las conclusiones Nos 1 a la 24, esta Entidad Fiscalizadora, instruirá un procedimiento sumarial para determinar las eventuales responsabilidades administrativas de los funcionarios involucrados en los hechos descritos.",
@@ -1708,7 +1624,7 @@
       "relevance": "MEDIUM",
       "score": 55,
       "source_url": "https://www.contraloria.cl/buscadorpdf/auditoria/e6f7ccdd700a02ceceb5892575b7a85e/html",
-      "organization_name": "MUN VILLARRICA",
+      "organization_name": "Municipalidad de Villarrica",
       "region": "La Araucanía",
       "provider_names": [],
       "amount_clp": null,
@@ -1752,9 +1668,9 @@
         "Control irregular de bienes o activos",
         "Debilidad o falla de control"
       ],
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_name": "MUN VILLARRICA",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_name": "Municipalidad de Villarrica",
+      "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
       ],
@@ -1820,7 +1736,7 @@
         "Debilidad o falla de control"
       ],
       "organization_id": "ENT-9d473bd66a79dc2a977b",
-      "organization_name": "DIRECCIÓN REGIONAL METROPOLITANA DEL INDAP",
+      "organization_name": "Dirección Regional Metropolitana del INDAP",
       "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -1857,8 +1773,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [
         "POTENTIAL_OTHER_PUBLIC_OFFICIAL_OFFENCE"
@@ -2003,7 +1919,7 @@
       "penal_score": 80,
       "person_ids": [],
       "provider_ids": [
-        "ENT-9738a9c8e4420e771c1d"
+        "ENT-b163eecf5158224af885"
       ],
       "provider_names": [
         "Consultora Arrebol Ingeniería y Gestión del Agua SpA"
@@ -2063,7 +1979,7 @@
         "Pago improcedente"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
@@ -2072,7 +1988,7 @@
       "penal_score": 59,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -2169,9 +2085,9 @@
         "Conflicto de interés o inhabilidad",
         "Contratación o compra irregular"
       ],
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_name": "MUN VILLARRICA",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_name": "Municipalidad de Villarrica",
+      "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE",
         "POTENTIAL_INCOMPATIBLE_NEGOTIATION"
@@ -2256,7 +2172,7 @@
         "Vínculo o parte relacionada"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_INCOMPATIBLE_NEGOTIATION"
@@ -2265,7 +2181,7 @@
       "penal_score": 68,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2acf6e5d094edaa2a6c1"
+        "ENT-cf862c577d7cbbfa4c43"
       ],
       "provider_names": [
         "Four Service SpA"
@@ -2325,14 +2241,14 @@
         "Uso observado de trato directo"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -2370,9 +2286,9 @@
       "irregularity_labels": [
         "Pago en exceso o sobrepago"
       ],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-e4913e03f8dc3a8bfb5d",
+      "organization_name": "Carabineros de Chile",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
       ],
@@ -2446,12 +2362,12 @@
       "penal_score": 68,
       "person_ids": [],
       "provider_ids": [
-        "ENT-32348efb58b7aedb4fe1",
-        "ENT-658f42c3e5f6f3b9bb41"
+        "ENT-8f7ad760975646fd74ed",
+        "ENT-9dffa29d571c0ff931cc"
       ],
       "provider_names": [
         "Dittborn y Unzueta S.A",
-        "de McCann Erickson S.A"
+        "McCann Erickson S.A"
       ],
       "region": "",
       "reparo": false,
@@ -2545,7 +2461,7 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-9d473bd66a79dc2a977b",
-      "organization_name": "DIRECCIÓN REGIONAL METROPOLITANA DEL INDAP",
+      "organization_name": "Dirección Regional Metropolitana del INDAP",
       "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -2633,7 +2549,7 @@
         "Pago improcedente"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
@@ -2642,7 +2558,7 @@
       "penal_score": 62,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -2704,7 +2620,7 @@
         "Uso observado de trato directo"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
@@ -2713,7 +2629,7 @@
       "penal_score": 62,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -2772,9 +2688,9 @@
       "irregularity_labels": [
         "Uso observado de trato directo"
       ],
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_name": "MUN VILLARRICA",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_name": "Municipalidad de Villarrica",
+      "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -2809,14 +2725,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -2852,8 +2768,8 @@
       "irregularity_labels": [
         "Uso observado de trato directo"
       ],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -2889,14 +2805,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2acf6e5d094edaa2a6c1"
+        "ENT-cf862c577d7cbbfa4c43"
       ],
       "provider_names": [
         "Four Service SpA"
@@ -2932,15 +2848,15 @@
       "irregularity_labels": [
         "Uso observado de trato directo"
       ],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2546bf113eeca1393c2e"
+        "ENT-74ca4ab4e464e616fcd9"
       ],
       "provider_names": [
         "Segmun SpA"
@@ -2979,7 +2895,7 @@
         "Uso observado de trato directo"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
@@ -2988,7 +2904,7 @@
       "penal_score": 62,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -3046,7 +2962,7 @@
         "Pago improcedente"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
@@ -3055,7 +2971,7 @@
       "penal_score": 59,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -3109,7 +3025,7 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -3149,14 +3065,14 @@
         "Uso observado de trato directo"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2acf6e5d094edaa2a6c1"
+        "ENT-cf862c577d7cbbfa4c43"
       ],
       "provider_names": [
         "Four Service SpA"
@@ -3193,14 +3109,14 @@
         "Uso observado de trato directo"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -3237,7 +3153,7 @@
         "Pago en exceso o sobrepago"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
@@ -3246,7 +3162,7 @@
       "penal_score": 59,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -3300,15 +3216,15 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2acf6e5d094edaa2a6c1",
-        "ENT-8835da3163ad9c3369e7"
+        "ENT-cf862c577d7cbbfa4c43",
+        "ENT-f5d41cde9e51f4f9aac2"
       ],
       "provider_names": [
         "Four Service SpA",
@@ -3426,8 +3342,8 @@
       "irregularity_labels": [
         "Anomalía o integridad contable"
       ],
-      "organization_id": "ENT-f5e7358a5757801f649f",
-      "organization_name": "Universidad del Bío-Bío",
+      "organization_id": "ENT-12d5d1d24169d6ac8d9e",
+      "organization_name": "UNIVERSIDAD DEL BIOBÍO",
       "organization_type": "STATE_UNIVERSITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -3469,7 +3385,7 @@
         "Pago improcedente"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_FRAUD_AGAINST_STATE"
@@ -3478,10 +3394,10 @@
       "penal_score": 55,
       "person_ids": [],
       "provider_ids": [
-        "ENT-fb3894df62e9f2922d19"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
-        "Constructora Guerra y Letelier SpA"
+        "Constructora Guerra Letelier SpA"
       ],
       "region": "Antofagasta",
       "reparo": false,
@@ -3571,9 +3487,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_name": "MUN VILLARRICA",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_name": "Municipalidad de Villarrica",
+      "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -3654,14 +3570,14 @@
         "Uso observado de trato directo"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -3694,7 +3610,7 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -3730,14 +3646,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -3770,14 +3686,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2acf6e5d094edaa2a6c1"
+        "ENT-cf862c577d7cbbfa4c43"
       ],
       "provider_names": [
         "Four Service SpA"
@@ -3809,15 +3725,15 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-965ab22cd3a97c18facb"
+        "ENT-b299563fac22c0475f2d"
       ],
       "provider_names": [
         "Servicios Odontológicos Ltda"
@@ -3965,9 +3881,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_name": "MUN VILLARRICA",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_name": "Municipalidad de Villarrica",
+      "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -4003,9 +3919,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_name": "MUN VILLARRICA",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_name": "Municipalidad de Villarrica",
+      "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -4044,7 +3960,7 @@
         "Vínculo o parte relacionada"
       ],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [
         "POTENTIAL_INCOMPATIBLE_NEGOTIATION"
@@ -4053,12 +3969,10 @@
       "penal_score": 68,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2acf6e5d094edaa2a6c1",
-        "ENT-3448bd7451318e1b631c"
+        "ENT-cf862c577d7cbbfa4c43"
       ],
       "provider_names": [
-        "Four Service SpA",
-        "de Four Service SpA"
+        "Four Service SpA"
       ],
       "region": "Antofagasta",
       "reparo": false,
@@ -4108,7 +4022,7 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-9d473bd66a79dc2a977b",
-      "organization_name": "DIRECCIÓN REGIONAL METROPOLITANA DEL INDAP",
+      "organization_name": "Dirección Regional Metropolitana del INDAP",
       "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -4147,17 +4061,19 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-3b80de371ee699a59b66"
+        "ENT-cf862c577d7cbbfa4c43",
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
-        "Constructora Guerra Letelier SpA y Four Service SpA"
+        "Four Service SpA",
+        "Constructora Guerra Letelier SpA"
       ],
       "region": "Antofagasta",
       "reparo": false,
@@ -4192,15 +4108,15 @@
       "irregularity_labels": [
         "Uso observado de trato directo"
       ],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2546bf113eeca1393c2e"
+        "ENT-74ca4ab4e464e616fcd9"
       ],
       "provider_names": [
         "Segmun SpA"
@@ -4233,7 +4149,7 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -4270,15 +4186,15 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-dc0b508fce33871ebe00"
+        "ENT-6a1be6549328fbe59521"
       ],
       "provider_names": [
         "Ambulancias Monumental SpA"
@@ -4311,7 +4227,7 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -4347,14 +4263,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -4386,8 +4302,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -4423,14 +4339,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -4470,10 +4386,10 @@
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-39e28ec9609469cd62b0"
+        "ENT-e01b3755462c4723cd0e"
       ],
       "provider_names": [
-        "Sociedad de Confecciones Cler Limitada"
+        "Sociedad de Confecciones Cler Ltda"
       ],
       "region": "Maule",
       "reparo": false,
@@ -4504,8 +4420,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-f5e7358a5757801f649f",
-      "organization_name": "Universidad del Bío-Bío",
+      "organization_id": "ENT-12d5d1d24169d6ac8d9e",
+      "organization_name": "UNIVERSIDAD DEL BIOBÍO",
       "organization_type": "STATE_UNIVERSITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -4626,10 +4542,10 @@
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-b6e846669dc5d58a7ae1"
+        "ENT-e01b3755462c4723cd0e"
       ],
       "provider_names": [
-        "la Sociedad de Confecciones Cler Ltda"
+        "Sociedad de Confecciones Cler Ltda"
       ],
       "region": "Maule",
       "reparo": false,
@@ -4694,9 +4610,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_name": "MUN VILLARRICA",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_name": "Municipalidad de Villarrica",
+      "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -4732,9 +4648,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-eeb3a0eca461f5fcf93f",
-      "organization_name": "MUN VILLARRICA",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "ENT-9fbaad9deda8470b6474",
+      "organization_name": "Municipalidad de Villarrica",
+      "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -4768,8 +4684,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -4805,14 +4721,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -4844,15 +4760,15 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-7692f87c53cfbed0811a"
+        "ENT-4df13a85ed715cb3a025"
       ],
       "provider_names": [
         "Medical Services SpA"
@@ -5019,14 +4935,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -5060,8 +4976,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-f5e7358a5757801f649f",
-      "organization_name": "Universidad del Bío-Bío",
+      "organization_id": "ENT-12d5d1d24169d6ac8d9e",
+      "organization_name": "UNIVERSIDAD DEL BIOBÍO",
       "organization_type": "STATE_UNIVERSITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -5142,9 +5058,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-e4913e03f8dc3a8bfb5d",
+      "organization_name": "Carabineros de Chile",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -5217,14 +5133,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -5256,9 +5172,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-e4913e03f8dc3a8bfb5d",
+      "organization_name": "Carabineros de Chile",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -5294,8 +5210,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-8225ae2386251ed52a5c",
-      "organization_name": "MUNICIPALIDAD DE TIERRA AMARILLA INSPECCIÓN EN TERRENO",
+      "organization_id": "ENT-dd594a018438d7c742be",
+      "organization_name": "MUNICIPALIDAD DE TIERRA AMARILLA",
       "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -5334,15 +5250,15 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2546bf113eeca1393c2e"
+        "ENT-74ca4ab4e464e616fcd9"
       ],
       "provider_names": [
         "Segmun SpA"
@@ -5378,7 +5294,7 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-9d473bd66a79dc2a977b",
-      "organization_name": "DIRECCIÓN REGIONAL METROPOLITANA DEL INDAP",
+      "organization_name": "Dirección Regional Metropolitana del INDAP",
       "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -5413,9 +5329,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-6e5716807f51b453e50c",
-      "organization_name": "s etapas de diseño",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "",
+      "organization_name": "",
+      "organization_type": "",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -5449,8 +5365,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -5488,7 +5404,7 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-9d473bd66a79dc2a977b",
-      "organization_name": "DIRECCIÓN REGIONAL METROPOLITANA DEL INDAP",
+      "organization_name": "Dirección Regional Metropolitana del INDAP",
       "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -5525,9 +5441,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-ed65bd519bf1d53bba09",
+      "organization_name": "SERVICIO LOCAL DE EDUCACIÓN PÚBLICA DE AYSÉN",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -5600,14 +5516,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-4d89e11a8510af1edf9a"
+        "ENT-e2fc3bec2ff490933b1f"
       ],
       "provider_names": [
         "Constructora Guerra Letelier SpA"
@@ -5678,15 +5594,15 @@
       "disciplinary": true,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2546bf113eeca1393c2e"
+        "ENT-74ca4ab4e464e616fcd9"
       ],
       "provider_names": [
         "Segmun SpA"
@@ -5718,8 +5634,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-f5e7358a5757801f649f",
-      "organization_name": "Universidad del Bío-Bío",
+      "organization_id": "ENT-12d5d1d24169d6ac8d9e",
+      "organization_name": "UNIVERSIDAD DEL BIOBÍO",
       "organization_type": "STATE_UNIVERSITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -5754,9 +5670,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-6e5716807f51b453e50c",
-      "organization_name": "s etapas de diseño",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "",
+      "organization_name": "",
+      "organization_type": "",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -5790,9 +5706,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-ed65bd519bf1d53bba09",
+      "organization_name": "SERVICIO LOCAL DE EDUCACIÓN PÚBLICA DE AYSÉN",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -5900,8 +5816,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -5938,9 +5854,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-6fb404cef43c64f442e7",
+      "organization_name": "Corporación Nacional Forestal",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -5976,20 +5892,20 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-6fb404cef43c64f442e7",
+      "organization_name": "Corporación Nacional Forestal",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-1656fae3ee0e2a475c58",
-        "ENT-6fb404cef43c64f442e7"
+        "ENT-a30813f528fc4ccac8da",
+        "ENT-efae98e94089c7781406"
       ],
       "provider_names": [
-        "Corporación Nacional Forestal",
-        "Spill Tech SpA"
+        "Spill Tech SpA",
+        "Corporación Nacional Forestal"
       ],
       "region": "Arica y Parinacota",
       "reparo": false,
@@ -6018,8 +5934,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-8225ae2386251ed52a5c",
-      "organization_name": "MUNICIPALIDAD DE TIERRA AMARILLA INSPECCIÓN EN TERRENO",
+      "organization_id": "ENT-dd594a018438d7c742be",
+      "organization_name": "MUNICIPALIDAD DE TIERRA AMARILLA",
       "organization_type": "MUNICIPALITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -6056,9 +5972,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-6fb404cef43c64f442e7",
+      "organization_name": "Corporación Nacional Forestal",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -6092,9 +6008,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-e4913e03f8dc3a8bfb5d",
+      "organization_name": "Carabineros de Chile",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -6168,8 +6084,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-f5e7358a5757801f649f",
-      "organization_name": "Universidad del Bío-Bío",
+      "organization_id": "ENT-12d5d1d24169d6ac8d9e",
+      "organization_name": "UNIVERSIDAD DEL BIOBÍO",
       "organization_type": "STATE_UNIVERSITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -6244,9 +6160,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-6e5716807f51b453e50c",
-      "organization_name": "s etapas de diseño",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "",
+      "organization_name": "",
+      "organization_type": "",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -6280,9 +6196,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-6e5716807f51b453e50c",
-      "organization_name": "s etapas de diseño",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "",
+      "organization_name": "",
+      "organization_type": "",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -6316,8 +6232,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-f5e7358a5757801f649f",
-      "organization_name": "Universidad del Bío-Bío",
+      "organization_id": "ENT-12d5d1d24169d6ac8d9e",
+      "organization_name": "UNIVERSIDAD DEL BIOBÍO",
       "organization_type": "STATE_UNIVERSITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -6352,9 +6268,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-ed65bd519bf1d53bba09",
+      "organization_name": "SERVICIO LOCAL DE EDUCACIÓN PÚBLICA DE AYSÉN",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -6424,9 +6340,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-6e5716807f51b453e50c",
-      "organization_name": "s etapas de diseño",
-      "organization_type": "PUBLIC_ORGANIZATION",
+      "organization_id": "",
+      "organization_name": "",
+      "organization_type": "",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -6462,9 +6378,9 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "",
-      "organization_name": "",
-      "organization_type": "",
+      "organization_id": "ENT-6fb404cef43c64f442e7",
+      "organization_name": "Corporación Nacional Forestal",
+      "organization_type": "PUBLIC_ORGANIZATION",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
@@ -6499,14 +6415,14 @@
       "irregularity_codes": [],
       "irregularity_labels": [],
       "organization_id": "ENT-e2cec363518a47266e43",
-      "organization_name": "Hospital Doctor Carlos Cisternas de Calama",
+      "organization_name": "HOSPITAL DOCTOR CARLOS CISTERNAS DE CALAMA",
       "organization_type": "HOSPITAL",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-2acf6e5d094edaa2a6c1"
+        "ENT-cf862c577d7cbbfa4c43"
       ],
       "provider_names": [
         "Four Service SpA"
@@ -6538,8 +6454,8 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-f5e7358a5757801f649f",
-      "organization_name": "Universidad del Bío-Bío",
+      "organization_id": "ENT-12d5d1d24169d6ac8d9e",
+      "organization_name": "UNIVERSIDAD DEL BIOBÍO",
       "organization_type": "STATE_UNIVERSITY",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
@@ -6576,18 +6492,18 @@
       "disciplinary": false,
       "irregularity_codes": [],
       "irregularity_labels": [],
-      "organization_id": "ENT-179c5ce433617f21632e",
-      "organization_name": "Servicio de Salud Antofagasta",
+      "organization_id": "ENT-bdc8a264e07f1a475a2c",
+      "organization_name": "Servicio de Salud de Antofagasta",
       "organization_type": "HEALTH_SERVICE",
       "penal_hypotheses": [],
       "penal_relevance": "NONE",
       "penal_score": 0,
       "person_ids": [],
       "provider_ids": [
-        "ENT-b59ec2518b84e9b398cd"
+        "ENT-74ca4ab4e464e616fcd9"
       ],
       "provider_names": [
-        "de Segmun SpA"
+        "Segmun SpA"
       ],
       "region": "Antofagasta",
       "reparo": false,
@@ -6597,6 +6513,141 @@
     }
   ],
   "source_health": [
+    {
+      "audit_links_found": 0,
+      "content_hash": "3bf21330333ba8ce89dc11516c6b12e898d0be1d3c6cc6418d69fa8d30194c89",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:37+00:00",
+      "http_status": 200,
+      "links_found": 100,
+      "news_articles_checked": 0,
+      "run_id": "RUN-d2ff45a70b9c3a28856b",
+      "source_id": "cgr_reportes_financieros",
+      "source_name": "Reportes financieros y presupuestarios",
+      "source_url": "https://www.contraloria.cl/web/cgr/reportes-financieros-y-presupuestario1",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
+    {
+      "audit_links_found": 0,
+      "content_hash": "986b20a4658299eb46ad78728a470f986e99c5d04c1e5cae85b1e12cbb59df3b",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:37+00:00",
+      "http_status": 200,
+      "links_found": 150,
+      "news_articles_checked": 0,
+      "run_id": "RUN-f3de7713641c92361f51",
+      "source_id": "cgr_datos_municipales",
+      "source_name": "Bases de datos municipales",
+      "source_url": "https://www.contraloria.cl/web/cgr/base-de-datos-municipales",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
+    {
+      "audit_links_found": 0,
+      "content_hash": "d1b5a42384e1bc5409c75e6553d286298818aacdfa423c783a48ca15d1386823",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:36+00:00",
+      "http_status": 200,
+      "links_found": 100,
+      "news_articles_checked": 0,
+      "run_id": "RUN-087b9fafed2d74dd6dc3",
+      "source_id": "cgr_fundaciones",
+      "source_name": "Auditorias a transferencias relacionadas con fundaciones",
+      "source_url": "https://www.contraloria.cl/web/cgr/auditorias-a-las-transferencias-relacionadas-con-fundaciones",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
+    {
+      "audit_links_found": 0,
+      "content_hash": "7fbbc7da57f6fbfaec4d372d0e52b402a1fd445e24b41e3d4fcb293deb12bd46",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:36+00:00",
+      "http_status": 200,
+      "links_found": 100,
+      "news_articles_checked": 0,
+      "run_id": "RUN-88ed959f5b5c0efc4dbd",
+      "source_id": "cgr_semaforo",
+      "source_name": "Semaforo Municipal",
+      "source_url": "https://www.contraloria.cl/web/cgr/semaforo",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
+    {
+      "audit_links_found": 0,
+      "content_hash": "1e319cff816e2cb57bec6470676d080add0c6811c929962547abc1e1d0939124",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:35+00:00",
+      "http_status": 200,
+      "links_found": 100,
+      "news_articles_checked": 0,
+      "run_id": "RUN-69a860646003837c5489",
+      "source_id": "cgr_fau",
+      "source_name": "Alertas de Posibles Fraudes (FAU)",
+      "source_url": "https://www.contraloria.cl/web/cgr/alerta-posibles-fraudes",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
+    {
+      "audit_links_found": 0,
+      "content_hash": "5a8a7133ea3b9650030bf3277d341524c3fad21729178e03bf56527f0fbf49e7",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:35+00:00",
+      "http_status": 200,
+      "links_found": 5,
+      "news_articles_checked": 0,
+      "run_id": "RUN-f9d3f07f85bba3a8d62a",
+      "source_id": "cgr_tribunal_cuentas",
+      "source_name": "Tribunal de Cuentas",
+      "source_url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
+    {
+      "audit_links_found": 0,
+      "content_hash": "fb5895a633e0fe7c47e5a4e285044a8fe0d6c15a87c3725b9adeda7528bae2ab",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:34+00:00",
+      "http_status": 200,
+      "links_found": 80,
+      "news_articles_checked": 0,
+      "run_id": "RUN-929a0a460e7caea63f85",
+      "source_id": "cgr_fiscalizaciones",
+      "source_name": "Fiscalizaciones en curso",
+      "source_url": "https://www.contraloria.cl/web/cgr/fiscalizaciones-en-curso",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
+    {
+      "audit_links_found": 0,
+      "content_hash": "f69078144ca831b6eda9cf38160a83b1d551f2e9351152cf0b9eaf69629cef2a",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:26+00:00",
+      "http_status": 200,
+      "links_found": 80,
+      "news_articles_checked": 0,
+      "run_id": "RUN-29a1f719fa2425c43e4b",
+      "source_id": "cgr_auditorias",
+      "source_name": "Informes de Auditoria",
+      "source_url": "https://www.contraloria.cl/web/cgr/informes-de-auditoria",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
+    {
+      "audit_links_found": 14,
+      "content_hash": "fdcad4e0ba2801cc7e38177141b6cfe5a8b36cfe1ef494f0fcc70aad9260ad26",
+      "error": "",
+      "finished_at": "2026-08-12T15:56:25+00:00",
+      "http_status": 200,
+      "links_found": 50,
+      "news_articles_checked": 50,
+      "run_id": "RUN-e81b1c91c5daddee71cd",
+      "source_id": "cgr_noticias",
+      "source_name": "Noticias CGR",
+      "source_url": "https://www.contraloria.cl/web/cgr/noticias",
+      "started_at": "2026-08-12T15:55:27+00:00",
+      "status": "OK"
+    },
     {
       "audit_links_found": 0,
       "content_hash": "8a6b027c191b26674685cf7f125830f5afd8246b3b39c74d61c569498ad40255",
@@ -7049,111 +7100,6 @@
       "source_id": "cgr_datos_municipales",
       "source_name": "Bases de datos municipales",
       "source_url": "https://www.contraloria.cl/web/cgr/base-de-datos-municipales",
-      "started_at": "2026-08-12T14:56:11+00:00",
-      "status": "OK"
-    },
-    {
-      "audit_links_found": 0,
-      "content_hash": "1f3100237819169b196dc8bf641d051fbd8e17fe94e9f5fed104b5158b246906",
-      "error": "",
-      "finished_at": "2026-08-12T14:57:13+00:00",
-      "http_status": 200,
-      "links_found": 100,
-      "news_articles_checked": 0,
-      "run_id": "RUN-dafbfb620baa6dd90cc5",
-      "source_id": "cgr_semaforo",
-      "source_name": "Semaforo Municipal",
-      "source_url": "https://www.contraloria.cl/web/cgr/semaforo",
-      "started_at": "2026-08-12T14:56:11+00:00",
-      "status": "OK"
-    },
-    {
-      "audit_links_found": 0,
-      "content_hash": "eaca049a6d6ea8439815a1516ac0b1bbbb05b3737632c7e2877121460e424656",
-      "error": "",
-      "finished_at": "2026-08-12T14:57:12+00:00",
-      "http_status": 200,
-      "links_found": 5,
-      "news_articles_checked": 0,
-      "run_id": "RUN-2a001cbe3af32b73f587",
-      "source_id": "cgr_tribunal_cuentas",
-      "source_name": "Tribunal de Cuentas",
-      "source_url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
-      "started_at": "2026-08-12T14:56:11+00:00",
-      "status": "OK"
-    },
-    {
-      "audit_links_found": 0,
-      "content_hash": "e84ae5b070f81d81a148fdabeae12fa62a771c71e67b3b4f3f56c1629fa878ca",
-      "error": "",
-      "finished_at": "2026-08-12T14:57:12+00:00",
-      "http_status": 200,
-      "links_found": 100,
-      "news_articles_checked": 0,
-      "run_id": "RUN-b211ec1b471b222d2062",
-      "source_id": "cgr_fundaciones",
-      "source_name": "Auditorias a transferencias relacionadas con fundaciones",
-      "source_url": "https://www.contraloria.cl/web/cgr/auditorias-a-las-transferencias-relacionadas-con-fundaciones",
-      "started_at": "2026-08-12T14:56:11+00:00",
-      "status": "OK"
-    },
-    {
-      "audit_links_found": 0,
-      "content_hash": "94ede2f7f6c90282a48fb29b8a782f762d55e20cd803bb4f51f660e805a2a562",
-      "error": "",
-      "finished_at": "2026-08-12T14:57:11+00:00",
-      "http_status": 200,
-      "links_found": 80,
-      "news_articles_checked": 0,
-      "run_id": "RUN-96f40912c94b130f2bfe",
-      "source_id": "cgr_fiscalizaciones",
-      "source_name": "Fiscalizaciones en curso",
-      "source_url": "https://www.contraloria.cl/web/cgr/fiscalizaciones-en-curso",
-      "started_at": "2026-08-12T14:56:11+00:00",
-      "status": "OK"
-    },
-    {
-      "audit_links_found": 0,
-      "content_hash": "51959f9ccf41ece335dcb81161f93da6be207a829c50095cef20822371aca80a",
-      "error": "",
-      "finished_at": "2026-08-12T14:57:11+00:00",
-      "http_status": 200,
-      "links_found": 100,
-      "news_articles_checked": 0,
-      "run_id": "RUN-ba15b9425f8e4ff060ab",
-      "source_id": "cgr_fau",
-      "source_name": "Alertas de Posibles Fraudes (FAU)",
-      "source_url": "https://www.contraloria.cl/web/cgr/alerta-posibles-fraudes",
-      "started_at": "2026-08-12T14:56:11+00:00",
-      "status": "OK"
-    },
-    {
-      "audit_links_found": 0,
-      "content_hash": "e84ef7cc58d19f588c2c1396b8958ec81bba15ec160ee755e21005bcfbf784f2",
-      "error": "",
-      "finished_at": "2026-08-12T14:57:01+00:00",
-      "http_status": 200,
-      "links_found": 80,
-      "news_articles_checked": 0,
-      "run_id": "RUN-4f37f89d72b5163b113b",
-      "source_id": "cgr_auditorias",
-      "source_name": "Informes de Auditoria",
-      "source_url": "https://www.contraloria.cl/web/cgr/informes-de-auditoria",
-      "started_at": "2026-08-12T14:56:11+00:00",
-      "status": "OK"
-    },
-    {
-      "audit_links_found": 14,
-      "content_hash": "04a09f9412c47ed1e8247e86d6c541399a9a321583deca62a4ae061273616ef5",
-      "error": "",
-      "finished_at": "2026-08-12T14:57:00+00:00",
-      "http_status": 200,
-      "links_found": 50,
-      "news_articles_checked": 50,
-      "run_id": "RUN-3b3d34603705db687f2c",
-      "source_id": "cgr_noticias",
-      "source_name": "Noticias CGR",
-      "source_url": "https://www.contraloria.cl/web/cgr/noticias",
       "started_at": "2026-08-12T14:56:11+00:00",
       "status": "OK"
     }
