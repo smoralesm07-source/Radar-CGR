@@ -1,12 +1,33 @@
 {
   "source_id": "cgr_tribunal_cuentas",
-  "source_url": "https://www.contraloria.cl/web/cgr/buscador-de-estado-diario-y-juicios",
-  "status_code": null,
-  "fetched_at": "2026-08-12T17:47:21+00:00",
-  "content_hash": "",
-  "title": "",
-  "text_excerpt": "",
-  "links": [],
+  "source_url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+  "status_code": 200,
+  "fetched_at": "2026-08-12T17:50:19+00:00",
+  "content_hash": "4927541c60537cf52a4274fd051dfc3a221b5a111ac6112e0b7724f3d90a11f0",
+  "title": "www.contraloria.cl",
+  "text_excerpt": "www.contraloria.cl Acceder Sistema de Tramitación y Seguimiento de Juicios de Cuentas Toggle navigation Tabla de causas 2da Estado Diario Búsqueda por Juicios Inicio Busqueda de estado diario Búsqueda por Estado Diario Rol / Tribunal Juzgado de Cuentas Tribunal de Cuentas de Segunda Instancia Fecha estado diario Borrar Búsqueda por rango de fechas Buscar Limpiar Resultados 11 resultados - pag 1/2 p p 1 2 p p Fecha Rol Nº Resolución Nº Resolución Demandante Cuentadantes o Demandados Cuentadantes o Demandados 11/08/2026 65/2026 RES. Nº 91114 RES. Nº 91114 División de Gobiernos Regionales y Municipalidades ARELLANO QUIROGA, CALDERÓN ARRIAGADA, FUENTES ASTORGA, NUÑEZ QUEZADA Y OTROS ARELLANO QUIROGA, CALDERÓN ARRIAGADA, FUENTES ASTORGA, NUÑEZ QUEZADA, TAPIA CARRION 11/08/2026 65/2026 RES. Nº 91115 RES. Nº 91115 División de Gobiernos Regionales y Municipalidades ARELLANO QUIROGA, CALDERÓN ARRIAGADA, FUENTES ASTORGA, NUÑEZ QUEZADA Y OTROS ARELLANO QUIROGA, CALDERÓN ARRIAGADA, FUENTES ASTORGA, NUÑEZ QUEZADA, TAPIA CARRION 11/08/2026 65/2026 RES. Nº 91113 RES. Nº 91113 División de Gobiernos Regionales y Municipalidades ARELLANO QUIROGA, CALDERÓN ARRIAGADA, FUENTES ASTORGA, NUÑEZ QUEZADA Y OTROS ARELLANO QUIROGA, CALDERÓN ARRIAGADA, FUENTES ASTORGA, NUÑEZ QUEZADA, TAPIA CARRION 11/08/2026 14/2026 RES. Nº 91119 RES. Nº 91119 Contraloría Regional de Los Ríos BORNECK LOAIZA, CAÑOLES PEÑA, FUENZALIDA AEDO, LOPEZ MONSALVE Y OTROS BORNECK LOAIZA, CAÑOLES PEÑA, FUENZALIDA AEDO, LOPEZ MONSALVE, MONTANO CEVALLOS, PINEDA SANCHEZ, RETAMAL BRIONES, RIOS BACHMANN 11/08/2026 14/2026 RES. Nº 91122 RES. Nº 91122 Contraloría Regional de Los Ríos BORNECK LOAIZA, CAÑOLES PEÑA, FUENZALIDA AEDO, LOPEZ MONSALVE Y OTROS BORNECK LOAIZA, CAÑOLES PEÑA, FUENZALIDA AEDO, LOPEZ MONSALVE, MONTANO CEVALLOS, PINEDA SANCHEZ, RETAMAL BRIONES, RIOS BACHMANN 11/08/2026 14/2026 RES. Nº 91121 RES. Nº 91121 Contraloría Regional de Los Ríos BORNECK LOAIZA, CAÑOLES PEÑA, FUENZALIDA AEDO, LOPEZ MONSALVE Y OTROS BORNECK LOAIZA, CAÑOLES PEÑA, FUENZALIDA AEDO, LOPEZ MONSALVE, MONTANO CEVALLOS, PINEDA SANCHEZ, RETAMAL BRIONES, RIOS BACHMANN 11/08/2026 14/2026 RES. Nº 91120 RES. Nº 91120 Contraloría Regional de Los Ríos BORNECK LOAIZA, CAÑOLES PEÑA, FUENZALIDA AEDO, LOPEZ MONSALVE Y OTROS BORNECK LOAIZA, CAÑOLES PEÑA, FUENZALIDA AEDO, LOPEZ MONSALVE, MONTANO CEVALLOS, PINEDA SANCHEZ, RETAMAL BRIONES, RIOS BACHMANN 11/08/2026 9/2026 RES. Nº 91117 RES. Nº 91117 Contraloría Regional de Aysén ALARCON MENA, DURAN LOBOS, GARCIA GODOY, HERRERA CALVO Y OTROS ALARCON MENA, DURAN LOBOS, GARCIA GODOY, HERRERA CALVO, SANDERS CORTES 11/08/2026 9/2026 RES. Nº 91118 RES. Nº 91118 Contraloría Regional de Aysén ALARCON MENA, DURAN LOBOS, GARCIA GODOY, HERRERA CALVO Y OTROS ALARCON MENA, DURAN LOBOS, GARCIA GODOY, HERRERA CALVO, SANDERS CORTES 11/08/2026 27/2025 RES. Nº 91123 RES. Nº 91123 Contraloría Regional de Ñuble RIQUELME IBARRA, SAN MARTIN VASQUEZ RIQUELME IBARRA, SAN MARTIN VASQUEZ 11 resultados - pag 1/2 p p 1",
+  "links": [
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/loginClave",
+      "text": "Acceder"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/tablaCausa2da",
+      "text": "Tabla de causas 2da"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+      "text": "Estado Diario"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaJuicios",
+      "text": "Búsqueda por Juicios"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio",
+      "text": "Inicio"
+    }
+  ],
   "audit_links": [],
-  "error": "TooManyRedirects: Exceeded 30 redirects."
+  "error": ""
 }
