@@ -20,7 +20,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: radar-cgr-data
+  group: radar-cgr-write-v2
   cancel-in-progress: false
 
 jobs:
@@ -28,9 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
-      - name: Checkout
+      - name: Checkout latest main
         uses: actions/checkout@v6
         with:
+          ref: main
           fetch-depth: 0
       - name: Python
         uses: actions/setup-python@v6
@@ -57,5 +58,9 @@ jobs:
             exit 0
           fi
           git commit -m "radar: actualizacion automatica $(date -u +'%Y-%m-%dT%H:%MZ')"
-          git pull --rebase origin main
+          git fetch origin main
+          if [ "$(git rev-parse HEAD^)" != "$(git rev-parse origin/main)" ] && [ "$(git rev-parse HEAD~1)" != "$(git rev-parse origin/main)" ]; then
+            echo "main cambió durante la corrida; regenerar en próxima ejecución"
+            exit 1
+          fi
           git push origin HEAD:main
