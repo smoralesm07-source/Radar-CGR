@@ -4,17 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       batch_size:
-        description: "Cantidad maxima de informes a procesar en esta corrida"
+        description: "Cantidad maxima de informes CGR a validar/procesar en esta corrida"
         required: false
-        default: "120"
-      max_pages:
-        description: "Paginas maximas de archivo de noticias CGR"
+        default: "250"
+      max_collections:
+        description: "Colecciones históricas pendientes a escanear; 0 = todas"
         required: false
-        default: "80"
-      max_articles:
-        description: "Noticias maximas a revisar para descubrir informes"
-        required: false
-        default: "1200"
+        default: "0"
   push:
     branches: [main]
     paths:
@@ -22,6 +18,7 @@ on:
       - "radar_cgr/commoncrawl_discovery.py"
       - "radar_cgr/coverage.py"
       - "radar_cgr/temporality.py"
+      - "radar_cgr/storage.py"
       - "config/historical_sources.json"
       - "tests/test_history.py"
       - "tests/test_commoncrawl.py"
@@ -40,11 +37,10 @@ concurrency:
 jobs:
   historical:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     env:
-      BATCH_SIZE: ${{ github.event.inputs.batch_size || '120' }}
-      MAX_PAGES: ${{ github.event.inputs.max_pages || '80' }}
-      MAX_ARTICLES: ${{ github.event.inputs.max_articles || '1200' }}
+      BATCH_SIZE: ${{ github.event.inputs.batch_size || '250' }}
+      MAX_COLLECTIONS: ${{ github.event.inputs.max_collections || '0' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -59,14 +55,14 @@ jobs:
         run: pip install -r requirements.txt
       - name: Pruebas
         run: pytest -q
-      - name: Descubrir docIdcm historicos en Common Crawl
+      - name: Descubrir docIdcm en todas las colecciones históricas pendientes
         env:
           TZ: America/Santiago
-        run: python -m radar_cgr.commoncrawl_discovery --min-year 2013 --max-year 2026 --max-pages-per-query 8 --page-size 5
-      - name: Barrido historico acumulativo
+        run: python -m radar_cgr.commoncrawl_discovery --min-year 2013 --max-year 2026 --max-pages-per-query 200 --page-size 5 --max-collections "$MAX_COLLECTIONS"
+      - name: Validar contra CGR y estructurar cola histórica
         env:
           TZ: America/Santiago
-        run: python -m radar_cgr.history --batch-size "$BATCH_SIZE" --max-pages "$MAX_PAGES" --max-articles "$MAX_ARTICLES"
+        run: python -m radar_cgr.history --batch-size "$BATCH_SIZE" --max-pages 0 --max-articles 0
       - name: Persistir cambios
         shell: bash
         run: |

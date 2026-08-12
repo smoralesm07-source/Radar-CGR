@@ -1,26 +1,6 @@
 {
-  "news_archives": [
-    {
-      "enabled": true,
-      "channel": "NEWS_ARCHIVE",
-      "url": "https://mantencion.contraloria.cl/cgr/web/cgr/noticias/index.html",
-      "max_pages": 120,
-      "max_articles": 1800,
-      "notes": "Archivo oficial CGR/Liferay. Se recorren enlaces de paginacion y se extraen URLs oficiales de informes desde cada noticia."
-    }
-  ],
-  "reference_pages": [
-    {
-      "channel": "CEA_REFERENCE",
-      "url": "https://revista.ceacgr.cl/revista/manual-de-citacion",
-      "notes": "Página oficial del Centro de Estudios de la Administración del Estado que cita informes históricos CGR y sus URLs oficiales."
-    },
-    {
-      "channel": "FOUNDATIONS",
-      "url": "https://www.contraloria.cl/web/cgr/auditorias-a-las-transferencias-relacionadas-con-fundaciones",
-      "notes": "Página temática CGR con informes vinculados a transferencias a fundaciones."
-    }
-  ],
+  "news_archives": [],
+  "reference_pages": [],
   "known_audits": [
     {
       "enabled": true,
@@ -43,5 +23,6 @@
       "label": "Informe 174/2021 - SAG plaguicidas",
       "url": "https://www.contraloria.cl/buscadorpdf/auditoria/318bf06bc86be907de40fb96696376a9/html"
     }
-  ]
+  ],
+  "notes": "Los landings Liferay de noticias/fundaciones quedan fuera de la corrida histórica mientras presenten TooManyRedirects en GitHub Actions. El descubrimiento masivo usa índices históricos de URL; toda ficha se valida contra CGR antes de ingresar al corpus."
 }

@@ -29,6 +29,7 @@ def summarize_coverage() -> dict:
     documents = read_jsonl(table_path("documents"))
     findings = read_jsonl(table_path("findings"))
     registry = read_jsonl(table_path("audit_registry"))
+    cc_collections = read_jsonl(table_path("cc_collections"))
     tribunal = read_jsonl(table_path("tribunal_cases"))
     runs = read_jsonl(table_path("source_runs"))
 
@@ -41,6 +42,7 @@ def summarize_coverage() -> dict:
     occurrence_years = Counter((x.get("occurrence_date_anchor", "") or "")[:4] for x in findings if x.get("occurrence_date_anchor"))
     status_counts = Counter(x.get("status", "UNKNOWN") for x in registry)
     channel_counts = Counter(x.get("discovery_channel", "UNKNOWN") for x in registry)
+    cc_status = Counter(x.get("status", "UNKNOWN") for x in cc_collections)
 
     benchmark_start, benchmark_end, benchmark_total = "2024-04-01", "2025-03-31", 792
     loaded_in_benchmark = sum(benchmark_start <= d <= benchmark_end for d in pub_dates if d)
@@ -54,10 +56,12 @@ def summarize_coverage() -> dict:
     pending = sum(x.get("status") != "FETCHED" and int(x.get("attempts") or 0) < 4 for x in registry)
     exhausted_errors = sum(x.get("status") == "ERROR" and int(x.get("attempts") or 0) >= 4 for x in registry)
     fetched = status_counts.get("FETCHED", 0)
+    cc_unfinished = sum(x.get("status") != "SCANNED" for x in cc_collections)
 
+    coverage_status = "BACKFILLING" if pending or exhausted_errors or cc_unfinished else "DISCOVERY_QUEUE_EMPTY"
     return {
         "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-        "coverage_status": "BACKFILLING" if pending or exhausted_errors else "DISCOVERY_QUEUE_EMPTY",
+        "coverage_status": coverage_status,
         "warning": "Una cola vacía no acredita por sí sola cobertura histórica completa: depende de la exhaustividad de los canales públicos de descubrimiento disponibles.",
         "audit_registry": {
             "total_discovered": len(registry),
@@ -67,6 +71,15 @@ def summarize_coverage() -> dict:
             "fetch_pct_of_discovered": round(100 * fetched / max(1, len(registry)), 1),
             "by_status": [{"name": k, "count": v} for k, v in status_counts.most_common()],
             "by_discovery_channel": [{"name": k, "count": v} for k, v in channel_counts.most_common()],
+        },
+        "historical_url_index": {
+            "collections_registered": len(cc_collections),
+            "collections_scanned": cc_status.get("SCANNED", 0),
+            "collections_error": cc_status.get("ERROR", 0),
+            "collections_pending_or_unknown": cc_unfinished,
+            "scan_pct": round(100 * cc_status.get("SCANNED", 0) / max(1, len(cc_collections)), 1),
+            "by_status": [{"name": k, "count": v} for k, v in cc_status.most_common()],
+            "role": "Índice de descubrimiento de URLs históricas. No se utiliza como evidencia del contenido; cada docIdcm debe validarse contra CGR.",
         },
         "documents": {
             "count": len(documents),
