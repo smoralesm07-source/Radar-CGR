@@ -10,6 +10,7 @@ from .dashboard import build_dashboard
 from .extract import parse_audit_detail
 from .intelligence import rebuild_intelligence
 from .models import Event, stable_id
+from .quality import apply_entity_quality_gate
 from .resolution import clean_entity_resolution
 from .storage import export_parquet, upsert_jsonl, write_snapshot
 
@@ -43,7 +44,8 @@ def run(source_filter:str|None=None,skip_network:bool=False)->dict:
     if source_run_rows: upsert_jsonl("source_runs",source_run_rows,"run_id")
     intelligence=rebuild_intelligence()
     resolution=clean_entity_resolution()
-    parquet=export_parquet(); dashboard=build_dashboard(); return {"started_at":started,"totals":totals,"intelligence":intelligence,"resolution":resolution,"parquet":parquet,"dashboard_kpis":dashboard["kpis"]}
+    quality=apply_entity_quality_gate()
+    parquet=export_parquet(); dashboard=build_dashboard(); return {"started_at":started,"totals":totals,"intelligence":intelligence,"resolution":resolution,"quality":quality,"parquet":parquet,"dashboard_kpis":dashboard["kpis"]}
 
 
 def main()->None:
