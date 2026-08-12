@@ -73,6 +73,12 @@ class Finding:
     enforcement: list[str] = field(default_factory=list)
     source_url: str = ""
     evidence_id: str = ""
+    occurrence_date_from: str = ""
+    occurrence_date_to: str = ""
+    occurrence_date_anchor: str = ""
+    occurrence_date_precision: str = "UNKNOWN"
+    occurrence_date_basis: str = ""
+    occurrence_date_confidence: float = 0.0
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -203,6 +209,59 @@ class PenalHypothesis:
     limitations: list[str] = field(default_factory=list)
     evidence_id: str = ""
     source_url: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class WatchItem:
+    watch_id: str
+    source_id: str
+    watch_type: str
+    title: str
+    source_url: str
+    stage: str = "WATCH"
+    first_seen: str = field(default_factory=utcnow_iso)
+    last_seen: str = field(default_factory=utcnow_iso)
+    matched_document_id: str = ""
+    match_confidence: float = 0.0
+    status: str = "OPEN"
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class EnforcementEvent:
+    enforcement_event_id: str
+    finding_id: str
+    document_id: str
+    organization_id: str
+    enforcement_type: str
+    action_date: str
+    stage: str
+    source_url: str
+    occurrence_date_from: str = ""
+    occurrence_date_to: str = ""
+    amount_clp: int | None = None
+    tribunal_link_status: str = "NOT_APPLICABLE"
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class FAUMatch:
+    fau_match_id: str
+    finding_id: str
+    document_id: str
+    pattern_code: str
+    pattern_label: str
+    score: int
+    match_basis: list[str] = field(default_factory=list)
+    source_url: str = ""
+    origin: str = "CGR_FAU_PUBLIC_THEME"
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

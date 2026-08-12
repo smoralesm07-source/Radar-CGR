@@ -14,7 +14,7 @@ DOCS_DIR = ROOT / "docs"
 CONFIG_DIR = ROOT / "config"
 
 DEFAULT_HEADERS = {
-    "User-Agent": "Radar-CGR/0.1 (+https://github.com/smoralesm07-source/Radar-CGR; OSINT publico)",
+    "User-Agent": "Radar-CGR/0.3 (+https://github.com/smoralesm07-source/Radar-CGR; OSINT publico)",
     "Accept-Language": "es-CL,es;q=0.9,en;q=0.6",
 }
 

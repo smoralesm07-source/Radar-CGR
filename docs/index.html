@@ -1,52 +1,5 @@
 <!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Radar CGR · Entity & Irregularity Intelligence</title>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="theme-color" content="#2e3236">
-</head>
-<body>
-<header class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="eyebrow">OSINT · AML / LA-FT · Chile <span class="version">v0.2</span></div>
-      <h1>Radar CGR</h1>
-      <p>Inteligencia estructurada sobre organismos públicos, proveedores, irregularidades, territorio y acciones derivadas de la Contraloría General de la República.</p>
-    </div>
-    <div class="status" id="generated">Cargando datos…</div>
-  </div>
-</header>
-
-<main class="wrap">
-  <section class="question-box">
-    <div class="question-title">Preguntas clave</div>
-    <div id="questions" class="questions"></div>
-  </section>
-
-  <section id="kpis" class="kpis"></section>
-
-  <nav class="tabs" id="tabs">
-    <button class="active" data-tab="summary">Resumen</button>
-    <button data-tab="organizations">Organismos</button>
-    <button data-tab="providers">Proveedores</button>
-    <button data-tab="regions">Territorio</button>
-    <button data-tab="penal">Relevancia penal</button>
-    <button data-tab="findings">Hallazgos</button>
-    <button data-tab="sources">Fuentes</button>
-  </nav>
-
-  <section id="view"></section>
-  <footer id="footer"></footer>
-</main>
-
-<div class="modal" id="modal" aria-hidden="true">
-  <div class="modal-card">
-    <button class="close" id="closeModal" aria-label="Cerrar">×</button>
-    <div id="modalBody"></div>
-  </div>
-</div>
-<script src="app.js"></script>
-</body>
-</html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Radar CGR · Enforcement & Temporal Intelligence</title><link rel="stylesheet" href="styles.css"><meta name="theme-color" content="#2e3236"></head>
+<body><header class="hero"><div class="hero-inner"><div><div class="eyebrow">OSINT · AML / LA-FT · Chile <span class="version">v0.3</span></div><h1>Radar CGR</h1><p>Inteligencia temporal y de enforcement sobre organismos públicos, proveedores, irregularidades y señales de la Contraloría General de la República.</p></div><div class="status" id="generated">Cargando datos…</div></div></header>
+<main class="wrap"><section class="question-box"><div class="question-title">Preguntas clave</div><div id="questions" class="questions"></div></section><section id="kpis" class="kpis"></section><nav class="tabs" id="tabs"><button class="active" data-tab="summary">Resumen</button><button data-tab="organizations">Organismos</button><button data-tab="providers">Proveedores</button><button data-tab="regions">Territorio</button><button data-tab="temporal">Cronología</button><button data-tab="watch">Alertas tempranas</button><button data-tab="enforcement">Enforcement / Tribunal</button><button data-tab="fau">FAU</button><button data-tab="penal">Relevancia penal</button><button data-tab="findings">Hallazgos</button><button data-tab="sources">Fuentes</button></nav><section id="view"></section><footer id="footer"></footer></main>
+<div class="modal" id="modal" aria-hidden="true"><div class="modal-card"><button class="close" id="closeModal" aria-label="Cerrar">×</button><div id="modalBody"></div></div></div><script src="app.js"></script><script src="tribunal.js"></script></body></html>

@@ -1,0 +1,7 @@
+const _renderShellBaseV3=renderShell;
+renderShell=function(){_renderShellBaseV3();const k=document.querySelector('#kpis');if(k&&!document.querySelector('[data-kpi="tribunal"]')){const d=document.createElement('div');d.className='kpi';d.dataset.kpi='tribunal';d.innerHTML=`<b>${esc(DATA.kpis?.tribunal_cases||0)}</b><span>Estados Tribunal</span>`;k.appendChild(d)}};
+const _renderEnforcementBase=renderEnforcement;
+renderEnforcement=function(){
+  _renderEnforcementBase();const rows=(DATA.tribunal_cases||[]).slice(0,80);const panel=document.createElement('div');panel.className='panel';panel.style.marginTop='14px';
+  panel.innerHTML=`<h2>Tribunal de Cuentas · estado diario</h2><div class="help">Registros estructurados desde la fuente oficial. Los vínculos con reparos son candidatos analíticos hasta contar con una clave inequívoca de causa.</div><div class="table-wrap"><table class="data-table"><thead><tr><th>Fecha</th><th>Rol</th><th>Resolución</th><th>Demandante</th><th>Cuentadantes / demandados</th><th>Vínculo a reparo</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${esc(x.state_date||x.state_date_raw||'')}</td><td><div class="name">${esc(x.role||'')}</div></td><td>${esc(x.resolution||'')}</td><td>${esc(x.claimant||'')}</td><td><div class="desc">${esc((x.defendants_raw||'').slice(0,280))}</div></td><td>${x.match_status==='CANDIDATE_REPARO_LINK'?`<span class="score-pill medium">Candidato ${Math.round((x.match_confidence||0)*100)}%</span>`:'—'}</td></tr>`).join('')}</tbody></table></div>`;document.querySelector('#view').appendChild(panel);
+};
