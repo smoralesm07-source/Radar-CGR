@@ -5,7 +5,7 @@ from typing import Iterable
 from .config import BRONZE_DIR,GOLD_DIR,SILVER_DIR
 from .models import canonical_json
 from .utils import ensure_parent
-TABLES=["documents","events","findings","evidence","entities","organizations","providers","persons","relationships","irregularities","penal_hypotheses","finding_enrichment","watch_items","enforcement_events","tribunal_cases","fau_catalog","fau_matches","audit_registry","cc_collections","municipal_control_snapshots","source_runs"]
+TABLES=["documents","events","findings","evidence","entities","organizations","providers","persons","relationships","irregularities","penal_hypotheses","finding_enrichment","watch_items","enforcement_events","tribunal_cases","fau_catalog","fau_matches","cic_catalog","audit_registry","cc_collections","municipal_control_snapshots","source_runs"]
 VOLATILE_FIELDS={"retrieved_at","last_seen"}
 def table_path(name):return SILVER_DIR/f"{name}.jsonl"
 def read_jsonl(path):
