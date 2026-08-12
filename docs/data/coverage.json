@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-12T18:23:03+00:00",
+  "generated_at": "2026-08-12T20:44:24+00:00",
   "coverage_status": "DISCOVERY_QUEUE_EMPTY",
   "warning": "Una cola vacía no acredita por sí sola cobertura histórica completa: depende de la exhaustividad de los canales públicos de descubrimiento disponibles.",
   "audit_registry": {
-    "total_discovered": 30,
-    "fetched": 30,
+    "total_discovered": 40,
+    "fetched": 40,
     "pending": 0,
     "exhausted_errors": 0,
     "fetch_pct_of_discovered": 100.0,
     "by_status": [
       {
         "name": "FETCHED",
-        "count": 30
+        "count": 40
       }
     ],
     "by_discovery_channel": [
       {
-        "name": "EXISTING_DOCUMENT",
-        "count": 16
+        "name": "COMMON_CRAWL_INDEX",
+        "count": 21
       },
       {
-        "name": "COMMON_CRAWL_INDEX",
-        "count": 11
+        "name": "EXISTING_DOCUMENT",
+        "count": 16
       },
       {
         "name": "CEA_REFERENCE",
@@ -33,13 +33,31 @@
       }
     ]
   },
+  "historical_url_index": {
+    "collections_registered": 123,
+    "collections_scanned": 123,
+    "collections_error": 0,
+    "collections_pending_or_unknown": 0,
+    "scan_pct": 100.0,
+    "by_status": [
+      {
+        "name": "SCANNED",
+        "count": 123
+      }
+    ],
+    "role": "Índice de descubrimiento de URLs históricas. No se utiliza como evidencia del contenido; cada docIdcm debe validarse contra CGR."
+  },
   "documents": {
-    "count": 30,
-    "publication_oldest": "2013-05-10",
+    "count": 40,
+    "publication_oldest": "2013-02-14",
     "publication_newest": "2026-07-31",
     "by_year": [
       {
         "year": "2013",
+        "count": 2
+      },
+      {
+        "year": "2014",
         "count": 1
       },
       {
@@ -48,14 +66,18 @@
       },
       {
         "year": "2016",
-        "count": 1
+        "count": 2
       },
       {
         "year": "2017",
-        "count": 3
+        "count": 5
       },
       {
         "year": "2018",
+        "count": 5
+      },
+      {
+        "year": "2019",
         "count": 1
       },
       {
@@ -77,14 +99,18 @@
     ]
   },
   "findings": {
-    "count": 263,
+    "count": 404,
     "occurrence_oldest": "1968-01-01",
     "occurrence_newest": "2026-03-06",
-    "known_temporality": 178,
-    "unknown_temporality": 85,
+    "known_temporality": 223,
+    "unknown_temporality": 181,
     "by_anchor_year": [
       {
         "year": "1968",
+        "count": 1
+      },
+      {
+        "year": "2010",
         "count": 1
       },
       {
@@ -92,20 +118,24 @@
         "count": 1
       },
       {
+        "year": "2013",
+        "count": 16
+      },
+      {
         "year": "2014",
-        "count": 31
+        "count": 32
       },
       {
         "year": "2015",
-        "count": 10
+        "count": 12
       },
       {
         "year": "2016",
-        "count": 18
+        "count": 31
       },
       {
         "year": "2017",
-        "count": 2
+        "count": 14
       },
       {
         "year": "2019",
@@ -153,43 +183,43 @@
   "source_latest": {
     "cgr_noticias": {
       "status": "ERROR",
-      "finished_at": "2026-08-12T17:50:01+00:00",
-      "error": "TooManyRedirects: Exceeded 30 redirects."
+      "finished_at": "2026-08-12T19:05:16+00:00",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='mantencion.contraloria.cl', port=443): Max retries exceeded with url: /cgr/web/cgr/noticias/index.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mantencion.contraloria.cl', port=443) at 0x7f06bb1a1490>, 'Connection to mantencion.contraloria.cl timed out. (connect timeout=35)'))"
     },
     "cgr_auditorias": {
-      "status": "ERROR",
-      "finished_at": "2026-08-12T17:50:07+00:00",
-      "error": "TooManyRedirects: Exceeded 30 redirects."
+      "status": "OK",
+      "finished_at": "2026-08-12T19:05:17+00:00",
+      "error": ""
     },
     "cgr_fiscalizaciones": {
-      "status": "ERROR",
-      "finished_at": "2026-08-12T17:50:13+00:00",
-      "error": "TooManyRedirects: Exceeded 30 redirects."
+      "status": "OK",
+      "finished_at": "2026-08-12T19:05:21+00:00",
+      "error": ""
     },
     "cgr_fau": {
-      "status": "ERROR",
-      "finished_at": "2026-08-12T17:50:19+00:00",
-      "error": "TooManyRedirects: Exceeded 30 redirects."
+      "status": "OK",
+      "finished_at": "2026-08-12T19:05:21+00:00",
+      "error": ""
     },
     "cgr_tribunal_cuentas": {
       "status": "OK",
-      "finished_at": "2026-08-12T17:50:20+00:00",
+      "finished_at": "2026-08-12T19:05:22+00:00",
       "error": ""
     },
     "cgr_fundaciones": {
-      "status": "ERROR",
-      "finished_at": "2026-08-12T17:50:29+00:00",
-      "error": "TooManyRedirects: Exceeded 30 redirects."
+      "status": "OK",
+      "finished_at": "2026-08-12T19:05:22+00:00",
+      "error": ""
     },
     "cgr_datos_municipales": {
-      "status": "ERROR",
-      "finished_at": "2026-08-12T17:50:40+00:00",
-      "error": "TooManyRedirects: Exceeded 30 redirects."
+      "status": "OK",
+      "finished_at": "2026-08-12T19:05:23+00:00",
+      "error": ""
     },
     "cgr_semaforo": {
-      "status": "ERROR",
-      "finished_at": "2026-08-12T17:50:35+00:00",
-      "error": "TooManyRedirects: Exceeded 30 redirects."
+      "status": "OK",
+      "finished_at": "2026-08-12T19:05:23+00:00",
+      "error": ""
     },
     "audit_detail": {
       "status": "ERROR",
@@ -197,9 +227,9 @@
       "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
     },
     "cgr_reportes_financieros": {
-      "status": "ERROR",
-      "finished_at": "2026-08-12T17:50:45+00:00",
-      "error": "TooManyRedirects: Exceeded 30 redirects."
+      "status": "OK",
+      "finished_at": "2026-08-12T19:05:23+00:00",
+      "error": ""
     }
   },
   "scope": {
