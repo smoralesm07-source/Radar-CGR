@@ -42,9 +42,10 @@ jobs:
       BATCH_SIZE: ${{ github.event.inputs.batch_size || '250' }}
       MAX_COLLECTIONS: ${{ github.event.inputs.max_collections || '0' }}
     steps:
-      - name: Checkout
+      - name: Checkout latest main
         uses: actions/checkout@v6
         with:
+          ref: main
           fetch-depth: 0
       - name: Python
         uses: actions/setup-python@v6
@@ -75,12 +76,9 @@ jobs:
             exit 0
           fi
           git commit -m "radar: backfill historico $(date -u +'%Y-%m-%dT%H:%MZ')"
-          for attempt in 1 2 3; do
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              exit 0
-            fi
-            git rebase --abort || true
-            sleep $((attempt * 5))
-          done
-          echo "No fue posible persistir el backfill tras 3 intentos"
-          exit 1
+          git fetch origin main
+          if [ "$(git rev-parse HEAD^)" != "$(git rev-parse origin/main)" ] && [ "$(git rev-parse HEAD~1)" != "$(git rev-parse origin/main)" ]; then
+            echo "main cambió durante la corrida; regenerar en próxima ejecución"
+            exit 1
+          fi
+          git push origin HEAD:main
