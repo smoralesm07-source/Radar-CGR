@@ -1,23 +1,27 @@
 {
-  "generated_at": "2026-08-12T18:12:57+00:00",
+  "generated_at": "2026-08-12T18:23:03+00:00",
   "coverage_status": "DISCOVERY_QUEUE_EMPTY",
   "warning": "Una cola vacía no acredita por sí sola cobertura histórica completa: depende de la exhaustividad de los canales públicos de descubrimiento disponibles.",
   "audit_registry": {
-    "total_discovered": 19,
-    "fetched": 19,
+    "total_discovered": 30,
+    "fetched": 30,
     "pending": 0,
     "exhausted_errors": 0,
     "fetch_pct_of_discovered": 100.0,
     "by_status": [
       {
         "name": "FETCHED",
-        "count": 19
+        "count": 30
       }
     ],
     "by_discovery_channel": [
       {
         "name": "EXISTING_DOCUMENT",
         "count": 16
+      },
+      {
+        "name": "COMMON_CRAWL_INDEX",
+        "count": 11
       },
       {
         "name": "CEA_REFERENCE",
@@ -30,10 +34,30 @@
     ]
   },
   "documents": {
-    "count": 19,
-    "publication_oldest": "2021-09-22",
+    "count": 30,
+    "publication_oldest": "2013-05-10",
     "publication_newest": "2026-07-31",
     "by_year": [
+      {
+        "year": "2013",
+        "count": 1
+      },
+      {
+        "year": "2015",
+        "count": 4
+      },
+      {
+        "year": "2016",
+        "count": 1
+      },
+      {
+        "year": "2017",
+        "count": 3
+      },
+      {
+        "year": "2018",
+        "count": 1
+      },
       {
         "year": "2021",
         "count": 2
@@ -53,15 +77,35 @@
     ]
   },
   "findings": {
-    "count": 164,
+    "count": 263,
     "occurrence_oldest": "1968-01-01",
-    "occurrence_newest": "2026-09-10",
-    "known_temporality": 129,
-    "unknown_temporality": 35,
+    "occurrence_newest": "2026-03-06",
+    "known_temporality": 178,
+    "unknown_temporality": 85,
     "by_anchor_year": [
       {
         "year": "1968",
         "count": 1
+      },
+      {
+        "year": "2012",
+        "count": 1
+      },
+      {
+        "year": "2014",
+        "count": 31
+      },
+      {
+        "year": "2015",
+        "count": 10
+      },
+      {
+        "year": "2016",
+        "count": 18
+      },
+      {
+        "year": "2017",
+        "count": 2
       },
       {
         "year": "2019",
@@ -77,11 +121,11 @@
       },
       {
         "year": "2023",
-        "count": 10
+        "count": 9
       },
       {
         "year": "2024",
-        "count": 41
+        "count": 30
       },
       {
         "year": "2025",
@@ -89,7 +133,7 @@
       },
       {
         "year": "2026",
-        "count": 4
+        "count": 3
       }
     ]
   },
