@@ -7,22 +7,29 @@ on:
       batch_size:
         description: "Cantidad maxima de informes CGR a validar/procesar en esta corrida"
         required: false
-        default: "250"
+        default: "120"
+      months_per_run:
+        description: "Meses pendientes a recorrer en el buscador oficial CGR"
+        required: false
+        default: "24"
       max_collections:
-        description: "Colecciones históricas pendientes a escanear; 0 = todas"
+        description: "Colecciones Common Crawl pendientes; 0 = todas"
         required: false
         default: "0"
   push:
     branches: [main]
     paths:
       - "radar_cgr/history.py"
+      - "radar_cgr/official_search.py"
       - "radar_cgr/commoncrawl_discovery.py"
       - "radar_cgr/coverage.py"
       - "radar_cgr/temporality.py"
       - "radar_cgr/storage.py"
       - "config/historical_sources.json"
+      - "requirements-historical.txt"
       - "tests/test_history.py"
       - "tests/test_commoncrawl.py"
+      - "tests/test_official_search.py"
       - "tests/test_temporality.py"
       - ".github/workflows/historical.yml"
   schedule:
@@ -40,7 +47,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
-      BATCH_SIZE: ${{ github.event.inputs.batch_size || '250' }}
+      BATCH_SIZE: ${{ github.event.inputs.batch_size || '120' }}
+      MONTHS_PER_RUN: ${{ github.event.inputs.months_per_run || '24' }}
       MAX_COLLECTIONS: ${{ github.event.inputs.max_collections || '0' }}
     steps:
       - name: Checkout latest main
@@ -53,11 +61,17 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - name: Dependencias
-        run: pip install -r requirements.txt
+      - name: Dependencias históricas
+        run: |
+          pip install -r requirements-historical.txt
+          python -m playwright install --with-deps chromium
       - name: Pruebas
         run: pytest -q
-      - name: Descubrir docIdcm en todas las colecciones históricas pendientes
+      - name: Descubrir informes con el buscador oficial CGR
+        env:
+          TZ: America/Santiago
+        run: python -m radar_cgr.official_search --start-year 2009 --months-per-run "$MONTHS_PER_RUN" --max-pages 200
+      - name: Descubrir docIdcm en índices web históricos complementarios
         env:
           TZ: America/Santiago
         run: python -m radar_cgr.commoncrawl_discovery --min-year 2013 --max-year 2026 --max-pages-per-query 200 --page-size 5 --max-collections "$MAX_COLLECTIONS"
