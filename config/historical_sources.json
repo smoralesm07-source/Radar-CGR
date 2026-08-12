@@ -1,0 +1,47 @@
+{
+  "news_archives": [
+    {
+      "enabled": true,
+      "channel": "NEWS_ARCHIVE",
+      "url": "https://mantencion.contraloria.cl/cgr/web/cgr/noticias/index.html",
+      "max_pages": 120,
+      "max_articles": 1800,
+      "notes": "Archivo oficial CGR/Liferay. Se recorren enlaces de paginacion y se extraen URLs oficiales de informes desde cada noticia."
+    }
+  ],
+  "reference_pages": [
+    {
+      "channel": "CEA_REFERENCE",
+      "url": "https://revista.ceacgr.cl/revista/manual-de-citacion",
+      "notes": "Página oficial del Centro de Estudios de la Administración del Estado que cita informes históricos CGR y sus URLs oficiales."
+    },
+    {
+      "channel": "FOUNDATIONS",
+      "url": "https://www.contraloria.cl/web/cgr/auditorias-a-las-transferencias-relacionadas-con-fundaciones",
+      "notes": "Página temática CGR con informes vinculados a transferencias a fundaciones."
+    }
+  ],
+  "known_audits": [
+    {
+      "enabled": true,
+      "channel": "CEA_REFERENCE",
+      "source": "https://revista.ceacgr.cl/revista/manual-de-citacion",
+      "label": "Informe 413/2021 - Municipalidad de Hijuelas",
+      "url": "https://www.contraloria.cl/buscadorpdf/auditoria/5f52f7d11546b51ec0441d3a666093f1/html"
+    },
+    {
+      "enabled": true,
+      "channel": "CEA_REFERENCE",
+      "source": "https://revista.ceacgr.cl/revista/manual-de-citacion",
+      "label": "Informe 580/2021 - Municipalidad de Quillota",
+      "url": "https://www.contraloria.cl/buscadorpdf/auditoria/060b001a7ebc963947a8732a3bd209ce/html"
+    },
+    {
+      "enabled": true,
+      "channel": "VERIFIED_OFFICIAL_URL",
+      "source": "bibliografia publica; contenido final verificado siempre contra CGR",
+      "label": "Informe 174/2021 - SAG plaguicidas",
+      "url": "https://www.contraloria.cl/buscadorpdf/auditoria/318bf06bc86be907de40fb96696376a9/html"
+    }
+  ]
+}

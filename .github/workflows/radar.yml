@@ -20,7 +20,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: radar-cgr-collector
+  group: radar-cgr-data
   cancel-in-progress: false
 
 jobs:

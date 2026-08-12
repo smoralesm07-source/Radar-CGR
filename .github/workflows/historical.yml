@@ -1,0 +1,82 @@
+name: Radar CGR - barrido historico
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: "Cantidad maxima de informes a procesar en esta corrida"
+        required: false
+        default: "120"
+      max_pages:
+        description: "Paginas maximas de archivo de noticias CGR"
+        required: false
+        default: "80"
+      max_articles:
+        description: "Noticias maximas a revisar para descubrir informes"
+        required: false
+        default: "1200"
+  push:
+    branches: [main]
+    paths:
+      - "radar_cgr/history.py"
+      - "radar_cgr/coverage.py"
+      - "config/historical_sources.json"
+      - "tests/test_history.py"
+      - ".github/workflows/historical.yml"
+  schedule:
+    - cron: "41 4,16 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-cgr-data
+  cancel-in-progress: false
+
+jobs:
+  historical:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      BATCH_SIZE: ${{ github.event.inputs.batch_size || '120' }}
+      MAX_PAGES: ${{ github.event.inputs.max_pages || '80' }}
+      MAX_ARTICLES: ${{ github.event.inputs.max_articles || '1200' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Dependencias
+        run: pip install -r requirements.txt
+      - name: Pruebas
+        run: pytest -q
+      - name: Barrido historico acumulativo
+        env:
+          TZ: America/Santiago
+        run: python -m radar_cgr.history --batch-size "$BATCH_SIZE" --max-pages "$MAX_PAGES" --max-articles "$MAX_ARTICLES"
+      - name: Persistir cambios
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "radar-cgr-bot"
+          git config user.email "radar-cgr-bot@users.noreply.github.com"
+          git add data docs/data
+          if git diff --cached --quiet; then
+            echo "Sin cambios historicos"
+            exit 0
+          fi
+          git commit -m "radar: backfill historico $(date -u +'%Y-%m-%dT%H:%MZ')"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 5))
+          done
+          echo "No fue posible persistir el backfill tras 3 intentos"
+          exit 1
