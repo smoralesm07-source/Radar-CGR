@@ -12,22 +12,25 @@ class AMLAssessment:
     severity: str
     enforcement: list[str]
 
+# Las reglas priorizan señales explicables. No equiparan una observación CGR con LA/FT.
 RULES = [
-    ("COI", "CONFLICT_OF_INTEREST", 78, [r"conflicto de inter[eé]s", r"incompatibil", r"v[ií]nculo.*proveedor"]),
+    ("COI", "CONFLICT_OF_INTEREST", 78, [r"conflicto de inter[eé]s", r"incompatibil", r"inhabilidad", r"c[oó]nyuge.*(?:funcionari|contrat)", r"v[ií]nculo.*proveedor"]),
     ("FRA", "FRAUD_OR_MISAPPROPRIATION", 86, [r"fraude", r"malvers", r"desv[ií]o", r"falsific", r"servicios? no prestad", r"pagos? improcedent"]),
-    ("PUB", "TRANSFER_OR_PUBLIC_FUNDS", 64, [r"transferenc", r"fondos? p[uú]blic", r"rendici[oó]n", r"subvenci", r"beneficiar"]),
-    ("PROC", "PROCUREMENT", 66, [r"licitaci", r"trato directo", r"adjudic", r"proveedor", r"orden(?:es)? de compra"]),
+    ("PUB", "TRANSFER_OR_PUBLIC_FUNDS", 64, [r"transferenc", r"fondos? p[uú]blic", r"rendici[oó]n", r"subvenci", r"bonificaci", r"beneficiar"]),
+    ("PROC", "PROCUREMENT", 66, [r"licitaci", r"trato directo", r"adjudic", r"proveedor", r"orden(?:es)? de compra", r"contrataci[oó]n"]),
     ("FIN", "FINANCIAL_ANOMALY", 60, [r"diferencia.*contabl", r"saldo.*moros", r"deuda", r"sin respaldo", r"no contabiliz", r"ingresos por percibir"]),
     ("AST", "ASSET_INCONSISTENCY", 67, [r"bienes? inmuebles?", r"veh[ií]culos?", r"inventario", r"activo", r"predio"]),
     ("CTL", "CONTROL_WEAKNESS", 45, [r"falta de control", r"debilidad(?:es)? de control", r"supervisi[oó]n", r"mecanismos? de control"]),
     ("PER", "PERSONNEL_INTEGRITY", 55, [r"funcionari", r"honorarios", r"remuneraci", r"licencia m[eé]dica"]),
-    ("CRM", "CRIMINAL_CONTEXT", 92, [r"antecedentes penales", r"ministerio p[uú]blico", r"fiscal[ií]a", r"delito", r"marihuana", r"usurpaci[oó]n"]),
+    # No se usa "Fiscalía" a secas: CGR posee una Unidad de Seguimiento de Fiscalía,
+    # que no debe confundirse con una derivación al Ministerio Público.
+    ("CRM", "CRIMINAL_CONTEXT", 92, [r"antecedentes penales", r"ministerio p[uú]blico", r"fiscal regional(?: del ministerio p[uú]blico)?", r"pudieran? revestir.*car[aá]cter(?:es)? de delito", r"hechos?.*car[aá]cter(?:es)? de delito", r"marihuana", r"usurpaci[oó]n"]),
 ]
 
 ENFORCEMENT = {
-    "DISCIPLINARY": [r"procedimiento disciplinario", r"sumario"],
+    "DISCIPLINARY": [r"procedimiento disciplinario", r"sumario(?: administrativo)?"],
     "REPARO": [r"reparo"],
-    "CRIMINAL_REFERRAL": [r"ministerio p[uú]blico", r"fiscal[ií]a"],
+    "CRIMINAL_REFERRAL": [r"(?:remit|puesto|pondr[aá]|comunic).*ministerio p[uú]blico", r"ministerio p[uú]blico.*(?:conocimiento|fines)", r"remit.*fiscal regional(?: del ministerio p[uú]blico)?"],
     "CDE_REFERRAL": [r"consejo de defensa del estado", r"\bCDE\b"],
     "FOLLOW_UP": [r"sistema de seguimiento", r"plazo de 60 d[ií]as", r"plazo de 15 d[ií]as"],
 }
@@ -38,7 +41,7 @@ def assess(text: str, has_amount: bool = False) -> AMLAssessment:
     best = ("GEN", "CONTROL_OR_COMPLIANCE", 30)
     matched_count = 0
     for code, family, base, patterns in RULES:
-        local_matches = sum(bool(re.search(p, lower, re.I)) for p in patterns)
+        local_matches = sum(bool(re.search(p, lower, re.I | re.S)) for p in patterns)
         if local_matches:
             matched_count += local_matches
             candidate = min(100, base + (local_matches - 1) * 4)
@@ -48,7 +51,7 @@ def assess(text: str, has_amount: bool = False) -> AMLAssessment:
     score = best[2]
     enforcement: list[str] = []
     for label, patterns in ENFORCEMENT.items():
-        if any(re.search(p, text or "", re.I) for p in patterns):
+        if any(re.search(p, text or "", re.I | re.S) for p in patterns):
             enforcement.append(label)
 
     if has_amount:
