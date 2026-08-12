@@ -30,7 +30,7 @@ def build_dashboard()->dict:
     enriched_findings=[]
     for e in enrichment:
         f=finding_by_id.get(e.get("finding_id"),{}); oid=e.get("organization_id",""); region=e.get("region") or "Sin región"
-        merged=dict(f); merged.update({k:v for k,v in e.items() if k not in {"finding_id","document_id","event_id"}}); merged["hypothesis_details"]=sorted(hyp_by_f.get(e.get("finding_id","")),key=lambda x:x.get("score",0),reverse=True)
+        merged=dict(f); merged.update({k:v for k,v in e.items() if k not in {"finding_id","document_id","event_id"}}); merged["hypothesis_details"]=sorted(hyp_by_f.get(e.get("finding_id",""),[]),key=lambda x:x.get("score",0),reverse=True)
         merged["priority_score"]=max(int(e.get("cgr_score") or 0),int(e.get("penal_score") or 0),int(e.get("aml_score") or 0)); enriched_findings.append(merged)
         if oid:
             s=org_stats[oid]; s["documents"].add(e.get("document_id")); s["findings"]+=1; s["providers"].update(e.get("provider_ids") or []); s["amount"]+=_amount(e.get("amount_clp")); s["cgr_max"]=max(s["cgr_max"],int(e.get("cgr_score") or 0)); s["penal_max"]=max(s["penal_max"],int(e.get("penal_score") or 0)); s["aml_max"]=max(s["aml_max"],int(e.get("aml_score") or 0)); s["penal_high"]+=e.get("penal_relevance")=="HIGH"; s["disciplinary"]+=bool(e.get("disciplinary")); s["reparos"]+=bool(e.get("reparo")); s["criminal_referrals"]+=bool(e.get("criminal_referral")); s["cde_referrals"]+=bool(e.get("cde_referral")); s["irregularities"].update(e.get("irregularity_labels") or []); s["sources"].add(e.get("source_url",""))
