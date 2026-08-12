@@ -32,7 +32,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: radar-cgr-data
+  group: radar-cgr-write-v2
   cancel-in-progress: false
 
 jobs:
