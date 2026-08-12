@@ -1,6 +1,6 @@
 {
   "sources": [
-    {"id":"cgr_noticias","name":"Noticias CGR","url":"https://www.contraloria.cl/web/cgr/noticias","collector":"news_index","enabled":true,"max_items":50,"priority":1,"notes":"Fuente de descubrimiento temprano de auditorias, CIC y medidas CGR."},
+    {"id":"cgr_noticias","name":"Noticias CGR","url":"https://mantencion.contraloria.cl/cgr/web/cgr/noticias/index.html","collector":"news_index","enabled":true,"max_items":200,"priority":1,"notes":"Archivo oficial CGR accesible sin el bucle de redireccion del landing www; fuente de descubrimiento temprano de auditorias, CIC y medidas CGR."},
     {"id":"cgr_auditorias","name":"Informes de Auditoria","url":"https://www.contraloria.cl/web/cgr/informes-de-auditoria","collector":"page_discovery","enabled":true,"max_items":80,"priority":1,"notes":"Landing oficial del buscador de informes de auditoria."},
     {"id":"cgr_fiscalizaciones","name":"Fiscalizaciones en curso","url":"https://www.contraloria.cl/web/cgr/fiscalizaciones-en-curso","collector":"page_discovery","enabled":true,"max_items":80,"priority":1,"notes":"Watchlist de fiscalizaciones aun no concluidas."},
     {"id":"cgr_fau","name":"Alertas de Posibles Fraudes (FAU)","url":"https://www.contraloria.cl/web/cgr/alerta-posibles-fraudes","collector":"page_discovery","enabled":true,"max_items":100,"priority":1,"notes":"Taxonomia institucional de tipologias de fraude."},
