@@ -7,7 +7,7 @@ on:
       - "docs/**"
       - ".github/workflows/pages.yml"
   workflow_run:
-    workflows: ["Radar CGR - recoleccion"]
+    workflows: ["Radar CGR - recoleccion", "Radar CGR - barrido historico"]
     types: [completed]
   workflow_dispatch:
 
