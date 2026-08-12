@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import time
 from datetime import datetime, timezone
 
 from .collectors import HTTPClient, collect_news_articles, collect_page
@@ -35,6 +36,8 @@ def run(source_filter:str|None=None,skip_network:bool=False)->dict:
                 html=client.get(url).text; parsed=parse_audit_detail(html,url); i,u=upsert_jsonl("documents",[parsed.document.to_dict()],"document_id"); totals["new_documents"]+=i; totals["updated_documents"]+=u; upsert_jsonl("events",[parsed.event.to_dict()],"event_id"); i,_=upsert_jsonl("findings",[x.to_dict() for x in parsed.findings],"finding_id"); totals["new_findings"]+=i; upsert_jsonl("evidence",[x.to_dict() for x in parsed.evidence],"evidence_id"); upsert_jsonl("entities",[x.to_dict() for x in parsed.entities],"entity_id")
             except Exception as exc:
                 totals["errors"]+=1; source_run_rows.append({"run_id":stable_id("RUN","audit_detail",url,started),"source_id":"audit_detail","source_name":"Ficha de auditoria CGR","source_url":url,"started_at":started,"finished_at":iso_now(),"status":"ERROR","error":f"{type(exc).__name__}: {exc}"})
+            finally:
+                time.sleep(0.2)
     if source_run_rows: upsert_jsonl("source_runs",source_run_rows,"run_id")
     parquet=export_parquet(); dashboard=build_dashboard(); return {"started_at":started,"totals":totals,"parquet":parquet,"dashboard_kpis":dashboard["kpis"]}
 
