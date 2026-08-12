@@ -5,6 +5,8 @@ from .storage import read_jsonl,replace_jsonl,table_path
 from .utils import normalize_ws
 MONTHS={"enero":1,"febrero":2,"marzo":3,"abril":4,"mayo":5,"junio":6,"julio":7,"agosto":8,"septiembre":9,"setiembre":9,"octubre":10,"noviembre":11,"diciembre":12}
 MONTH_RE="|".join(MONTHS); DATE_TEXT=rf"(\d{{1,2}})\s+de\s+({MONTH_RE})(?:\s+de\s+(\d{{4}}))?"
+NORMATIVE_WORDS=("ley","decreto ley","decreto con fuerza de ley","resolución","resolucion","dictamen","artículo","articulo","reglamento")
+FUTURE_WORDS=("programado","programada","programó","programo","deberá","debera","plazo","fecha prevista","término previsto","termino previsto","compromete","comprometió","comprometio")
 def _iso(y,m,d):
     try:return date(int(y),int(m),int(d)).isoformat()
     except Exception:return ""
@@ -17,57 +19,66 @@ def normalize_document_date(value):
         if m:return _iso(m.group(1),m.group(2),m.group(3)) if ymd else _iso(m.group(3),m.group(2),m.group(1))
     return ""
 def _result(start,end,precision,basis,confidence): return {"occurrence_date_from":start,"occurrence_date_to":end,"occurrence_date_anchor":end or start,"occurrence_date_precision":precision,"occurrence_date_basis":normalize_ws(basis)[:220],"occurrence_date_confidence":round(float(confidence),2)}
+def _context(t,start,end,radius=85):return t[max(0,start-radius):min(len(t),end+radius)].lower()
+def _is_normative_context(context):return any(w in context for w in NORMATIVE_WORDS)
+def _is_future_action_context(context):return any(w in context for w in FUTURE_WORDS)
 def infer_from_text(text,basis_prefix="FINDING_TEXT"):
     t=normalize_ws(text or "")
     if not t:return None
     m=re.search(rf"(?:per[ií]odo\s+comprendido\s+)?(?:entre|desde)\s+(?:el\s+)?{DATE_TEXT}\s+(?:y|hasta)\s+(?:el\s+)?{DATE_TEXT}",t,re.I)
     if m:
         d1,mo1,y1,d2,mo2,y2=m.groups();y1=y1 or y2
-        if y1 and y2:
+        if y1 and y2 and not _is_normative_context(_context(t,m.start(),m.end())):
             start=_iso(y1,MONTHS[mo1.lower()],d1);end=_iso(y2,MONTHS[mo2.lower()],d2)
             if start and end:return _result(start,end,"RANGE",f"{basis_prefix}: {m.group(0)}",.95)
     m=re.search(r"(?:entre|desde)\s+(?:el\s+)?(\d{1,2})[/-](\d{1,2})[/-](\d{4})\s+(?:y|hasta)\s+(?:el\s+)?(\d{1,2})[/-](\d{1,2})[/-](\d{4})",t,re.I)
-    if m:
+    if m and not _is_normative_context(_context(t,m.start(),m.end())):
         start=_iso(m.group(3),m.group(2),m.group(1));end=_iso(m.group(6),m.group(5),m.group(4))
         if start and end:return _result(start,end,"RANGE",f"{basis_prefix}: {m.group(0)}",.95)
     m=re.search(r"(?:durante|entre|en)\s+(?:los\s+)?años?\s+(\d{4})\s+(?:y|a|hasta)\s+(\d{4})",t,re.I)
-    if m:
+    if m and not _is_normative_context(_context(t,m.start(),m.end())):
         start,_=_year_bounds(m.group(1));_,end=_year_bounds(m.group(2));return _result(start,end,"YEAR_RANGE",f"{basis_prefix}: {m.group(0)}",.86)
     m=re.search(r"(?:durante|en)\s+(?:el\s+)?año\s+(\d{4})",t,re.I)
-    if m:
+    if m and not _is_normative_context(_context(t,m.start(),m.end())):
         start,end=_year_bounds(m.group(1));return _result(start,end,"YEAR",f"{basis_prefix}: {m.group(0)}",.84)
     m=re.search(rf"(?:durante|en)\s+(?:el\s+mes\s+de\s+)?({MONTH_RE})\s+de\s+(\d{{4}})",t,re.I)
-    if m:
+    if m and not _is_normative_context(_context(t,m.start(),m.end())):
         start,end=_month_bounds(m.group(2),MONTHS[m.group(1).lower()]);return _result(start,end,"MONTH",f"{basis_prefix}: {m.group(0)}",.88)
     m=re.search(rf"\bal\s+{DATE_TEXT}",t,re.I)
     if m:
-        context=t[max(0,m.start()-70):min(len(t),m.end()+70)].lower();day,month,year=m.groups()
-        if year and "fecha de corte" not in context and "equival" not in context:
+        context=_context(t,m.start(),m.end());day,month,year=m.groups()
+        if year and "fecha de corte" not in context and "equival" not in context and not _is_normative_context(context) and not _is_future_action_context(context):
             exact=_iso(year,MONTHS[month.lower()],day)
             if exact:return _result(exact,exact,"AS_OF_DATE",f"{basis_prefix}: {m.group(0)}",.90)
-    # Fecha contenida en un acto administrativo que el propio hallazgo vuelve a identificar como el día de ocurrencia.
     m=re.search(rf"\bdecreto\b.{{0,100}}?\bde\s+{DATE_TEXT}",t,re.I)
     if m:
-        day,month,year=m.groups()
-        repeated=rf"\bd[ií]a\s+{re.escape(day)}\s+de\s+{re.escape(month)}\s+de\s+la\s+presente\s+anualidad"
+        day,month,year=m.groups();repeated=rf"\bd[ií]a\s+{re.escape(day)}\s+de\s+{re.escape(month)}\s+de\s+la\s+presente\s+anualidad"
         if year and re.search(repeated,t,re.I):
             exact=_iso(year,MONTHS[month.lower()],day)
             if exact:return _result(exact,exact,"EXACT",f"{basis_prefix}: fecha del acto coincidente con día del hecho ({day} de {month} de {year})",.94)
     m=re.search(rf"(?:el\s+d[ií]a|del\s+d[ií]a|con\s+fecha|el)\s+{DATE_TEXT}",t,re.I)
     if m:
-        context=t[max(0,m.start()-50):min(len(t),m.end()+50)].lower();day,month,year=m.groups()
-        if year and not re.search(r"\b(?:ley|decreto|resoluci[oó]n|dictamen|oficio)\b",context):
+        context=_context(t,m.start(),m.end());day,month,year=m.groups()
+        if year and not _is_normative_context(context) and not _is_future_action_context(context):
             exact=_iso(year,MONTHS[month.lower()],day)
             if exact:return _result(exact,exact,"EXACT",f"{basis_prefix}: {m.group(0)}",.96)
     m=re.search(r"(?:el\s+d[ií]a|del\s+d[ií]a|con\s+fecha|el)\s+(\d{1,2})[/-](\d{1,2})[/-](\d{4})",t,re.I)
     if m:
-        exact=_iso(m.group(3),m.group(2),m.group(1))
-        if exact:return _result(exact,exact,"EXACT",f"{basis_prefix}: {m.group(0)}",.96)
+        context=_context(t,m.start(),m.end())
+        if not _is_normative_context(context) and not _is_future_action_context(context):
+            exact=_iso(m.group(3),m.group(2),m.group(1))
+            if exact:return _result(exact,exact,"EXACT",f"{basis_prefix}: {m.group(0)}",.96)
     return None
+def _not_after_document(result,document_date):
+    doc=normalize_document_date(document_date)
+    if not result or not doc:return result
+    start=result.get("occurrence_date_from","")
+    if start and start>doc:return None
+    return result
 def infer_occurrence_interval(finding_text,audit_objective="",document_date=""):
-    direct=infer_from_text(finding_text,"FINDING_TEXT")
+    direct=_not_after_document(infer_from_text(finding_text,"FINDING_TEXT"),document_date)
     if direct:return direct
-    inherited=infer_from_text(audit_objective,"AUDIT_OBJECTIVE")
+    inherited=_not_after_document(infer_from_text(audit_objective,"AUDIT_OBJECTIVE"),document_date)
     if inherited:
         inherited["occurrence_date_precision"]="AUDIT_"+inherited["occurrence_date_precision"];inherited["occurrence_date_confidence"]=round(min(inherited["occurrence_date_confidence"],.68),2);return inherited
     return _result("","","UNKNOWN","NO_TEMPORAL_EVIDENCE",0.0)

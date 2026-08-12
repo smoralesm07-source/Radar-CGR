@@ -49,5 +49,21 @@ def test_decree_date_repeated_as_day_of_fact_is_occurrence():
     assert x["occurrence_date_confidence"]>=0.9
 
 
+def test_future_compliance_date_is_not_occurrence():
+    text="El servicio deberá informar el resultado del estudio, cuyo término está programado para el 10 de septiembre de 2026."
+    x=infer_occurrence_interval(text,"","17-06-2026")
+    assert x["occurrence_date_precision"]=="UNKNOWN"
+
+
+def test_date_after_document_is_rejected_even_without_future_word():
+    x=infer_occurrence_interval("El día 10 de septiembre de 2026 se efectuará la revisión.","","17-06-2026")
+    assert x["occurrence_date_precision"]=="UNKNOWN"
+
+
+def test_normative_year_is_not_occurrence():
+    x=infer_occurrence_interval("La materia se regula en el año 1968 por una ley y un reglamento.")
+    assert x["occurrence_date_precision"]=="UNKNOWN"
+
+
 def test_normalize_document_date():
     assert normalize_document_date("29-05-2026")=="2026-05-29"

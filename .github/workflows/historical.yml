@@ -19,9 +19,13 @@ on:
     branches: [main]
     paths:
       - "radar_cgr/history.py"
+      - "radar_cgr/commoncrawl_discovery.py"
       - "radar_cgr/coverage.py"
+      - "radar_cgr/temporality.py"
       - "config/historical_sources.json"
       - "tests/test_history.py"
+      - "tests/test_commoncrawl.py"
+      - "tests/test_temporality.py"
       - ".github/workflows/historical.yml"
   schedule:
     - cron: "41 4,16 * * *"
@@ -55,6 +59,10 @@ jobs:
         run: pip install -r requirements.txt
       - name: Pruebas
         run: pytest -q
+      - name: Descubrir docIdcm historicos en Common Crawl
+        env:
+          TZ: America/Santiago
+        run: python -m radar_cgr.commoncrawl_discovery --min-year 2013 --max-year 2026 --max-pages-per-query 8 --page-size 5
       - name: Barrido historico acumulativo
         env:
           TZ: America/Santiago
