@@ -2,7 +2,7 @@
   "interop_version": "1.0",
   "radar_id": "RADAR_CGR",
   "repository": "smoralesm07-source/Radar-CGR",
-  "implementation_stage": "ADAPTER_PARTIAL",
+  "implementation_stage": "FUSION_EXPORT_READY_TERRITORY_PARTIAL",
   "record_domains": ["DOCUMENT","EVENT","FINDING","ENTITY","RELATIONSHIP","EVIDENCE"],
   "entity_hub": {
     "global_key": "ENT-RUT-{RUT_NORMALIZADO}",
@@ -13,13 +13,15 @@
     "local_ids_preserved": true,
     "adapter_module": "radar_cgr/interop.py",
     "materialized_path": "data/silver/entity_hub_v1.jsonl",
+    "canonical_entity_path": "data/silver/entities_fusion_v1.jsonl",
     "catalog_path": "docs/data/interop_catalog_v1.json"
   },
   "territory": {
     "region_key": "CL-REG-{CODIGO_REGION}",
     "commune_key": "CL-COM-{CODIGO_COMUNA}",
     "name_is_not_key": true,
-    "current_status": "ADAPTER_PENDING",
+    "current_status": "ADAPTER_PARTIAL",
+    "mapping_method": "VALIDATED_EXACT_REGION_ALIAS_ONLY",
     "unresolved_name_policy": "DO_NOT_PROMOTE_FREE_TEXT_TO_CANONICAL_KEY"
   },
   "sector": {
@@ -28,11 +30,19 @@
     "current_status": "REFERENCE_CONTRACT"
   },
   "temporal_evidence": {
-    "time_fields": ["observed_from","observed_to","source_published_at","retrieved_at","last_seen_at","last_successful_refresh_at"],
-    "evidence_fields": ["evidence_id","source_id","source_url","ultimate_source_id","source_tier","capture_method","source_run_id","content_sha256","quality_status","schema_version"],
+    "time_fields": ["valid_from","valid_to","source_published_at","observed_at","retrieved_at","ingested_at","last_seen_at"],
+    "evidence_fields": ["evidence_id","producer_id","source_id","source_url","ultimate_source_id","source_tier","capture_method","source_run_id","content_sha256","quality_status","schema_version"],
     "freshness_states": ["CURRENT","DUE","STALE","UNKNOWN"],
     "source_failure_is_zero": false,
-    "preserve_last_known_good": true
+    "preserve_last_known_good": true,
+    "current_status": "FUSION_EXPORT_READY",
+    "builder": "radar_cgr/fusion_export.py"
+  },
+  "relationships": {
+    "current_status": "FUSION_EXPORT_READY_WITH_GUARDRAIL",
+    "materialized_path": "data/silver/relationships_fusion_v1.jsonl",
+    "promotion_policy": "BOTH_ENDPOINTS_CANONICALLY_RESOLVED_AND_EVIDENCE_PRESENT",
+    "assertion_type": "DERIVED"
   },
   "scores": {
     "common_risk_score": false,
@@ -40,14 +50,15 @@
     "required_metadata": ["score_name","score_value","score_version","score_scope"]
   },
   "exports": [
-    {"path":"data/silver/entity_hub_v1.jsonl","purpose":"canonical entity interoperability view"},
-    {"path":"data/gold/entity_hub_v1.parquet","purpose":"columnar entity interoperability view"},
-    {"path":"docs/data/interop_catalog_v1.json","purpose":"machine-readable interoperability catalog"},
-    {"path":"data/","purpose":"pipeline data and source lineage"},
-    {"path":"docs/","purpose":"published/consumer outputs"}
+    {"path":"data/silver/entities_fusion_v1.jsonl","purpose":"Fusion Layer Entity objects"},
+    {"path":"data/silver/events_fusion_v1.jsonl","purpose":"Fusion Layer Event objects"},
+    {"path":"data/silver/relationships_fusion_v1.jsonl","purpose":"Fusion Layer Relationship objects with canonical endpoints"},
+    {"path":"data/silver/evidence_fusion_v1.jsonl","purpose":"Fusion Layer Evidence objects"},
+    {"path":"docs/data/fusion_interop_status_v1.json","purpose":"materialization and candidate status"}
   ],
   "consumer_contract": {
     "manifest_path": "interop/integration_manifest_v1.json",
-    "schema_path": "interop/interop_contract_v1.schema.json"
+    "schema_path": "interop/interop_contract_v1.schema.json",
+    "canonical_consumer": "smoralesm07-source/Intelligence_Fusion_Layer"
   }
 }
