@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T17:36:43+00:00",
+  "generated_at": "2026-08-13T17:54:14+00:00",
   "version": "0.3.5",
   "disclaimer": "Las señales son antecedentes OSINT para priorización analítica. Una observación CGR, una coincidencia FAU o una hipótesis de relevancia penal no acredita LA/FT, dolo ni responsabilidad penal individual. La fecha de ocurrencia distingue fecha exacta, intervalo y período auditado heredado; la fecha de publicación del informe no se usa como sustituto. La cobertura histórica se informa por separado y no se presume completa mientras existan brechas de descubrimiento o backfill.",
   "kpis": {
@@ -21843,7 +21843,7 @@
     ]
   },
   "historical_coverage": {
-    "generated_at": "2026-08-13T17:36:43+00:00",
+    "generated_at": "2026-08-13T17:54:14+00:00",
     "coverage_status": "DISCOVERY_QUEUE_EMPTY",
     "warning": "Una cola vacía no acredita por sí sola cobertura histórica completa: depende de la exhaustividad de los canales públicos de descubrimiento disponibles.",
     "audit_registry": {

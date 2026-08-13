@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T17:36:43+00:00",
+  "generated_at": "2026-08-13T17:54:14+00:00",
   "coverage_status": "DISCOVERY_QUEUE_EMPTY",
   "warning": "Una cola vacía no acredita por sí sola cobertura histórica completa: depende de la exhaustividad de los canales públicos de descubrimiento disponibles.",
   "audit_registry": {
