@@ -1,0 +1,14 @@
+{
+  "interop_version": "1.0",
+  "radar_id": "RADAR_CGR",
+  "status": "FUSION_EXPORT_READY_TERRITORY_PARTIAL",
+  "evidence": 494,
+  "entities": 0,
+  "events": 90,
+  "relationships": 0,
+  "unresolved_entity_candidates": 66,
+  "unpromoted_relationship_candidates": 67,
+  "events_with_canonical_region": 26,
+  "events_skipped_without_evidence": 0,
+  "source_failure_is_zero": false
+}
