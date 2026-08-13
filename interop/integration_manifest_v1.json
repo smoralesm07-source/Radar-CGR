@@ -2,21 +2,25 @@
   "interop_version": "1.0",
   "radar_id": "RADAR_CGR",
   "repository": "smoralesm07-source/Radar-CGR",
-  "implementation_stage": "CONTRACT_V1_INSTALLED",
+  "implementation_stage": "ADAPTER_PARTIAL",
   "record_domains": ["DOCUMENT","EVENT","FINDING","ENTITY","RELATIONSHIP","EVIDENCE"],
   "entity_hub": {
     "global_key": "ENT-RUT-{RUT_NORMALIZADO}",
     "valid_rut_required": true,
     "unresolved_policy": "ENTITY_ID_NULL_CANDIDATE_ONLY",
     "role_is_identity_independent": true,
-    "current_status": "ADAPTER_PENDING",
-    "local_ids_preserved": true
+    "current_status": "ADAPTER_READY",
+    "local_ids_preserved": true,
+    "adapter_module": "radar_cgr/interop.py",
+    "materialized_path": "data/silver/entity_hub_v1.jsonl",
+    "catalog_path": "docs/data/interop_catalog_v1.json"
   },
   "territory": {
     "region_key": "CL-REG-{CODIGO_REGION}",
     "commune_key": "CL-COM-{CODIGO_COMUNA}",
     "name_is_not_key": true,
-    "current_status": "ADAPTER_PENDING"
+    "current_status": "ADAPTER_PENDING",
+    "unresolved_name_policy": "DO_NOT_PROMOTE_FREE_TEXT_TO_CANONICAL_KEY"
   },
   "sector": {
     "mapping_statuses": ["VALIDATED_EXACT","VALIDATED_RULE","EMPIRICAL_CANDIDATE","AMBIGUOUS","NO_EQUIVALENCE"],
@@ -36,6 +40,9 @@
     "required_metadata": ["score_name","score_value","score_version","score_scope"]
   },
   "exports": [
+    {"path":"data/silver/entity_hub_v1.jsonl","purpose":"canonical entity interoperability view"},
+    {"path":"data/gold/entity_hub_v1.parquet","purpose":"columnar entity interoperability view"},
+    {"path":"docs/data/interop_catalog_v1.json","purpose":"machine-readable interoperability catalog"},
     {"path":"data/","purpose":"pipeline data and source lineage"},
     {"path":"docs/","purpose":"published/consumer outputs"}
   ],

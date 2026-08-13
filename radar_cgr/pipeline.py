@@ -10,6 +10,7 @@ from .enforcement import rebuild_enforcement_events
 from .extract import parse_audit_detail
 from .fau import rebuild_fau_matches
 from .intelligence import rebuild_intelligence
+from .interop import materialize_entity_hub
 from .models import Event,stable_id
 from .quality import apply_entity_quality_gate
 from .resolution import clean_entity_resolution
@@ -49,8 +50,8 @@ def run(source_filter=None,skip_network=False):
     if runs:upsert_jsonl("source_runs",runs,"run_id")
     if watch_candidates:merge_watch_candidates(watch_candidates)
     if tribunal_candidates:merge_tribunal_cases(tribunal_candidates)
-    temporality=backfill_finding_temporality();intelligence=rebuild_intelligence();resolution=clean_entity_resolution();quality=apply_entity_quality_gate();propagate_temporality_to_enrichment();watch=refresh_watch_matches();enforcement=rebuild_enforcement_events();tribunal=refresh_tribunal_reparo_candidates();fau=rebuild_fau_matches();parquet=export_parquet();dashboard=build_dashboard()
-    return {"started_at":started,"totals":totals,"semaforo":semaforo_result,"cic":cic_result,"temporality":temporality,"intelligence":intelligence,"resolution":resolution,"quality":quality,"watch":watch,"enforcement":enforcement,"tribunal":tribunal,"fau":fau,"parquet":parquet,"dashboard_kpis":dashboard["kpis"]}
+    temporality=backfill_finding_temporality();intelligence=rebuild_intelligence();resolution=clean_entity_resolution();quality=apply_entity_quality_gate();interop=materialize_entity_hub();propagate_temporality_to_enrichment();watch=refresh_watch_matches();enforcement=rebuild_enforcement_events();tribunal=refresh_tribunal_reparo_candidates();fau=rebuild_fau_matches();parquet=export_parquet();dashboard=build_dashboard()
+    return {"started_at":started,"totals":totals,"semaforo":semaforo_result,"cic":cic_result,"temporality":temporality,"intelligence":intelligence,"resolution":resolution,"quality":quality,"interop_entity_hub":interop,"watch":watch,"enforcement":enforcement,"tribunal":tribunal,"fau":fau,"parquet":parquet,"dashboard_kpis":dashboard["kpis"]}
 def main():
     p=argparse.ArgumentParser(description="Radar CGR - pipeline OSINT");p.add_argument("--source");p.add_argument("--skip-network",action="store_true");a=p.parse_args();import json;print(json.dumps(run(a.source,a.skip_network),ensure_ascii=False,indent=2))
 if __name__=="__main__":main()
