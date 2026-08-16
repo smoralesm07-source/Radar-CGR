@@ -2,6 +2,7 @@ from __future__ import annotations
 import re
 from typing import Any
 from .storage import read_jsonl,replace_jsonl,table_path
+from .territory import resolve as resolve_territory
 from .utils import normalize_name
 INTEROP_VERSION="1.0";RADAR_ID="RADAR_CGR"
 def _dv(body):
@@ -24,7 +25,11 @@ def _role(t):
     return "SOURCE_ENTITY"
 def adapt_entity(record:dict[str,Any]):
     rut=normalize_rut(record.get("rut"));eid=global_entity_id(rut);source=str(record.get("entity_id") or "");name=str(record.get("name") or "");resolved=bool(eid)
-    return {"interop_version":INTEROP_VERSION,"radar_id":RADAR_ID,"entity_id":eid,"source_entity_id":source or None,"candidate_entity_id":None if resolved else (source or None),"entity_type":record.get("entity_type") or "SOURCE_ENTITY","entity_role":_role(record.get("entity_type")),"rut":rut,"rut_valid":resolved,"canonical_name":name,"normalized_name":record.get("normalized_name") or normalize_name(name),"identity_status":"RESOLVED" if resolved else "UNRESOLVED","identity_method":"RUT_EXACT" if resolved else "SOURCE_LOCAL_ONLY","identity_confidence":1.0 if resolved else 0.0,"candidate_confidence":None if resolved else float(record.get("confidence") or 0.0),"source_document_id":record.get("source_document_id") or "","region_name":record.get("region") or "","territory_id":None,"territory_mapping_status":"UNRESOLVED_NAME_ONLY" if record.get("region") else "UNKNOWN"}
+    return {"interop_version":INTEROP_VERSION,"radar_id":RADAR_ID,"entity_id":eid,"source_entity_id":source or None,"candidate_entity_id":None if resolved else (source or None),"entity_type":record.get("entity_type") or "SOURCE_ENTITY","entity_role":_role(record.get("entity_type")),"rut":rut,"rut_valid":resolved,"canonical_name":name,"normalized_name":record.get("normalized_name") or normalize_name(name),"identity_status":"RESOLVED" if resolved else "UNRESOLVED","identity_method":"RUT_EXACT" if resolved else "SOURCE_LOCAL_ONLY","identity_confidence":1.0 if resolved else 0.0,"candidate_confidence":None if resolved else float(record.get("confidence") or 0.0),"source_document_id":record.get("source_document_id") or "","region_name":record.get("region") or "",**_territory_fields(record.get("region"))}
+def _territory_fields(region):
+    """Resuelve la región contra el índice canónico en vez de dejarla sin clave."""
+    tid,status=resolve_territory(region,"REGION")
+    return {"territory_id":tid,"territory_mapping_status":status}
 def materialize_entity_hub():
     rows=[adapt_entity(x) for x in read_jsonl(table_path("entities")) if x.get("entity_id")]
     i,u,d=replace_jsonl("entity_hub_v1",rows,"source_entity_id")

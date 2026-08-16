@@ -10,13 +10,7 @@ from typing import Any, Iterable
 RADAR_ID = "RADAR_CGR"
 VERSION = "1.0"
 
-REGION_ALIASES = {
-    "TARAPACA": "01", "ANTOFAGASTA": "02", "ATACAMA": "03", "COQUIMBO": "04",
-    "VALPARAISO": "05", "LIBERTADOR GENERAL BERNARDO OHIGGINS": "06", "OHIGGINS": "06",
-    "MAULE": "07", "BIOBIO": "08", "LA ARAUCANIA": "09", "ARAUCANIA": "09",
-    "LOS LAGOS": "10", "AYSEN": "11", "MAGALLANES": "12", "METROPOLITANA DE SANTIAGO": "13",
-    "METROPOLITANA": "13", "LOS RIOS": "14", "ARICA Y PARINACOTA": "15", "NUBLE": "16",
-}
+from .territory import territory_id as _resolve_territory
 
 
 def _rows(path: Path) -> list[dict[str, Any]]:
@@ -57,10 +51,8 @@ def _norm(value: object) -> str:
 
 
 def _territory(region: object) -> str | None:
-    name = _norm(region)
-    name = re.sub(r"^REGION (?:DE |DEL |DE LA )?", "", name).strip()
-    code = REGION_ALIASES.get(name)
-    return f"CL-REG-{code}" if code else None
+    """Resuelve la glosa regional contra el índice canónico del Context Hub."""
+    return _resolve_territory(region, "REGION")
 
 
 def _direct_evidence_id(seed: str) -> str:

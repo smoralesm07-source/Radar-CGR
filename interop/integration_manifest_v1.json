@@ -3,7 +3,14 @@
   "radar_id": "RADAR_CGR",
   "repository": "smoralesm07-source/Radar-CGR",
   "implementation_stage": "FUSION_EXPORT_READY_TERRITORY_PARTIAL",
-  "record_domains": ["DOCUMENT","EVENT","FINDING","ENTITY","RELATIONSHIP","EVIDENCE"],
+  "record_domains": [
+    "DOCUMENT",
+    "EVENT",
+    "FINDING",
+    "ENTITY",
+    "RELATIONSHIP",
+    "EVIDENCE"
+  ],
   "entity_hub": {
     "global_key": "ENT-RUT-{RUT_NORMALIZADO}",
     "valid_rut_required": true,
@@ -20,19 +27,70 @@
     "region_key": "CL-REG-{CODIGO_REGION}",
     "commune_key": "CL-COM-{CODIGO_COMUNA}",
     "name_is_not_key": true,
-    "current_status": "ADAPTER_PARTIAL",
-    "mapping_method": "VALIDATED_EXACT_REGION_ALIAS_ONLY",
-    "unresolved_name_policy": "DO_NOT_PROMOTE_FREE_TEXT_TO_CANONICAL_KEY"
+    "current_status": "ADAPTER_READY",
+    "granularity": "REGION_ONLY",
+    "granularity_note": "La glosa territorial de origen en CGR es regional; no hay comuna en la fuente.",
+    "mapping_method": "EXACT_MATCH_ON_NORMALIZED_KEY",
+    "canonical_source": "CONTEXT_HUB_TERRITORY_RESOLUTION_INDEX_V1",
+    "resolver_module": "radar_cgr/territory.py",
+    "vendored_index": "config/territory_resolution_index_v1.json",
+    "unresolved_name_policy": "DO_NOT_PROMOTE_FREE_TEXT_TO_CANONICAL_KEY",
+    "unresolved_status_values": [
+      "UNRESOLVED_NAME_ONLY",
+      "NOT_A_PLACE_NAME",
+      "UNKNOWN"
+    ],
+    "measured": {
+      "as_of": "2026-08-16",
+      "scope": "data/gold organizations+events+providers",
+      "distinct_glosses": 24,
+      "distinct_resolved": 22,
+      "rows_with_region": 73,
+      "rows_resolved": 71,
+      "row_resolution_pct": 97.3,
+      "unresolved_are_extraction_artifacts": true
+    }
   },
   "sector": {
-    "mapping_statuses": ["VALIDATED_EXACT","VALIDATED_RULE","EMPIRICAL_CANDIDATE","AMBIGUOUS","NO_EQUIVALENCE"],
+    "mapping_statuses": [
+      "VALIDATED_EXACT",
+      "VALIDATED_RULE",
+      "EMPIRICAL_CANDIDATE",
+      "AMBIGUOUS",
+      "NO_EQUIVALENCE"
+    ],
     "legal_caution": "SII_ACTIVITY_DOES_NOT_PROVE_UAF_OBLIGED_STATUS",
     "current_status": "REFERENCE_CONTRACT"
   },
   "temporal_evidence": {
-    "time_fields": ["valid_from","valid_to","source_published_at","observed_at","retrieved_at","ingested_at","last_seen_at"],
-    "evidence_fields": ["evidence_id","producer_id","source_id","source_url","ultimate_source_id","source_tier","capture_method","source_run_id","content_sha256","quality_status","schema_version"],
-    "freshness_states": ["CURRENT","DUE","STALE","UNKNOWN"],
+    "time_fields": [
+      "valid_from",
+      "valid_to",
+      "source_published_at",
+      "observed_at",
+      "retrieved_at",
+      "ingested_at",
+      "last_seen_at"
+    ],
+    "evidence_fields": [
+      "evidence_id",
+      "producer_id",
+      "source_id",
+      "source_url",
+      "ultimate_source_id",
+      "source_tier",
+      "capture_method",
+      "source_run_id",
+      "content_sha256",
+      "quality_status",
+      "schema_version"
+    ],
+    "freshness_states": [
+      "CURRENT",
+      "DUE",
+      "STALE",
+      "UNKNOWN"
+    ],
     "source_failure_is_zero": false,
     "preserve_last_known_good": true,
     "current_status": "FUSION_EXPORT_READY",
@@ -47,14 +105,34 @@
   "scores": {
     "common_risk_score": false,
     "policy": "RADAR_SPECIFIC_ONLY",
-    "required_metadata": ["score_name","score_value","score_version","score_scope"]
+    "required_metadata": [
+      "score_name",
+      "score_value",
+      "score_version",
+      "score_scope"
+    ]
   },
   "exports": [
-    {"path":"data/silver/entities_fusion_v1.jsonl","purpose":"Fusion Layer Entity objects"},
-    {"path":"data/silver/events_fusion_v1.jsonl","purpose":"Fusion Layer Event objects"},
-    {"path":"data/silver/relationships_fusion_v1.jsonl","purpose":"Fusion Layer Relationship objects with canonical endpoints"},
-    {"path":"data/silver/evidence_fusion_v1.jsonl","purpose":"Fusion Layer Evidence objects"},
-    {"path":"docs/data/fusion_interop_status_v1.json","purpose":"materialization and candidate status"}
+    {
+      "path": "data/silver/entities_fusion_v1.jsonl",
+      "purpose": "Fusion Layer Entity objects"
+    },
+    {
+      "path": "data/silver/events_fusion_v1.jsonl",
+      "purpose": "Fusion Layer Event objects"
+    },
+    {
+      "path": "data/silver/relationships_fusion_v1.jsonl",
+      "purpose": "Fusion Layer Relationship objects with canonical endpoints"
+    },
+    {
+      "path": "data/silver/evidence_fusion_v1.jsonl",
+      "purpose": "Fusion Layer Evidence objects"
+    },
+    {
+      "path": "docs/data/fusion_interop_status_v1.json",
+      "purpose": "materialization and candidate status"
+    }
   ],
   "consumer_contract": {
     "manifest_path": "interop/integration_manifest_v1.json",
