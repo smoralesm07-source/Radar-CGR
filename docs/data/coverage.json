@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T05:19:49+00:00",
+  "generated_at": "2026-08-17T17:00:30+00:00",
   "coverage_status": "DISCOVERY_QUEUE_EMPTY",
   "warning": "Una cola vacía no acredita por sí sola cobertura histórica completa: depende de la exhaustividad de los canales públicos de descubrimiento disponibles.",
   "audit_registry": {
@@ -183,42 +183,42 @@
   "source_latest": {
     "cgr_noticias": {
       "status": "ERROR",
-      "finished_at": "2026-08-16T22:38:33+00:00",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='mantencion.contraloria.cl', port=443): Max retries exceeded with url: /cgr/web/cgr/noticias/index.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mantencion.contraloria.cl', port=443) at 0x7f6e4e5c9ee0>, 'Connection to mantencion.contraloria.cl timed out. (connect timeout=35)'))"
+      "finished_at": "2026-08-17T10:50:40+00:00",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='mantencion.contraloria.cl', port=443): Max retries exceeded with url: /cgr/web/cgr/noticias/index.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mantencion.contraloria.cl', port=443) at 0x7f1ffdb59d30>, 'Connection to mantencion.contraloria.cl timed out. (connect timeout=35)'))"
     },
     "cgr_auditorias": {
       "status": "OK",
-      "finished_at": "2026-08-16T22:38:34+00:00",
+      "finished_at": "2026-08-17T10:50:41+00:00",
       "error": ""
     },
     "cgr_fiscalizaciones": {
       "status": "OK",
-      "finished_at": "2026-08-16T22:38:37+00:00",
+      "finished_at": "2026-08-17T10:50:49+00:00",
       "error": ""
     },
     "cgr_fau": {
       "status": "OK",
-      "finished_at": "2026-08-16T22:38:39+00:00",
+      "finished_at": "2026-08-17T10:50:55+00:00",
       "error": ""
     },
     "cgr_tribunal_cuentas": {
       "status": "OK",
-      "finished_at": "2026-08-16T22:38:39+00:00",
+      "finished_at": "2026-08-17T10:50:56+00:00",
       "error": ""
     },
     "cgr_fundaciones": {
       "status": "OK",
-      "finished_at": "2026-08-16T22:38:39+00:00",
+      "finished_at": "2026-08-17T10:50:56+00:00",
       "error": ""
     },
     "cgr_datos_municipales": {
       "status": "OK",
-      "finished_at": "2026-08-16T22:38:46+00:00",
+      "finished_at": "2026-08-17T10:51:05+00:00",
       "error": ""
     },
     "cgr_semaforo": {
       "status": "OK",
-      "finished_at": "2026-08-16T22:38:45+00:00",
+      "finished_at": "2026-08-17T10:51:04+00:00",
       "error": ""
     },
     "audit_detail": {
@@ -228,7 +228,7 @@
     },
     "cgr_reportes_financieros": {
       "status": "OK",
-      "finished_at": "2026-08-16T22:38:46+00:00",
+      "finished_at": "2026-08-17T10:51:05+00:00",
       "error": ""
     }
   },
