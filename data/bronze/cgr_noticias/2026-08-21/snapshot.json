@@ -2,11 +2,11 @@
   "source_id": "cgr_noticias",
   "source_url": "https://mantencion.contraloria.cl/cgr/web/cgr/noticias/index.html",
   "status_code": null,
-  "fetched_at": "2026-08-21T10:47:30+00:00",
+  "fetched_at": "2026-08-21T22:41:29+00:00",
   "content_hash": "",
   "title": "",
   "text_excerpt": "",
   "links": [],
   "audit_links": [],
-  "error": "ConnectTimeout: HTTPSConnectionPool(host='mantencion.contraloria.cl', port=443): Max retries exceeded with url: /cgr/web/cgr/noticias/index.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mantencion.contraloria.cl', port=443) at 0x7fd3d7991e20>, 'Connection to mantencion.contraloria.cl timed out. (connect timeout=35)'))"
+  "error": "ConnectTimeout: HTTPSConnectionPool(host='mantencion.contraloria.cl', port=443): Max retries exceeded with url: /cgr/web/cgr/noticias/index.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mantencion.contraloria.cl', port=443) at 0x7fe54e769ee0>, 'Connection to mantencion.contraloria.cl timed out. (connect timeout=35)'))"
 }
