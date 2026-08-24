@@ -1,0 +1,33 @@
+{
+  "source_id": "cgr_tribunal_cuentas",
+  "source_url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+  "status_code": 200,
+  "fetched_at": "2026-08-24T10:55:48+00:00",
+  "content_hash": "b36be870b3d6c5d54aadc11af256e506c482cecee304bccda6f85961eccc771f",
+  "title": "www.contraloria.cl",
+  "text_excerpt": "www.contraloria.cl Acceder Sistema de Tramitación y Seguimiento de Juicios de Cuentas Toggle navigation Tabla de causas 2da Estado Diario Búsqueda por Juicios Mantención de Sistema Informamos que hoy se realizará una actualización del sistema, motivo por el cual el sistema estará en mantención a partir de las 18:00 hrs. por un lapso aproximado de 10 minutos. Inicio Busqueda de estado diario Búsqueda por Estado Diario Rol / Tribunal Juzgado de Cuentas Tribunal de Cuentas de Segunda Instancia Fecha estado diario Borrar Búsqueda por rango de fechas Buscar Limpiar Resultados 0 resultados - pag 1/1 p p p p Fecha Rol Nº Resolución Nº Resolución Demandante Cuentadantes o Demandados Cuentadantes o Demandados No se han encontrado resultados 0 resultados - pag 1/1 p p p p Detalle del Expediente Datos Generales Tribunal: Servicio: Unidad Origen: Informe Final: Informe de Auditoria: Descargar Trámites asociados al expediente de Juzgado de Cuentas Foja Nº Doc. Año Tipo de Documento Tramite No se han encontrado resultados 0 resultados - pag 1/1 p p p p Cerrar Expediente ¿Necesitas ayuda? mesa de ayuda CTIC 2026 - Contraloría General de la República de Chile - v1.0.0",
+  "links": [
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/loginClave",
+      "text": "Acceder"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/tablaCausa2da",
+      "text": "Tabla de causas 2da"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+      "text": "Estado Diario"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaJuicios",
+      "text": "Búsqueda por Juicios"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio",
+      "text": "Inicio"
+    }
+  ],
+  "audit_links": [],
+  "error": ""
+}
