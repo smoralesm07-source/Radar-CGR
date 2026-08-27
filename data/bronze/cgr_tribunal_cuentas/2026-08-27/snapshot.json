@@ -1,0 +1,33 @@
+{
+  "source_id": "cgr_tribunal_cuentas",
+  "source_url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+  "status_code": 200,
+  "fetched_at": "2026-08-27T03:20:31+00:00",
+  "content_hash": "e0f777dce0f17c71a857355c62607ee4bbf043ac9a12a8cd4bacd9e22ea060e3",
+  "title": "www.contraloria.cl",
+  "text_excerpt": "www.contraloria.cl Acceder Sistema de Tramitación y Seguimiento de Juicios de Cuentas Toggle navigation Tabla de causas 2da Estado Diario Búsqueda por Juicios Mantención de Sistema A los usuarios externos de Contraloría: Se informa que el Sistema de Tramitación y Seguimiento del Juicio de Cuentas no estará disponible desde el 28 hasta el 31 de agosto de 2026, ambas fechas inclusive, debido a trabajos de actualización de la plataforma. Durante este período, las presentaciones y escritos podrán remitirse al correo electrónico de primera instancia escritosjuzgadodecuentas@contraloria.cl o al correo electrónico de segunda instancia segundainstancia@contraloria.cl según corresponda. Agradecemos su comprensión y les recomendamos considerar esta interrupción temporal al planificar sus gestiones. Inicio Busqueda de estado diario Búsqueda por Estado Diario Rol / Tribunal Juzgado de Cuentas Tribunal de Cuentas de Segunda Instancia Fecha estado diario Borrar Búsqueda por rango de fechas Buscar Limpiar Resultados 13 resultados - pag 1/2 p p 1 2 p p Fecha Rol Nº Resolución Nº Resolución Demandante Cuentadantes o Demandados Cuentadantes o Demandados 25/08/2026 79/2026 RES. Nº 91241 RES. Nº 91241 División de Fiscalización ÁGUILA AVILÉS, AGUIRRE ROJAS, ARÉVALO CUNICH, FIGUEROA SANDOVAL Y OTROS ÁGUILA AVILÉS, AGUIRRE ROJAS, ARÉVALO CUNICH, FIGUEROA SANDOVAL, GONZALEZ QUIROZ, MONTEALEGRE NOVOA, POBLETE CERDA, RODRÍGUEZ ASPILLAGA, SALGADO MONDACA, SEPÚLVEDA CASTRO, VIERA-GALLO QUESNEY 25/08/2026 36/2026 RES. Nº 91251 RES. Nº 91251 Contraloría Regional de Ñuble FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME Y OTROS FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME, SCHUFFENEGER SALAS, VICTORIANO NEIRA, VILLANUEVA GARRIDO, YEVENES RIFFO, ZAPATA VERA 25/08/2026 36/2026 RES. Nº 91252 RES. Nº 91252 Contraloría Regional de Ñuble FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME Y OTROS FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME, SCHUFFENEGER SALAS, VICTORIANO NEIRA, VILLANUEVA GARRIDO, YEVENES RIFFO, ZAPATA VERA 25/08/2026 36/2026 RES. Nº 91249 RES. Nº 91249 Contraloría Regional de Ñuble FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME Y OTROS FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME, SCHUFFENEGER SALAS, VICTORIANO NEIRA, VILLANUEVA GARRIDO, YEVENES RIFFO, ZAPATA VERA 25/08/2026 36/2026 RES. Nº 91250 RES. Nº 91250 Contraloría Regional de Ñuble FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME Y OTROS FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME, SCHUFFENEGER SALAS, VICTORIANO NEIRA, VILLANUEVA GARRIDO, YEVENES RIFFO, ZAPATA VERA 25/08/2026 36/2026 RES. Nº 91253 RES. Nº 91253 Contraloría Regional de Ñuble FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS RIQUELME Y OTROS FIGUEROA LLANOS, HERNANDEZ ARRIAGADA, MARTINEZ SAN MARTIN, SANTOS",
+  "links": [
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/loginClave",
+      "text": "Acceder"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/tablaCausa2da",
+      "text": "Tabla de causas 2da"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+      "text": "Estado Diario"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaJuicios",
+      "text": "Búsqueda por Juicios"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio",
+      "text": "Inicio"
+    }
+  ],
+  "audit_links": [],
+  "error": ""
+}

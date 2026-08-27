@@ -1,0 +1,413 @@
+{
+  "source_id": "cgr_fau",
+  "source_url": "https://www.contraloria.cl/web/cgr/alerta-posibles-fraudes",
+  "status_code": 200,
+  "fetched_at": "2026-08-27T03:20:30+00:00",
+  "content_hash": "ba9c6752bedfbed50242f6c6073a2dd09b06d19977a43a2988dad40767c942bf",
+  "title": "Alerta de posibles fraudes - www.contraloria.cl",
+  "text_excerpt": "Alerta de posibles fraudes - www.contraloria.cl EN A Link de interés Sobre nosotros Sobre nosotros Qué Hacemos Contralora General Definiciones Estratégicas Organigrama Sedes regionales Cuenta Pública Sistema de Integridad Preguntas frecuentes Ley de Transparencia Agendas Solicitar Información Estructura Orgánica Información Presupuestaria Funciones y Atribuciones Marco Normativo Dotación de Personal Dotación en Teletrabajo Contrataciones Actos y Resoluciones Trámites y Requisitos Vínculos Institucionales Declaración de Intereses y Patrimonio Estadísticas Ley de Lobby Documentos de interés Nuestro trabajo Nuestro trabajo Función de Fiscalización Ámbito de la Función Contribuir a una Auditoría en Curso Informes de Auditorías Rendición de cuentas Documentos de interés Unidades de Auditoría o Control Interno GEO-CGR Sugerir una fiscalización Auditorías a las transferencias relacionadas con Fundaciones Función Jurídica Ámbito de la Función Boletín Jurídico CGR Cómo Realizar Consultas Buscar Jurisprudencia Personal de la Administración del Estado Edición Oficial de la Ley Instructivos Bases Administrativas Tipo Buscar Juicios de Cuentas Buscar Legislación Sistemas Mi CGR Publicaciones Toma de razón Tramitación de Reglamentos y otros Actos Administrativos Función Contable Ámbito de la Función Municipalidades y Otras Entidades Servicios Públicos y Otras Entidades Públicas Educación Superior Empresas del Estado Modificaciones Presupuestarias Tramitadas Presupuesto Actualizado de la Nación Presupuesto Actualizado de Iniciativas de Inversion Informe de la Gestión Financiera del Estado Estudios Boletín Financiero Contable CGR Jurisprudencia Sistemas Función Jurisdiccional / Tribunal de Cuentas Primera Instancia Segunda Instancia Boletín de la Judicatura de Cuentas Fallos relevantes Buscador de sentencias Atención a usuarios Sistema de Tramitación y Seguimiento de Juicios de Cuentas Unidad de Cooperación y Relaciones Internacionales Junta de auditores ONU Datos abiertos Nuestros productos Nuestros productos Buscador Informes de auditoría Dictámenes y pronunciamientos CIC Tramitación de reglamentos DIP Estrategia Nacional Anticorrupción Semáforo Municipal Certificado de Disponibilidad Presupuestaria Atención ciudadana Atención ciudadana Servicios CGR en línea Denuncie en línea Consulte estado de trámite Solicite una audiencia Solicite información Ley de Transparencia Formulario de inscripción a Red Ciudadana de Control Red Ciudadana de Control Opine sobre nuestros servicios Suscríbase al Boletín Jurídico CGR Información general Sobre Atención de usuarios Cómo realizar consultas CGR Sobre Biblioteca Observatorio municipal Consejo de las Asociaciones de la Sociedad Civil Sobre COSOC Trabajar con nosotros Información de Auditoría Informes de Auditorías Últimas auditorías por sector y región Normativa y Jurisprudencia Buscar Jurisprudencia Edición Oficial de la Ley Lobby Solicitar Audiencias Registro de Audiencias, Viajes y Donativos Registro de lobbistas y gestor",
+  "links": [
+    {
+      "url": "https://www.contraloria.cl/web/cgr-ingles",
+      "text": "EN"
+    },
+    {
+      "url": "https://www.contraloria.cl/appinf/LegisJuri/DictamenesGeneralesMunicipales.nsf/fsconsultaNva?OpenFrameset",
+      "text": ""
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/alerta-posibles-fraudes",
+      "text": ""
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/link-de-interes",
+      "text": "Link de interés"
+    },
+    {
+      "url": "https://micgr.contraloria.cl",
+      "text": ""
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr",
+      "text": ""
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/que-hacemos",
+      "text": "Qué Hacemos"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/contralor-general",
+      "text": "Contralora General"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/definiciones-estrategicas",
+      "text": "Definiciones Estratégicas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/organigrama",
+      "text": "Organigrama"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/regionales",
+      "text": "Sedes regionales"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/cuentas-publicas",
+      "text": "Cuenta Pública"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/sistema-de-integridad",
+      "text": "Sistema de Integridad"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/preguntas-frecuentes",
+      "text": "Preguntas frecuentes"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/agendas",
+      "text": "Agendas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/solicitar-informacion2",
+      "text": "Solicitar Información"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/estructura-organica",
+      "text": "Estructura Orgánica"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/informacion-presupuestaria",
+      "text": "Información Presupuestaria"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/funciones-y-atribuciones",
+      "text": "Funciones y Atribuciones"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/edicion-oficial-de-la-ley1",
+      "text": "Marco Normativo"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/dotacion-de-personal",
+      "text": "Dotación de Personal"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/dotacion-en-teletrabajo",
+      "text": "Dotación en Teletrabajo"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/contrataciones",
+      "text": "Contrataciones"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/actos-y-resoluciones",
+      "text": "Actos y Resoluciones"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/tramites-y-requisitos",
+      "text": "Trámites y Requisitos"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/vinculos-institucionales",
+      "text": "Vínculos Institucionales"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/estadisticas",
+      "text": "Estadísticas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/ley-de-lobby",
+      "text": "Ley de Lobby"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/documentos-de-interes2",
+      "text": "Documentos de interés"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/ambito-de-la-funcion-auditora",
+      "text": "Ámbito de la Función"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/contribuir-a-una-auditoria-en-curso",
+      "text": "Contribuir a una Auditoría en Curso"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/informes-de-auditorias",
+      "text": "Informes de Auditorías"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/rendicion-de-cuentas",
+      "text": "Rendición de cuentas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/documento-de-interes",
+      "text": "Documentos de interés"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/unidades-de-control-interno",
+      "text": "Unidades de Auditoría o Control Interno"
+    },
+    {
+      "url": "https://www.contraloria.cl/opencgrapp/geocgr/acerca",
+      "text": "GEO-CGR"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/sugerir-una-fiscalizacion",
+      "text": "Sugerir una fiscalización"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/auditorias-a-las-transferencias-relacionadas-con-fundaciones",
+      "text": "Auditorías a las transferencias relacionadas con Fundaciones"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/ambito-de-la-funcion-juridica",
+      "text": "Ámbito de la Función"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/boletin-cgr",
+      "text": "Boletín Jurídico CGR"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/como-realizar-consultas1",
+      "text": "Cómo Realizar Consultas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/buscar-jurisprudencia",
+      "text": "Buscar Jurisprudencia"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/personal-de-la-administracion-del-estado",
+      "text": "Personal de la Administración del Estado"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/documento-de-interes1",
+      "text": "Instructivos"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/bases-administrativas-tipo",
+      "text": "Bases Administrativas Tipo"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/buscar-juicios-de-cuentas",
+      "text": "Buscar Juicios de Cuentas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/buscar-legislacion",
+      "text": "Buscar Legislación"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/sistemas-mi-cgr6",
+      "text": "Sistemas Mi CGR"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/publicaciones",
+      "text": "Publicaciones"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/toma-de-razon-",
+      "text": "Toma de razón"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/tramitacion-de-reglamentos",
+      "text": "Tramitación de Reglamentos y otros Actos Administrativos"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/ambito-de-la-funcion",
+      "text": "Ámbito de la Función"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/municipalidades1",
+      "text": "Municipalidades y Otras Entidades"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/ministerios-y-servicios-publicos1",
+      "text": "Servicios Públicos y Otras Entidades Públicas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/educacion-superior1",
+      "text": "Educación Superior"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/empresas-del-estado",
+      "text": "Empresas del Estado"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/toma-de-razon",
+      "text": "Modificaciones Presupuestarias Tramitadas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/presupuesto-actualizado-de-la-nacion",
+      "text": "Presupuesto Actualizado de la Nación"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/presupuesto-actualizado-de-iniciativas-de-inversion",
+      "text": "Presupuesto Actualizado de Iniciativas de Inversion"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/igfe3",
+      "text": "Informe de la Gestión Financiera del Estado"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/estudios-r",
+      "text": "Estudios"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/boletin-financiero-contable-cgr",
+      "text": "Boletín Financiero Contable CGR"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/jurisprudencia5",
+      "text": "Jurisprudencia"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/sistemas3",
+      "text": "Sistemas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/primera-instancia",
+      "text": "Primera Instancia"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/segunda-instancia",
+      "text": "Segunda Instancia"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/boletin-de-la-judicatura-de-cuentas",
+      "text": "Boletín de la Judicatura de Cuentas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/fallos-relevantes",
+      "text": "Fallos relevantes"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/buscador-de-sentencias",
+      "text": "Buscador de sentencias"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/atencion-a-usuarios2",
+      "text": "Atención a usuarios"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/",
+      "text": "Sistema de Tramitación y Seguimiento de Juicios de Cuentas"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/unidad-de-cooperacion-y-relaciones-internacionales2",
+      "text": "Unidad de Cooperación y Relaciones Internacionales"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/junta-de-auditores-onu",
+      "text": "Junta de auditores ONU"
+    },
+    {
+      "url": "https://www.contraloria.cl/multisite/datos-abiertos/",
+      "text": "Datos abiertos"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/buscador",
+      "text": "Buscador"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/informes-de-auditoria",
+      "text": "Informes de auditoría"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/dictamenes-y-pronunciamientos",
+      "text": "Dictámenes y pronunciamientos"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/cic",
+      "text": "CIC"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/tramitacion-de-reglamentos1",
+      "text": "Tramitación de reglamentos"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/estrategia-nacional-anticorrupcion/inicio",
+      "text": "Estrategia Nacional Anticorrupción"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/semaforo",
+      "text": "Semáforo Municipal"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/certificado-de-disponibilidad-presupuestaria",
+      "text": "Certificado de Disponibilidad Presupuestaria"
+    },
+    {
+      "url": "https://www.contraloria.cl/tramitespersonalescgr/login",
+      "text": "Denuncie en línea"
+    },
+    {
+      "url": "https://www.contraloria.cl/tradocconsulta/estadotramite/",
+      "text": "Consulte estado de trámite"
+    },
+    {
+      "url": "https://www.contraloria.cl/cgrapp/LOBBY_WEB/cl/contraloria/lobby/pub/formSolicitudAudiencia/FormSolicitudAudienciaController.jpf",
+      "text": "Solicite una audiencia"
+    },
+    {
+      "url": "https://www.contraloria.cl/encuestas/index.php/715438?lang=es-CL",
+      "text": "Formulario de inscripción a Red Ciudadana de Control"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/red-ciudadana-de-control",
+      "text": "Red Ciudadana de Control"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/opine-sobre-nuestros-servicios1",
+      "text": "Opine sobre nuestros servicios"
+    },
+    {
+      "url": "https://www.contraloria.cl/encuestas/index.php/427169?lang=es-CL",
+      "text": "Suscríbase al Boletín Jurídico CGR"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/ingreso-de-oficios-y-actos-administrativos-para-servicios-publicos",
+      "text": "Sobre Atención de usuarios"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/como-realiza-consultas-a-cgr",
+      "text": "Cómo realizar consultas CGR"
+    },
+    {
+      "url": "https://www.contraloria.cl/opencgrapp/geoportal/inicio",
+      "text": "Observatorio municipal"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/sobre-cosoc",
+      "text": "Sobre COSOC"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/trabajar-con-nosotros",
+      "text": "Trabajar con nosotros"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/informes-de-auditorias2",
+      "text": "Informes de Auditorías"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/ultimas-auditorias-por-sector-y-region",
+      "text": "Últimas auditorías por sector y región"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/buscar-jurisprudencia2",
+      "text": "Buscar Jurisprudencia"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/edicion-oficial-de-la-ley3",
+      "text": "Edición Oficial de la Ley"
+    },
+    {
+      "url": "https://www.contraloria.cl/web/cgr/registro-de-audiencias-viajes-y-donativos1",
+      "text": "Registro de Audiencias, Viajes y Donativos"
+    },
+    {
+      "url": "https://www.contraloria.cl/proley/LobbyCgr/faces/consultaLobby?tipoRegistro=4&_adf.ctrl-state=rmzvmixd9_67",
+      "text": "Registro de lobbistas y gestores"
+    }
+  ],
+  "audit_links": [],
+  "error": ""
+}
