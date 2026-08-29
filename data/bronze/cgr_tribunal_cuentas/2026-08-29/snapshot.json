@@ -1,0 +1,33 @@
+{
+  "source_id": "cgr_tribunal_cuentas",
+  "source_url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+  "status_code": 200,
+  "fetched_at": "2026-08-29T03:45:45+00:00",
+  "content_hash": "34177768a7a4bc0b0f1184823e4a7707eaefbbd133906b42d8dfd1ec9f1c326e",
+  "title": "www.contraloria.cl",
+  "text_excerpt": "www.contraloria.cl Acceder Sistema de Tramitación y Seguimiento de Juicios de Cuentas Toggle navigation Tabla de causas 2da Estado Diario Búsqueda por Juicios Mantención de Sistema A los usuarios externos de Contraloría: Se informa que el Sistema de Tramitación y Seguimiento del Juicio de Cuentas no estará disponible desde el 28 hasta el 31 de agosto de 2026, ambas fechas inclusive, debido a trabajos de actualización de la plataforma. Durante este período, las presentaciones y escritos podrán remitirse al correo electrónico de primera instancia escritosjuzgadodecuentas@contraloria.cl o al correo electrónico de segunda instancia segundainstancia@contraloria.cl según corresponda. Agradecemos su comprensión y les recomendamos considerar esta interrupción temporal al planificar sus gestiones. Inicio Busqueda de estado diario Búsqueda por Estado Diario Rol / Tribunal Juzgado de Cuentas Tribunal de Cuentas de Segunda Instancia Fecha estado diario Borrar Búsqueda por rango de fechas Buscar Limpiar Resultados 10 resultados - pag 1/1 p p 1 p p Fecha Rol Nº Resolución Nº Resolución Demandante Cuentadantes o Demandados Cuentadantes o Demandados 27/08/2026 64/2026 RES. Nº 91277 RES. Nº 91277 Contraloría Regional del Maule ALMUNA CARRIÓN, ALVAREZ ORTEGA, ARANCIBIA JAQUE, BATARCE ARAISE Y OTROS ALMUNA CARRIÓN, ALVAREZ ORTEGA, ARANCIBIA JAQUE, BATARCE ARAISE, BRIONES JORQUERA, CANCINO MONTECINO, CANCINO ROSSON, CHAMORRO GAETE, ELGUETA ELGUETA, ENCINA VILLALOBOS, FUENTEALBA PARRA, GARDIAZABAL AGUILAR, GONZALEZ CONTRERAS, MENCHACA PINOCHET, MOLINA CAMPOS, MUÑOZ DAZA, WEVAR CARRASCO, ZÚÑIGA IBÁÑEZ, ZÚÑIGA MENDOZA 27/08/2026 64/2026 RES. Nº 91278 RES. Nº 91278 Contraloría Regional del Maule ALMUNA CARRIÓN, ALVAREZ ORTEGA, ARANCIBIA JAQUE, BATARCE ARAISE Y OTROS ALMUNA CARRIÓN, ALVAREZ ORTEGA, ARANCIBIA JAQUE, BATARCE ARAISE, BRIONES JORQUERA, CANCINO MONTECINO, CANCINO ROSSON, CHAMORRO GAETE, ELGUETA ELGUETA, ENCINA VILLALOBOS, FUENTEALBA PARRA, GARDIAZABAL AGUILAR, GONZALEZ CONTRERAS, MENCHACA PINOCHET, MOLINA CAMPOS, MUÑOZ DAZA, WEVAR CARRASCO, ZÚÑIGA IBÁÑEZ, ZÚÑIGA MENDOZA 27/08/2026 64/2026 RES. Nº 91281 RES. Nº 91281 Contraloría Regional del Maule ALMUNA CARRIÓN, ALVAREZ ORTEGA, ARANCIBIA JAQUE, BATARCE ARAISE Y OTROS ALMUNA CARRIÓN, ALVAREZ ORTEGA, ARANCIBIA JAQUE, BATARCE ARAISE, BRIONES JORQUERA, CANCINO MONTECINO, CANCINO ROSSON, CHAMORRO GAETE, ELGUETA ELGUETA, ENCINA VILLALOBOS, FUENTEALBA PARRA, GARDIAZABAL AGUILAR, GONZALEZ CONTRERAS, MENCHACA PINOCHET, MOLINA CAMPOS, MUÑOZ DAZA, WEVAR CARRASCO, ZÚÑIGA IBÁÑEZ, ZÚÑIGA MENDOZA 27/08/2026 64/2026 RES. Nº 91276 RES. Nº 91276 Contraloría Regional del Maule ALMUNA CARRIÓN, ALVAREZ ORTEGA, ARANCIBIA JAQUE, BATARCE ARAISE Y OTROS ALMUNA CARRIÓN, ALVAREZ ORTEGA, ARANCIBIA JAQUE, BATARCE ARAISE, BRIONES JORQUERA, CANCINO MONTECINO, CANCINO ROSSON, CHAMORRO GAETE, ELGUETA ELGUETA, ENCINA VILLALOBOS, FUENTEALBA PARRA, GARDIAZABAL AGUILAR, GONZALEZ CONTRERAS, MENCHACA PINOCHET, MOLINA CAMPOS, MUÑOZ DAZA, WEVAR CARR",
+  "links": [
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/loginClave",
+      "text": "Acceder"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/tablaCausa2da",
+      "text": "Tabla de causas 2da"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaEstadoD",
+      "text": "Estado Diario"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio/busquedaJuicios",
+      "text": "Búsqueda por Juicios"
+    },
+    {
+      "url": "https://www.contraloria.cl/transopencgrapp/publicadorJuicio",
+      "text": "Inicio"
+    }
+  ],
+  "audit_links": [],
+  "error": ""
+}
