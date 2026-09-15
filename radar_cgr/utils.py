@@ -53,3 +53,62 @@ def absolutize(base: str, href: str) -> str:
 
 def ensure_parent(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+
+
+# El RUT aparece en los informes de auditoría como prosa del fiscalizador, no
+# como campo estructurado: «con el proveedor X, RUT 76.787.460-K». Se exige la
+# etiqueta literal porque en castellano las letras r-u-t abundan dentro de
+# palabras corrientes —«Frutería», «ruta 11-CH», «Urrutia»— y sin ella el
+# reconocimiento devuelve apellidos y caminos en vez de contribuyentes.
+RUT_LABELED_RE = re.compile(
+    r"R\.?\s?U\.?\s?T\.?\s*(?:N[°ºo]s?\.?)?\s*:?\s*(\d{1,2}[\.\s]?\d{3}[\.\s]?\d{3})\s*[-‐–—]\s*([0-9kK])",
+    re.IGNORECASE,
+)
+
+
+def rut_check_digit(body: str) -> str:
+    """Dígito verificador de módulo 11 sobre el cuerpo del RUT, sin puntos."""
+    total = 0
+    factor = 2
+    for char in reversed(body):
+        total += int(char) * factor
+        factor = 2 if factor == 7 else factor + 1
+    remainder = 11 - (total % 11)
+    return {11: "0", 10: "K"}.get(remainder, str(remainder))
+
+
+def normalize_rut(raw: str) -> str:
+    """Devuelve `cuerpo-DV` sólo si el dígito verificador cuadra; si no, cadena vacía.
+
+    Un RUT que no valida no es un RUT con una errata: es cualquier otra cosa con
+    forma de RUT. La Contraloría además enmascara los de personas naturales
+    —«RUT Nos 6.429.XXX-X»— y esa máscara debe morir aquí, no aguas abajo.
+    """
+    if not raw:
+        return ""
+    cleaned = re.sub(r"[\.\s]", "", str(raw)).upper()
+    match = re.fullmatch(r"(\d{7,8})-([0-9K])", cleaned)
+    if not match:
+        return ""
+    body, verifier = match.groups()
+    return f"{body}-{verifier}" if rut_check_digit(body) == verifier else ""
+
+
+def rut_near(text: str, start: int, end: int, window: int = 60) -> str:
+    """RUT etiquetado que sigue inmediatamente a un nombre entre `start` y `end`.
+
+    La ventana es corta y mira sólo hacia adelante a propósito: un RUT que está
+    tres líneas más abajo pertenece a otra entidad, y atribuirlo aquí sería
+    exactamente el error que el enlace CANDIDATE existe para evitar.
+    """
+    if not text:
+        return ""
+    tail = text[end:min(len(text), end + window)]
+    match = RUT_LABELED_RE.search(tail)
+    if not match:
+        return ""
+    # Entre el nombre y la etiqueta sólo puede haber puntuación. Cualquier
+    # palabra intermedia significa que el RUT es de otra cosa.
+    if not re.fullmatch(r"[\s,;:.()\-–—]*", tail[: match.start()]):
+        return ""
+    return normalize_rut(f"{match.group(1)}-{match.group(2)}")

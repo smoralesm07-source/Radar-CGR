@@ -52,3 +52,49 @@ def test_explicit_mp_referral_is_marked_explicit():
     assert hyps
     assert hyps[0].evidence_level=="EXPLICIT_CGR_REFERRAL"
     assert hyps[0].relevance=="HIGH"
+
+
+def test_provider_rut_captured_when_written_next_to_the_name():
+    # Texto real del informe de seguimiento CGR-AUD-318bf06b.
+    text=("prórroga del servicio de análisis de plaguicidas, por 6 meses, con el proveedor "
+          "Juan Pablo Belmar Carrasco E.I.R.L., RUT 76.787.460-K, producto de la licitación "
+          "pública ID 612-4-LE23")
+    rows=[x for x in extract_providers(text) if x["rut"]]
+    assert len(rows)==1
+    assert rows[0]["rut"]=="76787460-K"
+
+
+def test_masked_rut_never_becomes_a_rut():
+    # La Contraloría enmascara el RUT de personas naturales. Esa máscara no puede
+    # convertirse en identificador aguas abajo.
+    text=("Se advirtió el depósito a beneficiarios fallecidos por la Sociedad Comercial Andes Ltda., "
+          "RUT Nos 6.429.XXX-X, 8.601.XXX-X")
+    assert all(not x["rut"] for x in extract_providers(text))
+
+
+def test_letters_rut_inside_ordinary_words_are_not_a_rut():
+    # «Frutería», «ruta», «Urrutia» contienen r-u-t y son la razón por la que se
+    # exige la etiqueta literal seguida de un número.
+    for text in ("Pagos realizados al proveedor Frutería Mom Ltda. sin respaldo documental",
+                 "residuos a lo largo de la ruta 11-CH que la Constructora Lauca SpA debía retirar",
+                 "expuestas por el Diputado Osvaldo Urrutia Soto sobre Comercial Ofimat Ltda."):
+        assert all(not x["rut"] for x in extract_providers(text))
+
+
+def test_rut_of_a_different_entity_is_not_attributed():
+    # Un RUT separado del nombre por una frase pertenece a otra entidad.
+    text="contrato con el proveedor GEA Ltda y su empresa matriz, RUT 76.787.460-K, por servicios"
+    assert all(not x["rut"] for x in extract_providers(text))
+
+
+def test_provider_without_rut_keeps_the_field_empty():
+    text="Pagos no respaldados realizados al proveedor Comercial Las Dalias Ltda. durante 2024"
+    rows=extract_providers(text)
+    assert rows and all(x["rut"]=="" for x in rows)
+
+
+def test_a_later_mention_without_rut_does_not_erase_the_one_found():
+    text=("contrato con el proveedor Comercial Ofimat Ltda., RUT 60.921.000-1, por servicios. "
+          "Posteriormente el proveedor Comercial Ofimat Ltda. presentó facturas sin respaldo.")
+    rows=[x for x in extract_providers(text) if x["normalized_name"].startswith("COMERCIAL OFIMAT")]
+    assert len(rows)==1 and rows[0]["rut"]=="60921000-1"

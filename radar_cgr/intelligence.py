@@ -5,7 +5,7 @@ from collections import defaultdict
 
 from .models import Entity, Irregularity, Organization, PenalHypothesis, Person, Provider, Relationship, stable_id
 from .storage import read_jsonl, replace_jsonl, table_path
-from .utils import normalize_name, normalize_ws
+from .utils import normalize_name, normalize_ws, rut_near
 
 REGIONS = {
     "ARICA Y PARINACOTA": "Arica y Parinacota",
@@ -140,7 +140,10 @@ def extract_providers(text: str) -> list[dict]:
         role="MENTIONED_PROVIDER"
         if re.search(r"pag[oó]|pago[s]?|desembolso",context): role="PAYMENT_RECIPIENT"
         if re.search(r"contrat|licitaci|adjudic",context): role="CONTRACTOR"
-        results[norm]={"name":name,"normalized_name":norm,"relationship_type":role,"provider_type":"PRIVATE_LEGAL_ENTITY","confidence":0.92}
+        # El mismo proveedor puede nombrarse varias veces y sólo una traer el RUT:
+        # una mención posterior sin él no puede borrar el que ya se identificó.
+        rut=rut_near(text or "",match.start(),match.end()) or (results.get(norm,{}).get("rut") or "")
+        results[norm]={"name":name,"normalized_name":norm,"relationship_type":role,"provider_type":"PRIVATE_LEGAL_ENTITY","rut":rut,"confidence":0.92}
     for match in FOUNDATION_RE.finditer(text or ""):
         name=normalize_ws(match.group(1)).strip(" ,.;:-")
         norm=normalize_name(name)
@@ -148,7 +151,10 @@ def extract_providers(text: str) -> list[dict]:
         left=max(0,match.start()-150); right=min(len(text),match.end()+150); context=(text[left:right] or "").lower()
         if not re.search(r"transfer|convenio|contrat|pago|fundaci[oó]n",context): continue
         role="TRANSFER_RECIPIENT" if "transfer" in context else "MENTIONED_PROVIDER"
-        results[norm]={"name":name,"normalized_name":norm,"relationship_type":role,"provider_type":"NONPROFIT_LEGAL_ENTITY","confidence":0.78}
+        # El mismo proveedor puede nombrarse varias veces y sólo una traer el RUT:
+        # una mención posterior sin él no puede borrar el que ya se identificó.
+        rut=rut_near(text or "",match.start(),match.end()) or (results.get(norm,{}).get("rut") or "")
+        results[norm]={"name":name,"normalized_name":norm,"relationship_type":role,"provider_type":"NONPROFIT_LEGAL_ENTITY","rut":rut,"confidence":0.78}
     return sorted(results.values(),key=lambda x:x["normalized_name"])
 
 
@@ -270,7 +276,8 @@ def rebuild_intelligence()->dict:
         provider_ids=[]; provider_names=[]
         for item in extract_providers(text):
             pid=stable_id("ENT",item["normalized_name"]); provider_ids.append(pid); provider_names.append(item["name"])
-            providers[pid]=Provider(pid,item["name"],item["normalized_name"],item["provider_type"],"",region,did,item["confidence"]).to_dict(); generic_entities[pid]=Entity(pid,"PROVIDER",item["name"],item["normalized_name"],"",region,did,item["confidence"]).to_dict()
+            rut=item.get("rut","") or ""
+            providers[pid]=Provider(pid,item["name"],item["normalized_name"],item["provider_type"],rut,region,did,item["confidence"]).to_dict(); generic_entities[pid]=Entity(pid,"PROVIDER",item["name"],item["normalized_name"],rut,region,did,item["confidence"]).to_dict()
             if oid:
                 rel=Relationship(stable_id("REL",oid,pid,item["relationship_type"],fid),oid,pid,item["relationship_type"],did,finding.get("event_id",""),fid,evidence_id,source_url,item["confidence"])
                 relationships[rel.relationship_id]=rel.to_dict()
