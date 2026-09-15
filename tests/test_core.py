@@ -45,3 +45,15 @@ def test_parse_audit_structured_metadata_and_entity():
     assert r.event.entity_name=="Comisión Nacional de Riego"
     assert any(x.aml_relevance=="HIGH" for x in r.findings)
     assert all(x.evidence_id for x in r.findings)
+
+
+def test_rut_check_digit_and_normalization():
+    from radar_cgr.utils import normalize_rut, rut_check_digit
+    assert rut_check_digit("60921000")=="1"
+    assert rut_check_digit("76787460")=="K"
+    assert normalize_rut("60.921.000-1")=="60921000-1"
+    assert normalize_rut("76.787.460-k")=="76787460-K"
+    # Un dígito verificador que no cuadra no es un RUT con errata.
+    assert normalize_rut("60.921.000-2")==""
+    assert normalize_rut("6.429.XXX-X")==""
+    assert normalize_rut("")==""
