@@ -122,3 +122,4 @@
 {"collection_id": "CC-MAIN-2026-25", "from": "2026-06-05T21:48:11", "hashes_found": 0, "last_error": "", "last_scanned": "2026-08-12T20:38:48+00:00", "name": "June 2026 Index", "status": "SCANNED", "to": "2026-06-18T19:32:05"}
 {"collection_id": "CC-MAIN-2026-30", "from": "2026-07-10T07:05:34", "hashes_found": 0, "last_error": "", "last_scanned": "2026-08-12T20:38:48+00:00", "name": "July 2026 Index", "status": "SCANNED", "to": "2026-07-23T01:13:28"}
 {"collection_id": "CC-MAIN-2026-34", "from": "2026-08-07T10:18:45", "hashes_found": 0, "last_error": "", "last_scanned": "2026-08-25T05:09:40+00:00", "name": "August 2026 Index", "status": "SCANNED", "to": "2026-08-20T01:52:41"}
+{"collection_id": "CC-MAIN-2026-39", "from": "2026-09-04T13:16:03", "hashes_found": 0, "last_error": "", "last_scanned": "2026-09-20T09:26:37+00:00", "name": "September 2026 Index", "status": "SCANNED", "to": "2026-09-17T05:59:21"}
