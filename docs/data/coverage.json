@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-21T09:35:26+00:00",
-  "coverage_status": "DISCOVERY_QUEUE_EMPTY",
+  "generated_at": "2026-10-21T20:23:32+00:00",
+  "coverage_status": "BACKFILLING",
   "warning": "Una cola vacía no acredita por sí sola cobertura histórica completa: depende de la exhaustividad de los canales públicos de descubrimiento disponibles.",
   "audit_registry": {
     "total_discovered": 40,
@@ -34,15 +34,19 @@
     ]
   },
   "historical_url_index": {
-    "collections_registered": 125,
+    "collections_registered": 126,
     "collections_scanned": 125,
-    "collections_error": 0,
-    "collections_pending_or_unknown": 0,
-    "scan_pct": 100.0,
+    "collections_error": 1,
+    "collections_pending_or_unknown": 1,
+    "scan_pct": 99.2,
     "by_status": [
       {
         "name": "SCANNED",
         "count": 125
+      },
+      {
+        "name": "ERROR",
+        "count": 1
       }
     ],
     "role": "Índice de descubrimiento de URLs históricas. No se utiliza como evidencia del contenido; cada docIdcm debe validarse contra CGR."
@@ -183,42 +187,42 @@
   "source_latest": {
     "cgr_noticias": {
       "status": "ERROR",
-      "finished_at": "2026-10-21T00:39:39+00:00",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='mantencion.contraloria.cl', port=443): Max retries exceeded with url: /cgr/web/cgr/noticias/index.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mantencion.contraloria.cl', port=443) at 0x7f4ada37aff0>, 'Connection to mantencion.contraloria.cl timed out. (connect timeout=35)'))"
+      "finished_at": "2026-10-21T15:16:33+00:00",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='mantencion.contraloria.cl', port=443): Max retries exceeded with url: /cgr/web/cgr/noticias/index.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mantencion.contraloria.cl', port=443) at 0x7fb0b13e6990>, 'Connection to mantencion.contraloria.cl timed out. (connect timeout=35)'))"
     },
     "cgr_auditorias": {
       "status": "OK",
-      "finished_at": "2026-10-21T00:39:40+00:00",
+      "finished_at": "2026-10-21T15:16:34+00:00",
       "error": ""
     },
     "cgr_fiscalizaciones": {
       "status": "OK",
-      "finished_at": "2026-10-21T00:39:44+00:00",
+      "finished_at": "2026-10-21T15:16:40+00:00",
       "error": ""
     },
     "cgr_fau": {
       "status": "OK",
-      "finished_at": "2026-10-21T00:39:45+00:00",
+      "finished_at": "2026-10-21T15:16:40+00:00",
       "error": ""
     },
     "cgr_tribunal_cuentas": {
       "status": "OK",
-      "finished_at": "2026-10-21T00:39:46+00:00",
+      "finished_at": "2026-10-21T15:16:41+00:00",
       "error": ""
     },
     "cgr_fundaciones": {
       "status": "OK",
-      "finished_at": "2026-10-21T00:39:46+00:00",
+      "finished_at": "2026-10-21T15:16:42+00:00",
       "error": ""
     },
     "cgr_datos_municipales": {
       "status": "OK",
-      "finished_at": "2026-10-21T00:39:51+00:00",
+      "finished_at": "2026-10-21T15:16:51+00:00",
       "error": ""
     },
     "cgr_semaforo": {
       "status": "OK",
-      "finished_at": "2026-10-21T00:39:50+00:00",
+      "finished_at": "2026-10-21T15:16:45+00:00",
       "error": ""
     },
     "audit_detail": {
@@ -228,7 +232,7 @@
     },
     "cgr_reportes_financieros": {
       "status": "OK",
-      "finished_at": "2026-10-21T00:39:51+00:00",
+      "finished_at": "2026-10-21T15:16:51+00:00",
       "error": ""
     }
   },
